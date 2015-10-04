@@ -18,7 +18,7 @@ while [ $counter -lt $numOfIDs ]; do
 	~/steamcmd/steamcmd.sh +login anonymous +workshop_download_item 344320 $currentID +quit
 	((counter++))
 done
-echo -e "\n\n${BLUE}Removing old workshop data and moving new items into place${NC}..."
+echo -e "\n\n${BLUE}Removing old workshop data and moving new items into place...${NC}"
 rm -r ~/steamcmd/steamapps/common/qlds/steamapps/workshop
 mv ~/steamcmd/steamapps/workshop/ ~/steamcmd/steamapps/common/qlds/steamapps/workshop
 echo Done.
