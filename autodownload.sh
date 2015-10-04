@@ -11,7 +11,7 @@ NC="\033[0m"
 workshopIDs=`cat $qldsPath/baseq3/workshop.txt | grep -v '#' | sed '/^[ \t]*$/d'`
 numOfIDs=`echo "$workshopIDs" | wc -l`
 counter=0
-while [ $counter -le $numOfIDs ]; do
+while [ $counter -lt $numOfIDs ]; do
 	currentID=`echo $workshopIDs | awk '{ print $1 }'`
 	workshopIDs=`echo $workshopIDs | cut -d ' ' -f2-`
 	echo -e "\n\n${BLUE}Downloading item $currentID from Steam...${NC}\n"
