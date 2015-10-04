@@ -8,7 +8,7 @@ steamUser=""
 steamPass=""
 rconPass=""
 highestPort=28969
-message="^4The Purgery^7 servers are going down ^4within a minute^7 for daily updating. They will be back in ^45 minutes^7."
+message="^4The Purgery^7 servers are going down ^4within a minute^7 for daily updating. They will be back in ^410 minutes^7."
 
 echo "========== QuakeUpdate.sh has started. =========="
 # Informing players in the servers that the servers are going down for a bit.
@@ -49,6 +49,9 @@ cp -Rfv /home/qlserver/steamcmd/steamapps/common/qlds/baseq3/goodworkshop.txt /h
 # Removing the .quakelive directories, except for baseq3.
 echo Removing 2* directories...
 rm -rf /home/qlserver/.quakelive/2*
+
+# Running 'autodownload.sh' to recache all workshop items before restarting.
+bash /home/qlserver/autodownload.sh
 
 # Using 'supervisorctl' to start all servers.
 echo Starting Quake Servers...
