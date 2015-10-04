@@ -4,7 +4,7 @@
 # purger@tomtecsolutions.com
 
 # Defining variables.
-pathToStartScript="/home/qlserver/steamcmd/steamapps/common/qlds/run_server_x86.sh"
+pathToStartScript="/home/qlserver/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 pathToBaseQ3="/home/qlserver/steamcmd/steamapps/common/qlds/baseq3"
 
 location=""
