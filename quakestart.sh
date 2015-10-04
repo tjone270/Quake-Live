@@ -191,11 +191,11 @@ exec $pathToStartScript \
    	+set bot_nochat 1 \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 8 ]
-# starting pql duel 1...
+# starting vql duel 1...
 then
 sleep 35
 cp -f mappool_vqlduel.txt mappool.txt
-echo "Starting PQL duel server 1..."
+echo "Starting VQL duel server 1..."
 exec $pathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
