@@ -21,7 +21,7 @@ export qQLDSpath="~/steamcmd/steamapps/common/qlds"
 # Downloading a new copy of some files.
 curl $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix quakestart.sh
 curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix quakeupdate.sh
-cd $qStartPathToBaseQ3
+cd ~/steamcmd/steamapps/common/qlds/baseq3
 curl $qBaseURL/config-files/server.txt > server.cfg; dos2unix server.cfg
 curl $qBaseURL/config-files/access.txt > access.txt; dos2unix access.txt
 curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
