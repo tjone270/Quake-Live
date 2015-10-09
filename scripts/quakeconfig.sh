@@ -19,14 +19,14 @@ export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
 export qQLDSpath="~/steamcmd/steamapps/common/qlds"
 
 # Downloading a new copy of some files.
-curl $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix quakestart.sh
-curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix quakeupdate.sh
+curl $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix quakestart.sh; chmod +x quakestart.sh
+curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix quakeupdate.sh; chmod +x quakeupdate.sh
 cd ~/steamcmd/steamapps/common/qlds/baseq3
 curl $qBaseURL/config-files/server.txt > server.cfg; dos2unix server.cfg
 curl $qBaseURL/config-files/access.txt > access.txt; dos2unix access.txt
 curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
-rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -fo mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix mappool_*
-rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -fo factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
+rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix mappool_*
+rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -o factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
 
 # Updating this script.
 cd ~
