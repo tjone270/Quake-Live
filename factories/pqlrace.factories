@@ -1,0 +1,27 @@
+[
+   {
+      "author":"TomTec Solutions",
+      "description":"PQL/Turbo ruleset integration to Race servers.",
+      "basegt":"race",
+      "id":"pqlrace",
+      "title":"Turbo Race",
+      "cvars":{
+         "g_loadout":"0",
+         "g_spawnArmor":"0",
+         "dmflags":"60",
+         "g_startingArmor":"0",
+         "g_startingHealth":"100",
+         "g_allowKill":"1",
+         "g_overtime":"0",
+         "pmove_noPlayerClip":"1",
+         "pmove_CrouchSlide":"1",
+         "pmove_WeaponRaiseTime":"10",
+         "pmove_WeaponDropTime":"10",
+         "pmove_RampJump":"1",
+         "pmove_AirControl":"1",
+         "g_infiniteAmmo":"1",
+         "g_startingWeapons":"656",
+         "timelimit":"10"
+      }
+   }
+]
