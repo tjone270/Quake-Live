@@ -3,13 +3,11 @@
 # created by Thomas Jones on 09/09/15.
 # purger@tomtecsolutions.com
 
-# Defining variables.
-pathToStartScript="/home/qlserver/steamcmd/steamapps/common/qlds/run_server_x64.sh"
-pathToBaseQ3="/home/qlserver/steamcmd/steamapps/common/qlds/baseq3"
 
-location=""
-password=""
-sponsortag="$location"
+# Defining variables.
+sh quakeconfig.sh
+
+sponsortag="$qServerLocation"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
@@ -235,6 +233,28 @@ exec $pathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
 	+set fs_homepath ~/.quakelive/$gameport
+elif [ $1 -eq 10 ]
+# starting VQL iCTF 1...
+then
+sleep 40
+cp -f mappool_vqlictf.txt mappool.txt
+echo "Starting multi game type server 1..."
+exec $pathToStartScript \
+    +set net_strict 1 \
+    +set net_port $gameport \
+    +set sv_hostname " #$servernum The Purgery $location VQL - iCTF" \
+    +set zmq_rcon_enable 1 \
+    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_port $rconport \
+    +set zmq_stats_enable 1 \
+    +set zmq_stats_password "$password" \
+    +set zmq_stats_port $gameport \
+    +set sv_tags "$sponsortag" \
+    +set g_allowSpecVote 1 \
+    +set g_allowVoteMidGame 1 \
+    +set bot_enable 1 \
+    +set bot_nochat 1 \
+    +set fs_homepath ~/.quakelive/$gameport
 fi
 
 # Unused cvars.
