@@ -25,8 +25,8 @@ cd ~/steamcmd/steamapps/common/qlds/baseq3
 curl $qBaseURL/config-files/server.txt > server.cfg; dos2unix server.cfg
 curl $qBaseURL/config-files/access.txt > access.txt; dos2unix access.txt
 curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
-rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip mappools.zip; rm mappools.zip; dos2unix mappool_*
-rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip factories.zip; rm factories.zip; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
+rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -fo mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix mappool_*
+rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -fo factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
 
 # Updating this script.
 cd ~
