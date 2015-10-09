@@ -19,6 +19,7 @@ export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
 export qQLDSpath="/home/qlserver/steamcmd/steamapps/common/qlds/"
 
 # Downloading a new copy of some files.
-curl $qBaseURL/quakestart.sh > quakestart.sh
-curl $qBaseURL/quakeupdate.sh > quakeupdate.sh
-curl $qBaseURL/quakeconfig.sh > quakeconfig.sh
+curl $qBaseURL/scripts/quakestart.sh > quakestart.sh
+curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh
+curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh
+curl 
