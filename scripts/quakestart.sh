@@ -37,7 +37,7 @@ echo "Starting clan arena server 1 or 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "   #$servernum The Purgery $location PQL - Clan Arena" \
+    +set sv_hostname "   #$servernum The Purgery $qServerLocation PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -60,7 +60,7 @@ echo "Starting race server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Race" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Race" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -83,7 +83,7 @@ echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Free For All (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Free For All (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -106,7 +106,7 @@ echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Capture the Flag" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Capture the Flag" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -129,7 +129,7 @@ echo "Starting domination server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Domination" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Domination" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -152,7 +152,7 @@ echo "Starting infected server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Infected (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Infected (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -175,7 +175,7 @@ echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Team Deathmatch (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Team Deathmatch (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -198,7 +198,7 @@ echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location VQL - Duel" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Duel" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -221,7 +221,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Multi-Gametype Turbo (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -243,7 +243,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum The Purgery $location VQL - iCTF" \
+    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - iCTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
