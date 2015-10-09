@@ -5,8 +5,6 @@
 
 
 # Defining variables.
-sh quakeconfig.sh
-
 sponsortag="$qServerLocation"
 
 gameport=`expr $1 + 27960`
@@ -26,7 +24,7 @@ servernum=`expr $1 + 0`
 echo "========== QuakeStart.sh has started. =========="
 echo "========== $(date) =========="
 #echo "arg1 is equal to $1"
-cd $pathToBaseQ3
+cd $qStartPathToBaseQ3
 
 if [ $1 -le 1 ]
 # starting PQL CA 1 and 2...
@@ -236,7 +234,7 @@ exec $pathToStartScript \
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
-sleep 40
+sleep 45
 cp -f mappool_vqlictf.txt mappool.txt
 echo "Starting multi game type server 1..."
 exec $pathToStartScript \

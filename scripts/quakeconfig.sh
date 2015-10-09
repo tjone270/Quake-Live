@@ -1,5 +1,5 @@
 #! /bin/bash
-# quakeconfig.txt - quake live server variable configuration.
+# quakeconfig.txt - quake live server file sync.
 # created by Thomas Jones on 09/10/15.
 # purger@tomtecsolutions.com
 
@@ -16,12 +16,21 @@ export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
-export qQLDSpath="~/steamcmd/steamapps/common/qlds/"
+export qQLDSpath="~/steamcmd/steamapps/common/qlds"
 
 # Downloading a new copy of some files.
-curl $qBaseURL/scripts/quakestart.sh > quakestart.sh
-curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh
-curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh
-curl $qBaseURL/config-files/server.txt > $qQLDSpath/baseq3/server.cfg
-curl $qBaseURL/config-files/access.txt > $qQLDSpath/baseq3/access.txt
-curl $qBaseURL/config-files/workshop.txt > $qQLDSpath/baseq3/workshop.txt
+curl $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix quakestart.sh
+curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix quakeupdate.sh
+cd $qStartPathToBaseQ3
+curl $qBaseURL/config-files/server.txt > server.cfg; dos2unix server.cfg
+curl $qBaseURL/config-files/access.txt > access.txt; dos2unix access.txt
+curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
+rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip mappools.zip; rm mappools.zip; dos2unix mappool_*
+rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip factories.zip; rm factories.zip; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
+
+# Updating this script.
+cd ~
+curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh
+
+# Finished.
+exit 0
