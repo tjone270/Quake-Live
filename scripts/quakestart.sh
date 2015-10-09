@@ -7,6 +7,7 @@
 # Defining variables.
 export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
+export qRconPassword=$(<localConfig-rconPassword.txt)
 
 sponsortag="$qServerLocation, TomTec Solutions"
 
@@ -39,10 +40,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "   #$servernum The Purgery $qServerLocation PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -62,10 +63,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Race" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "grappling hook, crouch slide, $sponsortag" \
     +set g_voteFlags "13320" \
@@ -85,10 +86,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Free For All (Beta)" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -108,10 +109,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Capture the Flag" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -131,10 +132,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Domination" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -154,10 +155,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Infected (Beta)" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "zombies, $sponsortag" \
     +set g_voteFlags "13320" \
@@ -177,10 +178,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Team Deathmatch (Beta)" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -200,10 +201,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Duel" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
@@ -223,10 +224,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
 	+set g_allowSpecVote 1 \
@@ -245,10 +246,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - iCTF" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$password" \
+    +set zmq_rcon_password "$qRconPassword" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$password" \
+    +set zmq_stats_password "$qRconPassword" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_allowSpecVote 1 \
