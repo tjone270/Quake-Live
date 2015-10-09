@@ -1,8 +1,5 @@
 # Get these numbers from the ?id= ending of the workshop URI.
 
-# Eviscerated
-495808007
-
 # Loading Bay
 506895614
 
