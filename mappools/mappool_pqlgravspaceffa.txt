@@ -1,0 +1,8 @@
+# specify 1 map per line, mapname|factoryid
+# ex: aerowalk|ffa
+# see factories.txt for valid factory id values
+beyondreality|pqlgravspaceffa
+longestyard|pqlgravspaceffa
+spacechamber|pqlgravspaceffa
+spacectf|pqlgravspaceffa
+vortexportal|pqlgravspaceffa

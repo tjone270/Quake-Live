@@ -1,0 +1,27 @@
+# specify 1 map per line, mapname|factoryid
+# ex: aerowalk|ffa
+# see factories.txt for valid factory id values
+beyondreality|pqlca
+aerowalk|pqlca
+almostlost|pqlca
+arcanecitadel|pqlca
+blackcathedral|pqlca
+brimstoneabbey|pqlca
+bloodrun|pqlca
+campgrounds|pqlca
+asylum|pqlca
+coldwar|pqlca
+cliffside|pqlca
+theedge|pqlca
+railyard|pqlca
+quarantine|pqlca
+trinity|pqlca
+devilish|pqlca
+fatalinstinct|pqlca
+monastery|pqlca
+leviathan|pqlca
+foolishlegacy|pqlca
+deepinside|pqlca
+theepicenter|pqlca
+dredwerkz|pqlca
+purgatory|pqlca

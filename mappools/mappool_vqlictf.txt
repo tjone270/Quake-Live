@@ -1,0 +1,43 @@
+# specify 1 map per line, mapname|factoryid
+# ex: aerowalk|ffa
+# see factories.txt for valid factory id values
+basesiege|ictf
+beyondreality|ictf
+campercrossings|ictf
+citycrossings|ictf
+coldcathode|ictf
+courtyard|ictf
+cursed|ictf
+duelingkeeps|ictf
+electrocution|ictf
+falloutbunker|ictf
+finnegans|ictf
+fluorescent|ictf
+futurecrossings|ictf
+gospelcrossings|ictf
+industrialrevolution|ictf
+infinity|ictf
+innersanctums|ictf
+ironworks|ictf
+japanesecastles|ictf
+jumpwerkz|ictf
+lostparadise|ictf
+newcerberon|ictf
+overgrowth|ictf
+pillbox|ictf
+pulpfriction|ictf
+railyard|ictf
+rebound|ictf
+reflux|ictf
+scornforge|ictf
+shiningforces|ictf
+siberia|ictf
+skyward|ictf
+spaceictf|ictf
+spidercrossings|ictf
+stonekeep|ictf
+stronghold|ictf
+thedukesgarden|ictf
+troubledwaters|ictf
+vortexportal|ictf
+zen|ictf
