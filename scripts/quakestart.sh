@@ -37,7 +37,7 @@ echo "Starting clan arena server 1 or 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $location PQL - Clan Arena" \
+    +set sv_hostname "   #$servernum The Purgery $location PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
@@ -221,7 +221,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum The Purgery $location PQL - Multi-Gametype Turbo (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $location PQL - Multi-Gametype Turbo (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$password" \
     +set zmq_rcon_port $rconport \
