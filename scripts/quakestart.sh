@@ -7,7 +7,6 @@
 # Defining variables.
 export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
-export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
 
 sponsortag="$qServerLocation"
 
@@ -28,14 +27,14 @@ servernum=`expr $1 + 0`
 echo "========== QuakeStart.sh has started. =========="
 echo "========== $(date) =========="
 #echo "arg1 is equal to $1"
-cd $qStartPathToBaseQ3
+cd ~/steamcmd/steamapps/common/qlds/baseq3
 
 if [ $1 -le 1 ]
 # starting PQL CA 1 and 2...
 then
 cp -f mappool_pqlca.txt mappool.txt
 echo "Starting clan arena server 1 or 2..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Clan Arena" \
@@ -58,7 +57,7 @@ then
 sleep 5
 cp -f mappool_pqlrace.txt mappool.txt
 echo "Starting race server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Race" \
@@ -81,7 +80,7 @@ then
 sleep 10
 cp -f mappool_pqlffa.txt mappool.txt
 echo "Starting free for all server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Free For All (Beta)" \
@@ -104,7 +103,7 @@ then
 sleep 15
 cp -f mappool_pqlctf.txt mappool.txt
 echo "Starting capture the flag server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Capture the Flag" \
@@ -127,7 +126,7 @@ then
 sleep 20
 cp -f mappool_pqldom.txt mappool.txt
 echo "Starting domination server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Domination" \
@@ -150,7 +149,7 @@ then
 sleep 25
 cp -f mappool_pqlinfected.txt mappool.txt
 echo "Starting infected server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Infected (Beta)" \
@@ -173,7 +172,7 @@ then
 sleep 30
 cp -f mappool_pqltdm.txt mappool.txt
 echo "Starting team deathmatch server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location PQL - Team Deathmatch (Beta)" \
@@ -196,7 +195,7 @@ then
 sleep 35
 cp -f mappool_vqlduel.txt mappool.txt
 echo "Starting VQL duel server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname "  #$servernum The Purgery $location VQL - Duel" \
@@ -219,7 +218,7 @@ then
 sleep 40
 cp -f mappool_pqlmulti.txt mappool.txt
 echo "Starting multi game type server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname " #$servernum The Purgery $location PQL - Multi-Gametype Turbo (Beta)" \
@@ -241,7 +240,7 @@ then
 sleep 45
 cp -f mappool_vqlictf.txt mappool.txt
 echo "Starting multi game type server 1..."
-exec $pathToStartScript \
+exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
     +set sv_hostname " #$servernum The Purgery $location VQL - iCTF" \
