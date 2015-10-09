@@ -27,7 +27,7 @@ rm access.txt; curl $qBaseURL/config-files/access.txt > access.txt; dos2unix acc
 rm workshop.txt; curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
 rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix mappool_*
 rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -o factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
-sudo rm /etc/supervisord.conf; sudo curl $qBaseURL/config-files/supervisord.txt > /etc/supervisord.conf; sudo dos2unix /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
+sudo rm /etc/supervisord.conf; curl $qBaseURL/config-files/supervisord.txt > supervisord.conf; sudo mv supervisord.conf /etc/supervisord.conf; sudo dos2unix /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
 
 # Updating this script.
 cd ~
