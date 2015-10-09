@@ -1,5 +1,4 @@
 # Get these numbers from the ?id= ending of the workshop URI.
-# for the Purgery servers. Don't you dare touch this file.
 
 # Eviscerated
 495808007
