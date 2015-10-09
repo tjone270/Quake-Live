@@ -3,12 +3,10 @@
 # created by Thomas Jones on 03/10/15.
 # purger@tomtecsolutions.com
 
-qldsPath="/home/qlserver/steamcmd/steamapps/common/qlds/"
-
 
 BLUE="\033[0;34m"
 NC="\033[0m"
-workshopIDs=`cat $qldsPath/baseq3/workshop.txt | grep -v '#' | sed '/^[ \t]*$/d'`
+workshopIDs=`cat ~/steamcmd/steamapps/common/qlds/baseq3/workshop.txt | grep -v '#' | sed '/^[ \t]*$/d'`
 numOfIDs=`echo "$workshopIDs" | wc -l`
 counter=0
 while [ $counter -lt $numOfIDs ]; do
