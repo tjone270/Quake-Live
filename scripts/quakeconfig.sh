@@ -16,10 +16,12 @@ export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
-export qQLDSpath="/home/qlserver/steamcmd/steamapps/common/qlds/"
+export qQLDSpath="~/steamcmd/steamapps/common/qlds/"
 
 # Downloading a new copy of some files.
 curl $qBaseURL/scripts/quakestart.sh > quakestart.sh
 curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh
 curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh
-curl 
+curl $qBaseURL/config-files/server.txt > $qQLDSpath/baseq3/server.cfg
+curl $qBaseURL/config-files/access.txt > $qQLDSpath/baseq3/access.txt
+curl $qBaseURL/config-files/workshop.txt > $qQLDSpath/baseq3/workshop.txt
