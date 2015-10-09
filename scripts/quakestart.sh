@@ -8,7 +8,7 @@
 export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 
-sponsortag="$qServerLocation"
+sponsortag="$qServerLocation, TomTec Solutions"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
