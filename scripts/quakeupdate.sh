@@ -3,6 +3,14 @@
 # created by Thomas Jones on 09/09/15.
 # purger@tomtecsolutions.com
 
+# Defining variables:
+export qUpdateServerMessage="^4The Purgery^7 servers are going down ^4within a minute^7 for daily updating. They will be back in ^410 minutes^7."
+export qUpdateLowestRconPort=28960
+export qUpdateHighestRconPort=28970
+export qRconPassword=$(<localConfig-rconPassword.txt)
+export qSteamUsername=$(<localConfig-steamUsername.txt)
+export qSteamPassword=$(<localConfig-steamPassword.txt)
+
 echo "========== QuakeUpdate.sh has started. =========="
 # Informing players in the servers that the servers are going down for a bit.
 counter=$qUpdateLowestRconPort

@@ -5,6 +5,10 @@
 
 
 # Defining variables.
+export qServerLocation=$(<localConfig-serverLocation.txt)
+export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
+export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
+
 sponsortag="$qServerLocation"
 
 gameport=`expr $1 + 27960`
