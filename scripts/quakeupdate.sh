@@ -13,6 +13,7 @@ export qSteamUsername=$(<localConfig-steamUsername.txt)
 export qSteamPassword=$(<localConfig-steamPassword.txt)
 
 echo "========== QuakeUpdate.sh has started. =========="
+echo "========== $(date) =========="
 # Informing players in the servers that the servers are going down for a bit.
 counter="$qUpdateLowestRconPort"
 
