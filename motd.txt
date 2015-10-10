@@ -1,1 +1,1 @@
-Testing MOTD function... HELLO WORLD! ^00^11^22^33^44^55^66^77 YOU LITTLE WELP
+Message of the Day: ^2Don't do drugs kids, it's ^3cool^2!
