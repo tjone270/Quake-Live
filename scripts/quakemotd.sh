@@ -1,5 +1,5 @@
 #! /bin/bash
-# quakemotd.sh - quake live message of the day server broadcaster. designed to be run in-shell, then '^Z; bg; disown %1'. kill with 'killall quakemotd.sh'
+# quakemotd.sh - quake live message of the day server broadcaster. designed to be run in-shell, run './quakemotd.sh & disown %1'. kill with 'killall quakemotd.sh'
 # created by Thomas Jones on 10/10/15.
 # purger@tomtecsolutions.com
 
