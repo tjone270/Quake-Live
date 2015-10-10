@@ -22,6 +22,8 @@ do
         ((counter++))
     done
 
+    # Reset counter.
+    counter="$qUpdateLowestRconPort"
     # Download latest MOTD from GitHub.
     rm remoteConfig-motd.txt; curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
 
