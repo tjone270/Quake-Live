@@ -4,7 +4,7 @@
 # purger@tomtecsolutions.com
 
 echo "========== QuakeConfig.sh has started. =========="
-echo "========== $(date) =========="
+echo "========= $(date) ========="
 
 # Variables used in multiple scripts:
 cd ~

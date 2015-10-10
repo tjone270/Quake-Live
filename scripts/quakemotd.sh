@@ -12,7 +12,7 @@ export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/
 export qDelayBetweenMOTDbroadcast="600"  # in seconds
 
 echo "========== QuakeMOTD.sh has started. =========="
-echo "========== $(date) =========="
+echo "========= $(date) ========="
 
 # Broadcast MOTD to every server hosted locally.
 counter="$qUpdateLowestRconPort"

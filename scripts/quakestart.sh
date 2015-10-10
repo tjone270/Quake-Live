@@ -26,7 +26,7 @@ servernum=`expr $1 + 0`
 # as argument 1 by supervisord. 
 
 echo "========== QuakeStart.sh has started. =========="
-echo "========== $(date) =========="
+echo "========= $(date) ========="
 #echo "arg1 is equal to $1"
 cd ~/steamcmd/steamapps/common/qlds/baseq3
 
