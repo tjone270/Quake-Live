@@ -25,6 +25,8 @@ echo "Downloading and replacing 'quakestart.sh'..."
 rm quakestart.sh; curl -s $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix --quiet quakestart.sh; chmod +x quakestart.sh
 echo "Downloading and replacing 'quakeupdate.sh'..."
 rm quakeupdate.sh; curl -s $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix --quiet quakeupdate.sh; chmod +x quakeupdate.sh
+echo "Downloading and replacing 'autodownload.sh'..."
+rm autodownload.sh; curl -s $qBaseURL/scripts/autodownload.sh > autodownload.sh; dos2unix --quiet autodownload.sh; chmod +x autodownload.sh
 echo "Stopping, downloading and replacing 'quakemotd.sh'..."
 killall quakemotd.sh; rm quakemotd.sh; curl -s $qBaseURL/scripts/quakemotd.sh > quakemotd.sh; dos2unix --quiet quakemotd.sh; chmod +x quakemotd.sh;
 ./quakemotd.sh &
