@@ -78,7 +78,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 3 ]
 # starting PQL FFA 1...
 then
-sleep 10
+sleep 15
 cp -f mappool_pqlffa.txt mappool.txt
 echo "Starting free for all server 1..."
 exec $qPathToStartScript \
@@ -101,7 +101,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 4 ]
 # starting PQL CTF 1...
 then
-sleep 15
+sleep 25
 cp -f mappool_pqlctf.txt mappool.txt
 echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
@@ -124,7 +124,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 5 ]
 # starting PQL DOM 1...
 then
-sleep 20
+sleep 35
 cp -f mappool_pqldom.txt mappool.txt
 echo "Starting domination server 1..."
 exec $qPathToStartScript \
@@ -147,7 +147,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 6 ]
 # starting PQL INFECTED 1...
 then
-sleep 25
+sleep 45
 cp -f mappool_pqlinfected.txt mappool.txt
 echo "Starting infected server 1..."
 exec $qPathToStartScript \
@@ -170,7 +170,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 7 ]
 # starting PQL TDM 1...
 then
-sleep 30
+sleep 55
 cp -f mappool_pqltdm.txt mappool.txt
 echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
@@ -193,7 +193,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 8 ]
 # starting vql duel 1...
 then
-sleep 35
+sleep 65
 cp -f mappool_vqlduel.txt mappool.txt
 echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
@@ -216,7 +216,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 9 ]
 # starting PQL MultiGame 1...
 then
-sleep 40
+sleep 75
 cp -f mappool_pqlmulti.txt mappool.txt
 echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
@@ -238,7 +238,7 @@ exec $qPathToStartScript \
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
-sleep 45
+sleep 85
 cp -f mappool_vqlictf.txt mappool.txt
 echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
