@@ -3,6 +3,8 @@
 # created by Thomas Jones on 09/10/15.
 # purger@tomtecsolutions.com
 
+echo "========== QuakeConfig.sh has started. =========="
+echo "========== $(date) =========="
 
 # Variables used in multiple scripts:
 cd ~
@@ -19,22 +21,33 @@ export qStartPathToBaseQ3="~/steamcmd/steamapps/common/qlds/baseq3"
 export qQLDSpath="~/steamcmd/steamapps/common/qlds"
 
 # Downloading a new copy of some files.
-rm quakestart.sh; curl $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix quakestart.sh; chmod +x quakestart.sh
-rm quakeupdate.sh; curl $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix quakeupdate.sh; chmod +x quakeupdate.sh
-killall quakemotd.sh; rm quakemotd.sh; curl $qBaseURL/scripts/quakemotd.sh > quakemotd.sh; dos2unix quakemotd.sh; chmod +x quakemotd.sh;
+echo "Downloading and replacing 'quakestart.sh'..."
+rm quakestart.sh; curl -s $qBaseURL/scripts/quakestart.sh > quakestart.sh; dos2unix --quiet quakestart.sh; chmod +x quakestart.sh
+echo "Downloading and replacing 'quakeupdate.sh'..."
+rm quakeupdate.sh; curl -s $qBaseURL/scripts/quakeupdate.sh > quakeupdate.sh; dos2unix --quiet quakeupdate.sh; chmod +x quakeupdate.sh
+echo "Stopping, downloading and replacing 'quakemotd.sh'..."
+killall quakemotd.sh; rm quakemotd.sh; curl -s $qBaseURL/scripts/quakemotd.sh > quakemotd.sh; dos2unix --quiet quakemotd.sh; chmod +x quakemotd.sh;
 ./quakemotd.sh &
+echo "Starting 'quakemotd.sh'..."
 cd ~/steamcmd/steamapps/common/qlds/baseq3
-rm server.cfg; curl $qBaseURL/config-files/server.txt > server.cfg; dos2unix server.cfg
-rm access.txt; curl $qBaseURL/config-files/access.txt > access.txt; dos2unix access.txt
-rm workshop.txt; curl $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix workshop.txt
-rm -f mappool_*; curl $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix mappool_*
-rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -o factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix scripts/*
-rm -rf entities/; curl $qBaseURL/entities/entities.zip > entities.zip; unzip -o entities.zip; rm entities.zip; rm -rf __MACOSX; mkdir entities; mv *.ent entities/; dos2unix entities/*
-sudo rm /etc/supervisord.conf; curl $qBaseURL/config-files/supervisord.txt > supervisord.conf; sudo mv supervisord.conf /etc/supervisord.conf; sudo dos2unix /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
-
+echo "Downloading and replacing 'baseq3\server.cfg'..."
+rm server.cfg; curl -s $qBaseURL/config-files/server.txt > server.cfg; dos2unix --quiet server.cfg
+echo "Downloading and replacing 'baseq3\access.txt'..."
+rm access.txt; curl -s $qBaseURL/config-files/access.txt > access.txt; dos2unix --quiet access.txt
+echo "Downloading and replacing 'baseq3\workshop.txt'..."
+rm workshop.txt; curl -s $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix --quiet workshop.txt
+echo "Downloading and updating all map-pool files..."
+rm -f mappool_*; curl -s $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix --quiet mappool_*
+echo "Downloading and updating all factories..."
+rm -rf scripts/; curl -s $qBaseURL/factories/factories.zip > factories.zip; unzip -o factories.zip; rm factories.zip; rm -rf __MACOSX; mkdir scripts; mv *.factories scripts/; dos2unix --quiet scripts/*
+echo "Downloading and replacing all entities..."
+rm -rf entities/; curl -s $qBaseURL/entities/entities.zip > entities.zip; unzip -o entities.zip; rm entities.zip; rm -rf __MACOSX; mkdir entities; mv *.ent entities/; dos2unix --quiet entities/*
+echo "Downloading and replacing '/etc/supervisord.conf'..."
+sudo rm /etc/supervisord.conf; curl -s $qBaseURL/config-files/supervisord.txt > supervisord.conf; sudo mv supervisord.conf /etc/supervisord.conf; sudo dos2unix --quiet /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
+echo Done.
 # Updating this script. THIS IS NOW TAKEN CARE OF IN THE UPDATE SCRIPT
 #cd ~
-#curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh; chmod +x quakeconfig.sh
+#curl -s $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix --quiet quakeconfig.sh; chmod +x quakeconfig.sh
 
 # Finished.
 exit 0
