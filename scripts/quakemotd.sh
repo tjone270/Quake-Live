@@ -1,5 +1,5 @@
 #! /bin/bash
-# quakemotd.sh - quake live message of the day server broadcaster.
+# quakemotd.sh - quake live message of the day server broadcaster. designed to be run in-shell, then '^Z; bg; disown %1'. kill with 'killall quakemotd.sh'
 # created by Thomas Jones on 10/10/15.
 # purger@tomtecsolutions.com
 
@@ -9,19 +9,19 @@ export qRconPassword=$(<localConfig-rconPassword.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
-export qDelayBetweenMOTDbroadcast="5"  # in seconds
+export qDelayBetweenMOTDbroadcast="600"  # in seconds
 
 # Broadcast MOTD to every server hosted locally.
 counter="$qUpdateLowestRconPort"
 while true
 do
     # Download latest MOTD from GitHub.
-    curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
+    curl -silent $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix --quiet remoteConfig-motd.txt
     export qMOTDcontent=$(<remoteConfig-motd.txt)
     while [ $counter -le $qUpdateHighestRconPort ]
     do
-        echo "Broadcasting MOTD to port $counter"
-        ~/steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"$qMOTDcontent\""
+        #echo "Broadcasting MOTD to port $counter"
+        ~/steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"$qMOTDcontent\"" 2>&1 /dev/null
         ((counter++))
     done
 
