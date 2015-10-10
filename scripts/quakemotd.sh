@@ -9,7 +9,7 @@ export qMOTDcontent=$(<remoteConfig-motd.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
-export qDelayBetweenMOTDbroadcast="0"  # in seconds
+export qDelayBetweenMOTDbroadcast="5"  # in seconds
 
 # Broadcast MOTD to every server hosted locally.
 counter="$qUpdateLowestRconPort"
@@ -23,9 +23,9 @@ do
     done
 
     # Reset counter.
-    counter="$qUpdateLowestRconPort"
+    export counter="$qUpdateLowestRconPort"
     # Download latest MOTD from GitHub.
-    rm remoteConfig-motd.txt; curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
+    curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
 
     sleep $qDelayBetweenMOTDbroadcast
 done
