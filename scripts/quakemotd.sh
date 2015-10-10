@@ -16,7 +16,7 @@ counter="$qUpdateLowestRconPort"
 while true
 do
     # Download latest MOTD from GitHub.
-    curl -silent $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix --quiet remoteConfig-motd.txt
+    curl -s $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix --quiet remoteConfig-motd.txt
     export qMOTDcontent=$(<remoteConfig-motd.txt)
     while [ $counter -le $qUpdateHighestRconPort ]
     do
