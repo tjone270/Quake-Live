@@ -33,4 +33,6 @@ set con_tty 0
 set sv_fps "40"
 set sv_idleExit "120"
 
+set sv_altEntDir “baseq3/entities”
+
 set serverstartup "startRandomMap"
