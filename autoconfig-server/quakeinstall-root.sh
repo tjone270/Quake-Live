@@ -12,7 +12,7 @@ echo "Updating 'apt-get'..."
 apt-get update
 clear
 echo "Installing packages..."
-apt-get -y install apache2 python3 python-setuptools lib32gcc1 curl nano samba build-essential python-dev unzip dos2unix
+apt-get -y install apache2 python3 python-setuptools lib32gcc1 curl nano samba build-essential python-dev unzip dos2unix mailutils
 clear
 echo "Installing ZeroMQ library..."
 # we use '--without-libsodium' because I encounter many problems with trying to configure with it.
