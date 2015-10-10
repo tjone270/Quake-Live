@@ -8,7 +8,7 @@ if [ $# -eq 0 ]; then
     echo "    ./searchlogs.sh <string> <server id> <surrounding lines>"
     echo ""
     echo "Example:"
-    echo "    ./searchlogs.sh 'purger' 0 3"
+    echo "    ./searchlogs.sh 'tjone270' 0 3"
     exit 1
 fi
 
