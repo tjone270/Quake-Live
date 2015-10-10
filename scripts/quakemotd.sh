@@ -4,8 +4,8 @@
 # purger@tomtecsolutions.com
 
 # Defining variables:
-export qRconPassword=$(<localConfig-rconPassword.txt)
 export qMOTDcontent=$(<remoteConfig-motd.txt)
+export qRconPassword=$(<localConfig-rconPassword.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
@@ -15,6 +15,9 @@ export qDelayBetweenMOTDbroadcast="5"  # in seconds
 counter="$qUpdateLowestRconPort"
 while true
 do
+    # Download latest MOTD from GitHub.
+    curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
+    export qMOTDcontent=$(<remoteConfig-motd.txt)
     while [ $counter -le $qUpdateHighestRconPort ]
     do
         echo "Broadcasting MOTD to port $counter"
@@ -24,9 +27,6 @@ do
 
     # Reset counter.
     export counter="$qUpdateLowestRconPort"
-    # Download latest MOTD from GitHub.
-    curl $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix remoteConfig-motd.txt
-
     sleep $qDelayBetweenMOTDbroadcast
 done
 
