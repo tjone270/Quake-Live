@@ -21,7 +21,7 @@ do
     while [ $counter -le $qUpdateHighestRconPort ]
     do
         #echo "Broadcasting MOTD to port $counter"
-        ~/steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"$qMOTDcontent\"" 2>&1 /dev/null
+        python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"$qMOTDcontent\"" > /dev/null
         ((counter++))
     done
 
