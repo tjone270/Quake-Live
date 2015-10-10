@@ -3,7 +3,7 @@
 set sv_mapPoolFile "mappool.txt"  // Map pool that the server will use. See default mapcycle.txt for format.
 set g_accessFile "access.txt"     // Used to determine which 64-bit Steam IDs have admin access, or are banned.
      
-set sv_maxClients “16”     // How many players can connect at once.
+set sv_maxClients "16"     // How many players can connect at once.
 
 set g_password ""          // Set a server-wide password, and stop all users from connecting without it.
 
