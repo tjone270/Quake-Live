@@ -32,9 +32,9 @@ rm -rf scripts/; curl $qBaseURL/factories/factories.zip > factories.zip; unzip -
 rm -rf entities/; curl $qBaseURL/entities/entities.zip > entities.zip; unzip -o entities.zip; rm entities.zip; rm -rf __MACOSX; mkdir entities; mv *.ent entities/; dos2unix entities/*
 sudo rm /etc/supervisord.conf; curl $qBaseURL/config-files/supervisord.txt > supervisord.conf; sudo mv supervisord.conf /etc/supervisord.conf; sudo dos2unix /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
 
-# Updating this script.
-cd ~
-curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh; chmod +x quakeconfig.sh
+# Updating this script. THIS IS NOW TAKEN CARE OF IN THE UPDATE SCRIPT
+#cd ~
+#curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh; chmod +x quakeconfig.sh
 
 # Finished.
 exit 0

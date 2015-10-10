@@ -31,6 +31,7 @@ echo Updating Quake Server...
 ~/steamcmd/steamcmd.sh +login "$qSteamUsername" "$qSteamPassword" +force_install_dir ~/steamcmd/steamapps/common/qlds/ +app_update 349090 +quit
 
 # Updating mappools/configs/factories
+curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh; chmod +x quakeconfig.sh
 sh quakeconfig.sh
 
 # Removing the .quakelive directories, except for baseq3.
