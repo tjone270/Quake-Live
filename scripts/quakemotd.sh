@@ -9,7 +9,7 @@ export qRconPassword=$(<localConfig-rconPassword.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
-export qDelayBetweenMOTDbroadcast="600"  # in seconds
+export qDelayBetweenMOTDbroadcast="900"  # in seconds
 
 echo "========== QuakeMOTD.sh has started. =========="
 echo "========= $(date) ========="
