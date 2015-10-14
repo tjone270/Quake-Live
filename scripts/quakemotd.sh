@@ -29,6 +29,7 @@ do
         counter2=3 # Skip line 1 and 2 to allow me to put instructions in.
         counted2=`echo $qMOTDcontent | wc -l`
         while [ $counter2 -le $counted2 ]
+        do
             qBroadcastLine=`echo $qMOTDcontent | sed "${counter2}q;d"` # | grep -v '#'
             python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"^7$qBroadcastLine\"" > /dev/null
             ((counter2++))
