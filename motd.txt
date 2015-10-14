@@ -1,1 +1,5 @@
-^5Message of the Day:^7 Welcome to ^4The Purgery^7 servers, please talk to tjon^4e^7270 if you have any questions/requests.
+# This file is read from every 15 minutes for the MOTD broadcast on all servers.                                     $
+# Limit of 119 characters per line otherwise QLDS will truncate the line.
+Welcome to ^4The Purgery^7 servers, please talk to tjon^4e^7270 if you have any questions/requests.
+Join our IRC channel at QuakeNet ^2#thepurgery^7 to message admins/mods/other players :).
+Join our TeamSpeak server at ^2teamspeak.quakelive.tomtecsolutions.com.au^7 to talk to other players.

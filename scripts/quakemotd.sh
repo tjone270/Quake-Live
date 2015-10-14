@@ -25,7 +25,14 @@ do
     while [ $counter -le $qUpdateHighestRconPort ]
     do
         #echo "Broadcasting MOTD to port $counter"
-        python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"$qMOTDcontent\"" > /dev/null
+        python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say '^5Message of the Day:^7'" > /dev/null
+        counter2=3 # Skip line 1 and 2 to allow me to put instructions in.
+        counted2=`echo $qMOTDcontent | wc -l`
+        while [ $counter2 -le $counted2 ]
+            qBroadcastLine=`echo $qMOTDcontent | sed "${counter2}q;d"` # | grep -v '#'
+            python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"^7$qBroadcastLine\"" > /dev/null
+            ((counter2++))
+        done
         ((counter++))
     done
 
