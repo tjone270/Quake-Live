@@ -18,24 +18,25 @@ echo "========= $(date) ========="
 counter="$qUpdateLowestRconPort"
 while true
 do
+export qDelayInMinutes=$(($qDelayBetweenMOTDbroadcast%3600/60))
 sleep $qDelayBetweenMOTDbroadcast
 # Download latest MOTD from GitHub.
 curl -s $qBaseURL/motd.txt > remoteConfig-motd.txt; dos2unix --quiet remoteConfig-motd.txt
 while [ $counter -le $qUpdateHighestRconPort ]
 do
-echo "Broadcasting MOTD to port $counter"
-python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say ^5Message of the Day:^7" # > /dev/null
-counter2=3 # Skip line 1 and 2 to allow me to put instructions in.
-counted2=`cat $HOME/$qMOTDcontentFileName | wc -l`
-counted2=`expr $counted2 + 1`
-while [ $counter2 -le $counted2 ]
-do
-echo Line $counter2 of $counted2.
-qBroadcastLine=`cat $HOME/$qMOTDcontentFileName | sed "${counter2}q;d"` # | grep -v '#'
-python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"^7$qBroadcastLine\"" # > /dev/null
-((counter2++))
-done
-((counter++))
+    echo "Broadcasting MOTD to port $counter"
+    python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say ^5Message of the Day:^7 (repeats every $qDelayInMinutes minutes." # > /dev/null
+    counter2=3 # Skip line 1 and 2 to allow me to put instructions in.
+    counted2=`cat $HOME/$qMOTDcontentFileName | wc -l`
+    counted2=`expr $counted2 + 1`
+    while [ $counter2 -le $counted2 ]
+    do
+        echo Line $counter2 of $counted2.
+        qBroadcastLine=`cat $HOME/$qMOTDcontentFileName | sed "${counter2}q;d"` # | grep -v '#'
+        python steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say \"^7$qBroadcastLine\"" # > /dev/null
+        ((counter2++))
+    done
+    ((counter++))
 done
 
 # Reset counter.
