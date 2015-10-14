@@ -27,6 +27,7 @@ jumpwerkz|ctf
 lostparadise|ctf
 newcerberon|ctf
 overgrowth|ctf
+overlord|ctf
 pillbox|ctf
 pulpfriction|ctf
 railyard|ctf
