@@ -5,6 +5,7 @@ aerowalk|duel
 battleforged|duel
 bloodrun|duel
 campgrounds|duel
+concretepalace|duel
 cure|duel
 delirium|duel
 dismemberment|duel

@@ -3,11 +3,14 @@
 # see factories.txt for valid factory id values
 basesiege|ctf
 beyondreality|ctf
+bloodlust|ctf
 campercrossings|ctf
 citycrossings|ctf
 coldcathode|ctf
 courtyard|ctf
 cursed|ctf
+dividedcrossings|ctf
+doubleimpact|ctf
 duelingkeeps|ctf
 electrocution|ctf
 falloutbunker|ctf

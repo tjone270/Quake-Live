@@ -19,6 +19,7 @@ devilish|ca
 dreadfulplace|ca
 drunkenmummy|ca
 electrichead|ca
+eviscerated|ca
 evolution|ca
 eyetoeye|ca
 foolishlegacy|ca
@@ -26,6 +27,7 @@ grimdungeons|ca
 hearth|ca
 hellsgate|ca
 henhouse|ca
+heroskeep|ca
 hiddenfortress|ca
 intervention|ca
 leftbehind|ca
