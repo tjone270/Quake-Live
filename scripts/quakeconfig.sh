@@ -40,7 +40,7 @@ rm server.cfg; curl -s $qBaseURL/config-files/server.txt > server.cfg; dos2unix 
 echo "Downloading and replacing 'baseq3\workshop.txt'..."
 rm workshop.txt; curl -s $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix --quiet workshop.txt
 echo "Downloading and updating all access files..."
-rm -f mappool_*; curl -s $qBaseURL/accesses/accesses.zip > accesses.zip; unzip -o accesses.zip; rm accesses.zip; rm -rf __MACOSX; dos2unix --quiet access_*
+rm -f access*; curl -s $qBaseURL/accesses/accesses.zip > accesses.zip; unzip -o accesses.zip; rm accesses.zip; rm -rf __MACOSX; dos2unix --quiet access*
 echo "Downloading and updating all map-pool files..."
 rm -f mappool_*; curl -s $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix --quiet mappool_*
 echo "Downloading and updating all factories..."
