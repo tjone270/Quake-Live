@@ -34,10 +34,13 @@ echo "Starting 'quakemotd.sh'..."
 cd ~/steamcmd/steamapps/common/qlds/baseq3
 echo "Downloading and replacing 'baseq3\server.cfg'..."
 rm server.cfg; curl -s $qBaseURL/config-files/server.txt > server.cfg; dos2unix --quiet server.cfg
-echo "Downloading and replacing 'baseq3\access.txt'..."
-rm access.txt; curl -s $qBaseURL/config-files/access.txt > access.txt; dos2unix --quiet access.txt
+# No need to run this anymore, as there are now more than one access file.
+#  echo "Downloading and replacing 'baseq3\access.txt'..."
+#  rm access.txt; curl -s $qBaseURL/config-files/access.txt > access.txt; dos2unix --quiet access.txt
 echo "Downloading and replacing 'baseq3\workshop.txt'..."
 rm workshop.txt; curl -s $qBaseURL/config-files/workshop.txt > workshop.txt; dos2unix --quiet workshop.txt
+echo "Downloading and updating all access files..."
+rm -f mappool_*; curl -s $qBaseURL/accesses/accesses.zip > accesses.zip; unzip -o accesses.zip; rm accesses.zip; rm -rf __MACOSX; dos2unix --quiet access_*
 echo "Downloading and updating all map-pool files..."
 rm -f mappool_*; curl -s $qBaseURL/mappools/mappools.zip > mappools.zip; unzip -o mappools.zip; rm mappools.zip; rm -rf __MACOSX; dos2unix --quiet mappool_*
 echo "Downloading and updating all factories..."
@@ -48,8 +51,8 @@ echo "Downloading and replacing '/etc/supervisord.conf'..."
 sudo rm /etc/supervisord.conf; curl -s $qBaseURL/config-files/supervisord.txt > supervisord.conf; sudo mv supervisord.conf /etc/supervisord.conf; sudo dos2unix --quiet /etc/supervisord.conf; sudo chmod 755 /etc/supervisord.conf
 echo Done.
 # Updating this script. THIS IS NOW TAKEN CARE OF IN THE UPDATE SCRIPT
-#cd ~
-#curl -s $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix --quiet quakeconfig.sh; chmod +x quakeconfig.sh
+#  cd ~
+#  curl -s $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix --quiet quakeconfig.sh; chmod +x quakeconfig.sh
 
 # Finished.
 exit 0
