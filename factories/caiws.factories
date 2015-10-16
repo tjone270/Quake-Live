@@ -1,0 +1,15 @@
+[
+   {
+      "author":"TomTec Solutions",
+      "description":"VQL Clan Arena mode with Instant Weapon Switch",
+      "basegt":"ca",
+      "id":"caiws",
+      "title":"CA + InstaWeapon Switch",
+      "cvars":{
+         "pmove_WeaponRaiseTime":"10",
+         "pmove_WeaponDropTime":"10",
+         "weapon_reload_rg":"1200",
+         "g_damage_lg":"7"
+      }
+   }
+]
