@@ -3,3 +3,5 @@
 Welcome to ^4The Purgery^7 servers, please talk to tjon^4e^7270 if you have any questions/requests.
 Join our IRC channel at QuakeNet ^2#thepurgery^7 to message admins/mods/other players :).
 Join our TeamSpeak server at ^2teamspeak.quakelive.tomtecsolutions.com.au^7 to talk to other players.
+We invite any suggestions, email me at ^2thomas@tomtecsolutions.com^7.
+^1These servers are still under development, please expect outages until release. Sorry :(
