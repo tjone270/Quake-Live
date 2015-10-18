@@ -198,9 +198,32 @@ exec $qPathToStartScript \
    	+set bot_nochat 1 \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 8 ]
-# starting vql duel 1...
+# starting PQL MultiGame 1...
 then
 sleep 65
+cp -f access_purgery.txt access.txt
+cp -f mappool_pqlmulti.txt mappool.txt
+echo "Starting multi game type server 1..."
+exec $qPathToStartScript \
+    +set net_strict 1 \
+    +set net_port $gameport \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
+    +set zmq_rcon_enable 1 \
+    +set zmq_rcon_password "$qRconPassword" \
+    +set zmq_rcon_port $rconport \
+    +set zmq_stats_enable 1 \
+    +set zmq_stats_password "$qRconPassword" \
+    +set zmq_stats_port $gameport \
+    +set sv_tags "$sponsortag" \
+    +set g_allowSpecVote 1 \
+    +set g_allowVoteMidGame 1 \
+    +set bot_enable 1 \
+    +set bot_nochat 1 \
+    +set fs_homepath ~/.quakelive/$gameport
+elif [ $1 -eq 9 ]
+# starting vql duel 1...
+then
+sleep 75
 cp -f access_purgery.txt access.txt
 cp -f mappool_vqlduel.txt mappool.txt
 echo "Starting VQL duel server 1..."
@@ -216,34 +239,11 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+    +set g_allowSpecVote 1 \
+    +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
-   	+set bot_nochat 1 \
-	+set fs_homepath ~/.quakelive/$gameport
-elif [ $1 -eq 9 ]
-# starting PQL MultiGame 1...
-then
-sleep 75
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlmulti.txt mappool.txt
-echo "Starting multi game type server 1..."
-exec $qPathToStartScript \
-    +set net_strict 1 \
-    +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
-    +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$qRconPassword" \
-    +set zmq_rcon_port $rconport \
-    +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$qRconPassword" \
-    +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
-    +set bot_enable 1 \
-   	+set bot_nochat 1 \
-	+set fs_homepath ~/.quakelive/$gameport
+    +set bot_nochat 1 \
+    +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
@@ -279,7 +279,7 @@ echo "Starting mickzerofive's server..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "http://4seasonsgaming.com $qServerLocation" \
+    +set sv_hostname "http://4SeasonsGaming.com $qServerLocation" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "PASSWORD" \
     +set zmq_rcon_port $rconport \
