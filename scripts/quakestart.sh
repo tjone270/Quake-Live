@@ -284,6 +284,7 @@ exec $qPathToStartScript \
     +set zmq_rcon_password "PASSWORD" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
+    +set g_accessFile "access_mickzerofive.txt" \
     +set zmq_stats_password "PASSWORD" \
     +set zmq_stats_port $gameport \
     +set sv_tags "4Seasons Gaming, $qServerLocation" \
