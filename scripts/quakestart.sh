@@ -33,8 +33,6 @@ cd ~/steamcmd/steamapps/common/qlds/baseq3
 if [ $1 -le 1 ]
 # starting PQL CA 1 and 2...
 then
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlca.txt mappool.txt
 echo "Starting clan arena server 1 or 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -52,13 +50,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
 	+set bot_enable 1 \
 	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlca.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 2 ]
 # starting PQL Race 1...
 then
-sleep 5
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlrace.txt mappool.txt
 echo "Starting race server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -76,13 +73,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlrace.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 3 ]
 # starting PQL FFA 1...
 then
-sleep 15
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlffa.txt mappool.txt
 echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -100,13 +96,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlffa.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 4 ]
 # starting PQL CTF 1...
 then
-sleep 25
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlctf.txt mappool.txt
 echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -124,13 +119,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlctf.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 5 ]
 # starting PQL DOM 1...
 then
-sleep 35
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqldom.txt mappool.txt
 echo "Starting domination server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -148,13 +142,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqldom.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 6 ]
 # starting PQL INFECTED 1...
 then
-sleep 45
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlinfected.txt mappool.txt
 echo "Starting infected server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -172,13 +165,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlinfected.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 7 ]
 # starting PQL TDM 1...
 then
-sleep 55
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqltdm.txt mappool.txt
 echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -196,13 +188,12 @@ exec $qPathToStartScript \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqltdm.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 8 ]
 # starting PQL MultiGame 1...
 then
-sleep 65
-cp -f access_purgery.txt access.txt
-cp -f mappool_pqlmulti.txt mappool.txt
 echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -219,13 +210,12 @@ exec $qPathToStartScript \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_pqlmulti.txt" \
     +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 9 ]
 # starting vql duel 1...
 then
-sleep 75
-cp -f access_purgery.txt access.txt
-cp -f mappool_vqlduel.txt mappool.txt
 echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -243,14 +233,13 @@ exec $qPathToStartScript \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_vqlduel.txt" \
     +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
-sleep 85
-cp -f access_purgery.txt access.txt
-cp -f mappool_vqlictf.txt mappool.txt
-echo "Starting multi game type server 1..."
+echo "Starting VQL iCTF type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
@@ -266,15 +255,14 @@ exec $qPathToStartScript \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_vqlictf.txt" \
     +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 11 ]
 # starting mickzerofive's brisbane server 1...
 then
-sleep 95
 if [ $(hostname) == "brisbane.quakelive.tomtecsolutions.com.au" ]
 then
-cp -f access_mickzerofive.txt access.txt
-cp -f mappool_default.txt mappool.txt
 echo "Starting mickzerofive's server..."
 exec $qPathToStartScript \
     +set net_strict 1 \
@@ -284,7 +272,6 @@ exec $qPathToStartScript \
     +set zmq_rcon_password "PASSWORD" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set g_accessFile "access_mickzerofive.txt" \
     +set zmq_stats_password "PASSWORD" \
     +set zmq_stats_port $gameport \
     +set sv_tags "4Seasons Gaming, $qServerLocation" \
@@ -292,6 +279,8 @@ exec $qPathToStartScript \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
+    +set g_accessFile "access_mickzerofive.txt" \
+    +set sv_mappoolFile "mappool_default.txt" \
     +set fs_homepath ~/.quakelive/$gameport
 else
 echo "This system is not intended to host MickZeroFive's server."
