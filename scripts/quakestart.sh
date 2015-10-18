@@ -292,7 +292,11 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set fs_homepath ~/.quakelive/$gameport
+else
+then
+echo "This system is not intended to host MickZeroFive's server."
 fi
+
 fi
 
 
