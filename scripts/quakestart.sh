@@ -271,7 +271,7 @@ elif [ $1 -eq 11 ]
 # starting mickzerofive's brisbane server 1...
 then
 sleep 95
-if [ $(hostname) -eq "brisbane.quakelive.tomtecsolutions.com.au" ]
+if [ $(hostname) == "brisbane.quakelive.tomtecsolutions.com.au" ]
 then
 cp -f access_mickzerofive.txt access.txt
 cp -f mappool_default.txt mappool.txt
@@ -286,7 +286,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "PASSWORD" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "4SeasonsGaming, $qServerLocation" \
+    +set sv_tags "4Seasons Gaming, $qServerLocation" \
     +set g_allowSpecVote 1 \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
