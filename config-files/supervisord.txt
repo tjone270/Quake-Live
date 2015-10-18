@@ -23,5 +23,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 command=/home/qlserver/quakestart.sh %(process_num)s
 user=qlserver
 process_name=qzeroded_%(process_num)s
-numprocs=11
+numprocs=12
 autorestart=true

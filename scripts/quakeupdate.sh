@@ -5,9 +5,9 @@
 
 # Defining variables:
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
-export qUpdateServerMessage="^4The Purgery^7 servers are going down ^4within a minute^7 for daily updating. They will be back in ^410 minutes^7."
+export qUpdateServerMessage="^7All ^4TomTec Solutions^7 hosted servers are going down ^4within a minute^7 for daily updating. They will be back in ^410 minutes^7."
 export qUpdateLowestRconPort=28960
-export qUpdateHighestRconPort=28970
+export qUpdateHighestRconPort=28971
 export qRconPassword=$(<localConfig-rconPassword.txt)
 export qSteamUsername=$(<localConfig-steamUsername.txt)
 export qSteamPassword=$(<localConfig-steamPassword.txt)
