@@ -5,7 +5,7 @@
 
 # Defining variables:
 export qMOTDcontentFileName="remoteConfig-motd.txt"
-export qRconPassword=$(<localConfig-rconPassword.txt)
+export qRconPassword=$(<localConfig-rconPassword-purgery.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
