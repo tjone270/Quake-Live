@@ -8,7 +8,7 @@
 export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
-
+export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
 sponsortag="$qServerLocation, TomTec Solutions"
 
 gameport=`expr $1 + 27960`
@@ -269,10 +269,10 @@ exec $qPathToStartScript \
     +set net_port $gameport \
     +set sv_hostname "http://4SeasonsGaming.com $qServerLocation" \
     +set zmq_rcon_enable 1 \
-    +set zmq_rcon_password "$(<localConfig-rconPassword-mickzerofive.txt)" \
+    +set zmq_rcon_password "$qRconPassword4sg" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
-    +set zmq_stats_password "$(<localConfig-rconPassword-mickzerofive.txt)" \
+    +set zmq_stats_password "$qRconPassword4sg" \
     +set zmq_stats_port $gameport \
     +set sv_tags "4Seasons Gaming, $qServerLocation" \
     +set g_allowSpecVote 1 \
