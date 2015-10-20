@@ -37,8 +37,10 @@ curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh;
 sh quakeconfig.sh
 
 # Removing the .quakelive directories, except for baseq3.
-echo Removing 2* directories...
-rm -rf ~/.quakelive/2*
+echo Removing Purgery port directories...
+cd ~/.quakelive
+rm -rf 27960 27961 27962 27963 27964 27965 27966 27967 27968 27969 27970
+cd ~
 
 # Running 'autodownload.sh' to recache all workshop items before restarting.
 bash ~/autodownload.sh
