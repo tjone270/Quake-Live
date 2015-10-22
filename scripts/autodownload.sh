@@ -13,7 +13,7 @@ while [ $counter -lt $numOfIDs ]; do
 	currentID=`echo $workshopIDs | awk '{ print $1 }'`
 	workshopIDs=`echo $workshopIDs | cut -d ' ' -f2-`
 	echo -e "Downloading item $currentID from Steam... ($(expr $counter + 1)/$numOfIDs)"
-	~/steamcmd/steamcmd.sh +login anonymous +workshop_download_item 344320 $currentID +quit > /dev/null
+	~/steamcmd/steamcmd.sh +login anonymous +workshop_download_item 282440 $currentID +quit > /dev/null
 	((counter++))
 done
 echo "Removing old workshop data and moving new items into place..."
