@@ -1,19 +1,7 @@
 # Get these numbers from the ?id= ending of the workshop URI.
 
-# Loading Bay
-506895614
-
 # Quake Live Extras Pack
-527098396
-
-# Rats Maps
-526629743
-
-# Prime Evil
-441343978
-
-# Light
-441344649
+539421606
 
 # Quake Live Holiday Pack
-530480960
+539421982
