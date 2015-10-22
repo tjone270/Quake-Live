@@ -9,8 +9,6 @@ export qUpdateServerMessage="^7All ^4TomTec Solutions^7 hosted servers are going
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
 export qRconPassword=$(<localConfig-rconPassword-purgery.txt)
-export qSteamUsername=$(<localConfig-steamUsername.txt)
-export qSteamPassword=$(<localConfig-steamPassword.txt)
 
 echo "========== QuakeUpdate.sh has started. =========="
 echo "========= $(date) ========="
@@ -30,7 +28,7 @@ echo Stopping Quake Servers...
 
 # Running 'steamcmd' to update qzeroded
 echo Updating Quake Server...
-~/steamcmd/steamcmd.sh +login "$qSteamUsername" "$qSteamPassword" +force_install_dir ~/steamcmd/steamapps/common/qlds/ +app_update 349090 +quit
+~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/steamcmd/steamapps/common/qlds/ +app_update 349090 +quit
 
 # Updating mappools/configs/factories
 curl $qBaseURL/scripts/quakeconfig.sh > quakeconfig.sh; dos2unix quakeconfig.sh; chmod +x quakeconfig.sh
