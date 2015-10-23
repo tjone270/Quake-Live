@@ -35,7 +35,7 @@ echo "Starting clan arena server 1 or 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "   #$servernum Quake Server $qServerLocation PQL - Clan Arena" \
+    +set sv_hostname "   #$servernum Quake Server $location PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -58,7 +58,7 @@ echo "Starting race server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Race" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Race" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -81,7 +81,7 @@ echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Free For All (Beta)" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Free For All (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -104,7 +104,7 @@ echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Capture the Flag" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Capture the Flag" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -127,7 +127,7 @@ echo "Starting domination server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Domination" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Domination" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -150,7 +150,7 @@ echo "Starting infected server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Infected (Beta)" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Infected (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -173,7 +173,7 @@ echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Team Deathmatch (Beta)" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Team Deathmatch (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -196,7 +196,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
+    +set sv_hostname "  #$servernum Quake Server $location PQL - Multi-Gametype Turbo (Beta)" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -218,7 +218,7 @@ echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum Quake Server $qServerLocation VQL - Duel" \
+    +set sv_hostname "  #$servernum Quake Server $location VQL - Duel" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
@@ -241,7 +241,7 @@ echo "Starting VQL iCTF type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum Quake Server $qServerLocation VQL - iCTF" \
+    +set sv_hostname " #$servernum Quake Server $location VQL - iCTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "password" \
     +set zmq_rcon_port $rconport \
