@@ -9,7 +9,7 @@ export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
 export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
-sponsortag="$qServerLocation, TomTec Solutions"
+sponsortag="$qServerLocation,TomTec Solutions"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
@@ -30,10 +30,10 @@ echo "========= $(date) ========="
 #echo "arg1 is equal to $1"
 cd ~/steamcmd/steamapps/common/qlds/baseq3
 
-if [ $1 -le 1 ]
-# starting PQL CA 1 and 2...
+if [ $1 -eq 0 ]
+# starting PQL CA 1
 then
-echo "Starting clan arena server 1 or 2..."
+echo "Starting clan arena server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
@@ -53,6 +53,29 @@ exec $qPathToStartScript \
     +set g_accessFile "access_purgery.txt" \
     +set sv_mappoolFile "mappool_pqlca.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
+elif [ $1 -eq 1 ]
+# starting VQL CA 1
+then
+echo "Starting clan arena server 2..."
+exec $qPathToStartScript \
+    +set net_strict 1 \
+    +set net_port $gameport \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Clan Arena" \
+    +set zmq_rcon_enable 1 \
+    +set zmq_rcon_password "$qRconPasswordPurgery" \
+    +set zmq_rcon_port $rconport \
+    +set zmq_stats_enable 1 \
+    +set zmq_stats_password "$qRconPasswordPurgery" \
+    +set zmq_stats_port $gameport \
+    +set sv_tags "$sponsortag" \
+    +set g_voteFlags "13320" \
+    +set g_allowSpecVote 1 \
+    +set g_allowVoteMidGame 1 \
+    +set bot_enable 1 \
+    +set bot_nochat 1 \
+    +set g_accessFile "access_purgery.txt" \
+    +set sv_mappoolFile "mappool_vqlca.txt" \
+    +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 2 ]
 # starting PQL Race 1...
 then
@@ -67,7 +90,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "grappling hook, crouch slide, $sponsortag" \
+    +set sv_tags "grappling hook, crouch slide,$sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -274,7 +297,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPassword4sg" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "4Seasons Gaming, $qServerLocation" \
+    +set sv_tags "4Seasons Gaming,$qServerLocation" \
     +set g_allowSpecVote 1 \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
