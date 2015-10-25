@@ -29,8 +29,9 @@ echo "Downloading and replacing 'autodownload.sh'..."
 rm autodownload.sh; curl -s $qBaseURL/scripts/autodownload.sh > autodownload.sh; dos2unix --quiet autodownload.sh; chmod +x autodownload.sh
 echo "Stopping, downloading and replacing 'quakemotd.sh'..."
 killall quakemotd.sh; rm quakemotd.sh; curl -s $qBaseURL/scripts/quakemotd.sh > quakemotd.sh; dos2unix --quiet quakemotd.sh; chmod +x quakemotd.sh;
-./quakemotd.sh &
-echo "Starting 'quakemotd.sh'..."
+# RCON occasionally breaks the server, so this shouldn't be used until I find a solution.
+#echo "Starting 'quakemotd.sh'..."
+# ./quakemotd.sh &
 cd ~/steamcmd/steamapps/common/qlds/baseq3
 echo "Downloading and replacing 'baseq3\server.cfg'..."
 rm server.cfg; curl -s $qBaseURL/config-files/server.txt > server.cfg; dos2unix --quiet server.cfg
