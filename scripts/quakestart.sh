@@ -106,7 +106,7 @@ echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Free For All (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Free For All" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -175,7 +175,7 @@ echo "Starting infected server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Infected (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Infected" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -198,7 +198,7 @@ echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Team Deathmatch (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Team Deathmatch" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -221,7 +221,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo (Beta)" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
