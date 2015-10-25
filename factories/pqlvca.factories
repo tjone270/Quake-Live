@@ -3,8 +3,8 @@
       "author":"TomTec Solutions",
       "description":"Special Vampiric Clan Arena ruleset with infinite ammo.",
       "basegt":"ca",
-      "id":"pqlca",
-      "title":"Turbo CA",
+      "id":"pqlvca",
+      "title":"Turbo VCA + 350HP + IA",
       "cvars":{
          "g_loadout":"0",
          "g_startingAmmo_sg":"50",
