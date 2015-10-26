@@ -1,7 +1,7 @@
 #! /bin/bash
 # quakestart.sh - quake live multiple server update script, utilising steamcmd.
 # created by Thomas Jones on 09/09/15.
-# purger@tomtecsolutions.com
+# thomas@tomtecsolutions.com
 
 echo "========== QuakeUpdate.sh has started. =========="
 echo "========= $(date) ========="

@@ -15,7 +15,7 @@ echo "Installing Quake Live Dedicated Server..."
 ./steamcmd.sh +login anonymous +force_install_dir /home/qlserver/steamcmd/steamapps/common/qlds/ +app_update 349090 +quit
 clear
 echo "Cronning 'QuakeUpdate.sh'..."
-echo "0 4 * * * /home/qlserver/quakeupdate.sh" > cron; crontab cron; rm cron
+echo "0 8 * * * /home/qlserver/quakeupdate.sh" > cron; crontab cron; rm cron
 clear
 echo "Done."
 exit
