@@ -6,7 +6,7 @@
 
 # Defining variables.
 export qServerLocation=$(<localConfig-serverLocation.txt)
-export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
+export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x86.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
 export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
 sponsortag="$qServerLocation,TomTec Solutions"
@@ -14,13 +14,6 @@ sponsortag="$qServerLocation,TomTec Solutions"
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
 servernum=`expr $1 + 0`
-
-# Executing a random delay to stagger the spawning of each server, as
-# supervisord starts everything at once, thus lowering the load surge.
-#	echo "Sleeping for random delay (5-30 seconds) before spawning..."
-#	sleep $(((RANDOM%120)+10))
-# No-one cares about this anymore, sleeping on a per-server basis now?
-# Finally works, should mean that all servers should be up after 45 seconds.
 
 # Starts servers with different settings, based off the process number parsed
 # as argument 1 by supervisord. 
