@@ -27,3 +27,6 @@
 
 # mod 7, sifz
 76561198002147295|mod
+
+# mod 8, meganfoxxed
+76561198218511531|mod
