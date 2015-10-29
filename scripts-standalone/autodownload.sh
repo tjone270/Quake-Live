@@ -1,7 +1,7 @@
 #! /bin/bash
 # autodownload.sh - quake live dedicated server workshop item download utility.
 # created by Thomas Jones on 03/10/15.
-# purger@tomtecsolutions.com
+# thomas@tomtecsolutions.com
 
 echo "========== AutoDownload.sh has started. =========="
 echo "========= $(date) ========="
