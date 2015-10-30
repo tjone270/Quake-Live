@@ -30,7 +30,7 @@ echo "Starting clan arena server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "EKB PQL - Clan Arena" \
+    +set sv_hostname "#$servernum lets start testing Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -44,7 +44,7 @@ exec $qPathToStartScript \
 	+set bot_enable 1 \
 	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqlca.txt" \
+    +set sv_mappoolFile "mappool_vqlca.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 1 ]
 # starting VQL CA 1
@@ -53,7 +53,7 @@ echo "Starting clan arena server 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "EKB VQL - Clan Arena" \
+    +set sv_hostname "#$servernum lets start testing Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -76,7 +76,7 @@ echo "Starting race server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Race" \
+    +set sv_hostname "  #$servernum lets start testing PQL - Race" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -99,7 +99,7 @@ echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Free For All" \
+    +set sv_hostname "#$servernum lets start testing Free For All" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -113,7 +113,7 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqlffa.txt" \
+    +set sv_mappoolFile "mappool_vqlffa.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 4 ]
 # starting PQL CTF 1...
@@ -122,7 +122,7 @@ echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Capture the Flag" \
+    +set sv_hostname "#$servernum lets start testing Capture the Flag" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -136,16 +136,16 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqlctf.txt" \
+    +set sv_mappoolFile "mappool_vqlctf.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 5 ]
 # starting PQL DOM 1...
 then
-echo "Starting domination server 1..."
+echo "Starting clan arena server 3..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Domination" \
+    +set sv_hostname "#$servernum lets start testing Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -159,16 +159,16 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqldom.txt" \
+    +set sv_mappoolFile "mappool_vqlca.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 6 ]
 # starting PQL INFECTED 1...
 then
-echo "Starting VQL FFA server 1..."
+echo "Starting VQL FFA server 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation VQL - Free For All" \
+    +set sv_hostname "#$servernum lets start testing Free For All" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -191,7 +191,7 @@ echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Team Deathmatch" \
+    +set sv_hostname "#$servernum lets start testing Team Deathmatch" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -205,7 +205,7 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqltdm.txt" \
+    +set sv_mappoolFile "mappool_vqltdm.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 8 ]
 # starting PQL MultiGame 1...
@@ -214,7 +214,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation PQL - Multi-Gametype Turbo" \
+    +set sv_hostname "#$servernum lets start testing $qServerLocation PQL - Multi-Gametype Turbo" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -236,7 +236,7 @@ echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation VQL - Duel" \
+    +set sv_hostname "#$servernum lets start testing Duel" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -259,7 +259,7 @@ echo "Starting VQL iCTF type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum lets start testing $qServerLocation VQL - iCTF" \
+    +set sv_hostname "#$servernum lets start testing iCTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
