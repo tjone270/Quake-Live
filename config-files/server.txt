@@ -20,13 +20,17 @@ set g_floodprot_decay "1000"   // Decrease the flood counter by 1 this often, in
 
 set g_voteDelay "0" // Delay allowing votes for x milliseconds after map load.
 set g_voteLimit "0" // Limit users to x votes per map.
+set g_allowVote "1"
+set g_allowVoteMidGame "1"
+set g_allowSpecVote "1"
+set g_alltalk "0"
 
 set sv_warmupReadyPercentage "0.51"  // Ratio of players that must be ready before the match starts.
 set g_warmupDelay "15"               // Wait x seconds before allowing match to start to allow all players to connect.
 set g_warmupReadyDelay "0"           // Force the game to start after x seconds after someone readies up.
 set g_warmupReadyDelayAction "1"     // Set to 1 to force players to spectator after g_warmupReady Delay, 2 to force ready up.
 
-set g_inactivity "0"  // Kick players who are inactive for x amount of seconds.
+set g_inactivity "90"  // Kick players who are inactive for x amount of seconds.
 set teamsize 0
 set con_tty 0
 
@@ -35,4 +39,4 @@ set sv_idleExit "120"
 
 set sv_altEntDir "baseq3/entities"
 
-set serverstartup "startRandomMap"
+set serverstartup "map campgrounds ca"
