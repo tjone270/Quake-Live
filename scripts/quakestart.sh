@@ -6,7 +6,7 @@
 
 # Defining variables.
 export qServerLocation=$(<localConfig-serverLocation.txt)
-export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x86.sh"
+export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
 export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
 sponsortag="$qServerLocation"
