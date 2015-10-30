@@ -14,6 +14,7 @@ blackcathedral|pqlffa
 brimstoneabbey|pqlffa
 chemicalreaction|pqlffa
 bloodrun|pqlffa
+bloodrunintel|pqlffa
 lostworld|pqlffa
 furiousheights|pqlffa
 spacectf|pqlffa
@@ -52,3 +53,6 @@ dredwerkz|pqlffa
 devilish|pqlffa
 dismemberment|pqlffa
 purgatory|pqlffa
+repent|pqlffa
+overkill|pqlffa
+limbus|pqlffa
