@@ -5,9 +5,9 @@
 
 
 # Defining variables.
-export location="Australia"
+export location="EKB"
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x86.sh"
-sponsortag="$location,TomTec Solutions"
+sponsortag="$location"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`

@@ -6,10 +6,10 @@
 
 # Defining variables.
 export qServerLocation=$(<localConfig-serverLocation.txt)
-export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x64.sh"
+export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x86.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
 export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
-sponsortag="$qServerLocation"
+sponsortag="EKB"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
@@ -30,7 +30,7 @@ echo "Starting clan arena server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "   #$servernum lets start testing $qServerLocation PQL - Clan Arena" \
+    +set sv_hostname "EKB PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -53,7 +53,7 @@ echo "Starting clan arena server 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum lets start testing $qServerLocation VQL - Clan Arena" \
+    +set sv_hostname "EKB VQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
