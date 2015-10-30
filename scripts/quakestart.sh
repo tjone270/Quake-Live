@@ -141,11 +141,11 @@ exec $qPathToStartScript \
 elif [ $1 -eq 5 ]
 # starting PQL DOM 1...
 then
-echo "Starting clan arena server 3..."
+echo "Starting PQL clan arena server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "#$servernum lets start testing Clan Arena" \
+    +set sv_hostname "#$servernum lets start testing PQL Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -159,12 +159,12 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_vqlca.txt" \
+    +set sv_mappoolFile "mappool_pqlca.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 6 ]
 # starting PQL INFECTED 1...
 then
-echo "Starting VQL FFA server 2..."
+echo "Starting PQL FFA server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
@@ -182,7 +182,7 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_vqlffa.txt" \
+    +set sv_mappoolFile "mappool_pqlffa.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 7 ]
 # starting PQL TDM 1...
@@ -255,11 +255,11 @@ exec $qPathToStartScript \
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
-echo "Starting VQL iCTF type server 1..."
+echo "Starting VQL duel server 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "#$servernum lets start testing iCTF" \
+    +set sv_hostname "#$servernum lets start testing Duel" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -272,7 +272,7 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_vqlictf.txt" \
+    +set sv_mappoolFile "mappool_vqlduel.txt" \
     +set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 11 ]
 # starting mickzerofive's brisbane server 1...
