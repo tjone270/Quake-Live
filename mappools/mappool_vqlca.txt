@@ -18,6 +18,7 @@ hearth|ca
 hellsgate|ca
 hiddenfortress|ca
 leviathan|ca
+limbus|ca
 overkill|ca
 purgatory|ca
 quarantine|ca
