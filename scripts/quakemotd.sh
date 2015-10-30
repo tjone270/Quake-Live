@@ -8,7 +8,7 @@ export qMOTDcontentFileName="remoteConfig-motd.txt"
 export qRconPassword=$(<localConfig-rconPassword-purgery.txt)
 export qUpdateLowestRconPort=28960
 export qUpdateHighestRconPort=28970
-export qBaseURL="https://raw.githubusercontent.com/tjone270/QuakeLiveDS_Scripts/master"
+export qBaseURL="https://raw.githubusercontent.com/dark-saber/QuakeLiveDS_Scripts/master"
 export qDelayBetweenMOTDbroadcast="900"  # in seconds
 
 echo "========== QuakeMOTD.sh has started. =========="
