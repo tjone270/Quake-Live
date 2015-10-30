@@ -21,8 +21,6 @@ set g_floodprot_decay "1000"   // Decrease the flood counter by 1 this often, in
 set g_voteDelay "0" // Delay allowing votes for x milliseconds after map load.
 set g_voteLimit "0" // Limit users to x votes per map.
 set g_allowVote "1"
-set g_allowVoteMidGame "1"
-set g_allowSpecVote "1"
 set g_alltalk "0"
 
 set sv_warmupReadyPercentage "0.51"  // Ratio of players that must be ready before the match starts.
@@ -39,4 +37,4 @@ set sv_idleExit "120"
 
 set sv_altEntDir "baseq3/entities"
 
-set serverstartup "map campgrounds ca"
+set serverstartup "startRandomMap"
