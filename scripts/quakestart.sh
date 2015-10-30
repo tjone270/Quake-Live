@@ -37,7 +37,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "CA, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -60,7 +60,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "CA, $sponsortag" \
     +set g_voteFlags "13320" \
     +set g_allowSpecVote 1 \
     +set g_allowVoteMidGame 1 \
@@ -83,7 +83,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "grappling hook, crouch slide,$sponsortag" \
+    +set sv_tags "PQL, race, defrag, grappling hook, crouch slide, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -106,7 +106,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "FFA, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -129,7 +129,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "CTF, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -152,7 +152,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "PQL, CA, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -175,7 +175,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "PQL, FFA, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -198,7 +198,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "TDM, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
@@ -221,7 +221,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "PQL, $sponsortag" \
     +set g_allowSpecVote 1 \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
@@ -243,7 +243,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "duel, $sponsortag" \
     +set g_voteFlags "13320" \
     +set g_allowSpecVote 0 \
     +set g_allowVoteMidGame 0 \
@@ -266,7 +266,7 @@ exec $qPathToStartScript \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "$sponsortag" \
+    +set sv_tags "duel, $sponsortag" \
     +set g_allowSpecVote 1 \
     +set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
