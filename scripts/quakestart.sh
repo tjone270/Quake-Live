@@ -30,7 +30,7 @@ echo "Starting clan arena server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "   #$servernum The Purgery $qServerLocation PQL - Clan Arena" \
+    +set sv_hostname "   #$servernum EKB testing $qServerLocation PQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -53,7 +53,7 @@ echo "Starting clan arena server 2..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Clan Arena" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation VQL - Clan Arena" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -76,7 +76,7 @@ echo "Starting race server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Race" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Race" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -99,7 +99,7 @@ echo "Starting free for all server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Free For All" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Free For All" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -122,7 +122,7 @@ echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Capture the Flag" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Capture the Flag" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -145,7 +145,7 @@ echo "Starting domination server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Domination" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Domination" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -164,25 +164,25 @@ exec $qPathToStartScript \
 elif [ $1 -eq 6 ]
 # starting PQL INFECTED 1...
 then
-echo "Starting infected server 1..."
+echo "Starting VQL FFA server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Infected" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation VQL - Free For All" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "zombies,$sponsortag" \
+    +set sv_tags "$sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqlinfected.txt" \
+    +set sv_mappoolFile "mappool_vqlffa.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 7 ]
 # starting PQL TDM 1...
@@ -191,7 +191,7 @@ echo "Starting team deathmatch server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Team Deathmatch" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Team Deathmatch" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -214,7 +214,7 @@ echo "Starting multi game type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Multi-Gametype Turbo" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation PQL - Multi-Gametype Turbo" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -236,7 +236,7 @@ echo "Starting VQL duel server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Duel" \
+    +set sv_hostname "  #$servernum EKB testing $qServerLocation VQL - Duel" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -259,7 +259,7 @@ echo "Starting VQL iCTF type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - iCTF" \
+    +set sv_hostname " #$servernum EKB testing $qServerLocation VQL - iCTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
