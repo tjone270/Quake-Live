@@ -1,0 +1,45 @@
+# specify 1 map per line, mapname|factoryid
+# ex: aerowalk|ffa
+# see factories.txt for valid factory id values
+aerowalk|ffa
+almostlost|ffa
+arcanecitadel|ffa
+blackcathedral|ffa
+brimstoneabbey|ffa
+chemicalreaction|ffa
+bloodrun|ffa
+bloodrunintel|ffa
+lostworld|ffa
+furiousheights|ffa
+campgrounds|ffa
+asylum|ffa
+arkinholm|ffa
+coldwar|ffa
+cliffside|ffa
+theedge|ffa
+longestyard|ffa
+quarantine|ffa
+spacechamber|ffa
+tornado|ffa
+trinity|ffa
+leviathan|ffa
+foolishlegacy|ffa
+deepinside|ffa
+dreadfulplace|ffa
+demonkeep|ffa
+dredwerkz|ffa
+dismemberment|ffa
+purgatory|ffa
+repent|ffa
+overkill|ffa
+deepinside|ffa
+grimdungeons|ffa
+hiddenfortress|ffa
+limbus|ffa
+ragnarok|ffa
+realmofsteelrats|ffa
+retribution|ffa
+solid|ffa
+terminatria|ffa
+terminus|ffa
+warehouse|ffa
