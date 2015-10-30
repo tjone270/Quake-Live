@@ -36,3 +36,5 @@ set sv_idleExit "120"
 set sv_altEntDir "baseq3/entities"
 
 set serverstartup "startRandomMap"
+
+set g_damage_lg 7
