@@ -1,7 +1,7 @@
 # Get these numbers from the ?id= ending of the workshop URI.
 
 # Quake Live Extras Pack
-#539421606
+539421606
 
 # Quake Live Holiday Pack
-#539421982
+539421982
