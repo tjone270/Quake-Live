@@ -260,7 +260,7 @@ echo "Starting VQL iCTF type server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - iCTF" \
+    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - CTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -273,10 +273,9 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_vqlictf.txt" \
+    +set sv_mappoolFile "mappool_ctf.txt" \
     +set fs_homepath ~/.quakelive/$gameport \
     +set g_damage_lg 6
-    +set g_startingWeapons 65
 elif [ $1 -eq 11 ]
 # starting mickzerofive's brisbane server 1...
 then
