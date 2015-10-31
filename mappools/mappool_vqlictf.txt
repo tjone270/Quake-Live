@@ -33,7 +33,7 @@ scornforge|ictf
 shiningforces|ictf
 siberia|ictf
 skyward|ictf
-spaceictf|ictf
+spacectf|ictf
 spidercrossings|ictf
 stonekeep|ictf
 stronghold|ictf

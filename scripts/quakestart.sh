@@ -123,7 +123,7 @@ echo "Starting capture the flag server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "  #$servernum The Purgery $qServerLocation PQL - Capture the Flag" \
+    +set sv_hostname "  #$servernum The Purgery $qServerLocation VQL - Capture the Flag" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -137,8 +137,9 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_pqlctf.txt" \
-	+set fs_homepath ~/.quakelive/$gameport
+    +set sv_mappoolFile "mappool_vqlctf.txt" \
+	+set fs_homepath ~/.quakelive/$gameport \
+    +set g_damage_lg 6
 elif [ $1 -eq 5 ]
 # starting PQL DOM 1...
 then
@@ -256,11 +257,11 @@ exec $qPathToStartScript \
 elif [ $1 -eq 10 ]
 # starting VQL iCTF 1...
 then
-echo "Starting VQL iCTF type server 1..."
+echo "Starting VQL iCTF server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - CTF" \
+    +set sv_hostname " #$servernum The Purgery $qServerLocation VQL - iCTF" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
@@ -273,9 +274,10 @@ exec $qPathToStartScript \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_ctf.txt" \
+    +set sv_mappoolFile "mappool_vqlictf.txt" \
     +set fs_homepath ~/.quakelive/$gameport \
-    +set g_damage_lg 6
+    +set g_damage_lg 6 \
+    +set g_voteFlags 0
 elif [ $1 -eq 11 ]
 # starting mickzerofive's brisbane server 1...
 then
