@@ -193,14 +193,14 @@ echo "Starting PQL A&D server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "#$servernum lets start cooking PQL Attack & Defence" \
+    +set sv_hostname "#$servernum lets start cooking PQL Attack & Defend" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "PQL, Attack&Defence, A&D, $sponsortag" \
+    +set sv_tags "PQL, Attack&Defend, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
