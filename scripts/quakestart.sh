@@ -9,7 +9,7 @@ export qServerLocation=$(<localConfig-serverLocation.txt)
 export qPathToStartScript="~/steamcmd/steamapps/common/qlds/run_server_x86.sh"
 export qRconPasswordPurgery=$(<localConfig-rconPassword-purgery.txt)
 export qRconPassword4sg=$(<localConfig-rconPassword-mickzerofive.txt)
-sponsortag="EKB"
+sponsortag="RUS, EKB"
 
 gameport=`expr $1 + 27960`
 rconport=`expr $1 + 28960`
