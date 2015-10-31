@@ -189,25 +189,25 @@ exec $qPathToStartScript \
 elif [ $1 -eq 7 ]
 # starting PQL TDM 1...
 then
-echo "Starting team deathmatch server 1..."
+echo "Starting PQL A&D server 1..."
 exec $qPathToStartScript \
     +set net_strict 1 \
     +set net_port $gameport \
-    +set sv_hostname "#$servernum lets start cooking Team Deathmatch" \
+    +set sv_hostname "#$servernum lets start cooking PQL Attack & Defence" \
     +set zmq_rcon_enable 1 \
     +set zmq_rcon_password "$qRconPasswordPurgery" \
     +set zmq_rcon_port $rconport \
     +set zmq_stats_enable 1 \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
-    +set sv_tags "VQL, $sponsortag" \
+    +set sv_tags "PQL, Attack&Defence, A&D, $sponsortag" \
     +set g_voteFlags "13320" \
 	+set g_allowSpecVote 1 \
 	+set g_allowVoteMidGame 1 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
-    +set sv_mappoolFile "mappool_vqltdm.txt" \
+    +set sv_mappoolFile "mappool_pqlad.txt" \
 	+set fs_homepath ~/.quakelive/$gameport
 elif [ $1 -eq 8 ]
 # starting PQL MultiGame 1...

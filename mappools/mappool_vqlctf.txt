@@ -2,7 +2,7 @@
 # ex: aerowalk|ffa
 # see factories.txt for valid factory id values
 basesiege|ctf
-beyondreality|pq
+beyondreality|ctf
 campercrossings|ctf
 aerowalk|ctf
 almostlost|ctf
