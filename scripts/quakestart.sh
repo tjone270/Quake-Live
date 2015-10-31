@@ -68,7 +68,8 @@ exec $qPathToStartScript \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
     +set sv_mappoolFile "mappool_vqlca.txt" \
-    +set fs_homepath ~/.quakelive/$gameport
+    +set fs_homepath ~/.quakelive/$gameport \
+    +set g_damage_lg 7
 elif [ $1 -eq 2 ]
 # starting PQL Race 1...
 then
