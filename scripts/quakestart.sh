@@ -39,8 +39,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
 	+set bot_enable 1 \
 	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -62,8 +62,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-    +set g_allowSpecVote 1 \
-    +set g_allowVoteMidGame 1 \
+    +set g_allowSpecVote 0 \
+    +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -86,8 +86,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "grappling hook, crouch slide,$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -109,8 +109,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -132,8 +132,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -156,8 +156,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -179,8 +179,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "zombies,$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -202,8 +202,8 @@ exec $qPathToStartScript \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
     +set g_voteFlags "13312" \
-	+set g_allowSpecVote 1 \
-	+set g_allowVoteMidGame 1 \
+	+set g_allowSpecVote 0 \
+	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
    	+set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -224,8 +224,8 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_allowSpecVote 1 \
-    +set g_allowVoteMidGame 1 \
+    +set g_allowSpecVote 0 \
+    +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -269,8 +269,8 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_allowSpecVote 1 \
-    +set g_allowVoteMidGame 1 \
+    +set g_allowSpecVote 0 \
+    +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_purgery.txt" \
@@ -295,8 +295,8 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPassword4sg" \
     +set zmq_stats_port $gameport \
     +set sv_tags "4Seasons Gaming,$qServerLocation" \
-    +set g_allowSpecVote 1 \
-    +set g_allowVoteMidGame 1 \
+    +set g_allowSpecVote 0 \
+    +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
     +set g_accessFile "access_mickzerofive.txt" \
