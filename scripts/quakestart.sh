@@ -251,6 +251,7 @@ exec $qPathToStartScript \
     +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
     +set bot_nochat 1 \
+    +set g_damage_lg 6 \
     +set g_accessFile "access_purgery.txt" \
     +set sv_mappoolFile "mappool_vqlduel.txt" \
     +set fs_homepath ~/.quakelive/$gameport
