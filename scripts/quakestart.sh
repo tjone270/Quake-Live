@@ -301,7 +301,7 @@ exec $qPathToStartScript \
     +set bot_nochat 1 \
     +set g_accessFile "access_mickzerofive.txt" \
     +set sv_mappoolFile "mappool_default.txt" \
-    +set fs_homepath ~/.quakelive/$gameport
+    +set fs_homepath ~/.quakelive/mickzerofive-27971
 else
 echo "This system is not intended to host MickZeroFive's server."
 fi
