@@ -38,7 +38,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
 	+set bot_enable 1 \
@@ -61,7 +61,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
     +set g_allowSpecVote 0 \
     +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -85,7 +85,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "grappling hook, crouch slide,$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -108,7 +108,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -131,7 +131,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -155,7 +155,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -178,7 +178,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "zombies,$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -201,7 +201,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
 	+set g_allowSpecVote 0 \
 	+set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
@@ -246,7 +246,7 @@ exec $qPathToStartScript \
     +set zmq_stats_password "$qRconPasswordPurgery" \
     +set zmq_stats_port $gameport \
     +set sv_tags "$sponsortag" \
-    +set g_voteFlags "13320" \
+    +set g_voteFlags "9320" \
     +set g_allowSpecVote 0 \
     +set g_allowVoteMidGame 0 \
     +set bot_enable 1 \
