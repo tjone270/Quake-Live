@@ -7,7 +7,7 @@ set sv_maxClients "18"     // How many players can connect at once.
 
 set g_password ""          // Set a server-wide password, and stop all users from connecting without it.
 
-set sv_privateClients "2"  // Reserve slots that can be used with sv_privatePassword.
+set sv_privateClients "1"  // Reserve slots that can be used with sv_privatePassword.
 set sv_privatePassword "givemeaspot"  // Password to use in conjunction with sv_privateClients.
 
 set com_hunkMegs "60"      // May need to be increased for additional players.
@@ -36,3 +36,5 @@ set sv_idleExit "120"
 set sv_altEntDir "baseq3/entities"
 
 set serverstartup "startRandomMap"
+
+set qlx_owner "76561198213481765"

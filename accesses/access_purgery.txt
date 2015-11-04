@@ -30,3 +30,6 @@
 
 # mod 8, meganfoxxed
 76561198218511531|mod
+
+# mod 9, chef
+76561198250594530|mod
