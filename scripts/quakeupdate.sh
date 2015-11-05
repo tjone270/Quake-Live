@@ -18,7 +18,7 @@ counter="$qUpdateLowestRconPort"
 while [ $counter -le $qUpdateHighestRconPort ]
 do
 	echo Telling players in server port $counter that the servers are going down...
-	~/steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say $qUpdateServerMessage"
+	python2 ~/steamcmd/steamapps/common/qlds/rcon.py --host tcp://127.0.0.1:$counter --password "$qRconPassword" --command "say $qUpdateServerMessage"
 	((counter++))
 done
 
