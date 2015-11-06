@@ -3,6 +3,12 @@
 # created by Thomas Jones on 10/10/15.
 # purger@tomtecsolutions.com
 
+
+#
+#  DEPRECIATED IN FAVOUR OF MINQLX
+#
+
+
 # Defining variables:
 export qMOTDcontentFileName="remoteConfig-motd.txt"
 export qRconPassword=$(<localConfig-rconPassword-purgery.txt)
