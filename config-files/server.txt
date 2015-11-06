@@ -37,7 +37,8 @@ set sv_altEntDir "baseq3/entities"
 
 set serverstartup "startRandomMap"
 
-set g_inactivity 60
+set g_inactivity 120
 
 set qlx_owner "76561198213481765"
 set qlx_plugins "plugin_manager, essentials, motd, permission, ban, clan, branding, rules"
+set qlx_redisAddress "43.229.61.190"
