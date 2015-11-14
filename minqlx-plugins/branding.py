@@ -2,7 +2,8 @@
 # created by Thomas Jones on 06-11-15
 # thomas@tomtecsolutions.com
 """
-Branding.py is a minqlx plugin that permits you to modify your map loading screen with your own information. Simply put the plugin in the 'minqlx-plugins' folder, !load the plugin, and set these cvars:
+Branding.py is a minqlx plugin that permits you to modify your map loading screen with your own information.
+Simply put the plugin in the 'minqlx-plugins' folder, !load the plugin, and set these cvars:
 
 qlx_serverBrandName
 qlx_serverBrandTopField
