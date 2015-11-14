@@ -1,1 +1,2 @@
-# Quake Live Dedicated Server - Bits and Bobs
+# Quake Live Dedicated Server
+## Bits and Bobs
