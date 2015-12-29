@@ -1,6 +1,7 @@
 # Created by Thomas Jones on 14/12/2015 - thomas@tomtecsolutions.com
+# aliases.py, a plugin for minqlx to show aliases from the redis database.
 # This plugin is released to everyone, for any purpose. It comes with no warranty, no guarantee it works, it's released AS IS.
-# You can modify everything, except for line one, two and three. They're there to indicate I whacked this together originally. Please make it better :D
+# You can modify everything, except for line one, two, three and four. They're there to indicate I whacked this together originally. Please make it better :D
 
 import minqlx
 import minqlx.database
@@ -11,6 +12,9 @@ class aliases(minqlx.Plugin):
     def __init__(self):
         self.add_command("alias", self.cmd_alias, usage="<id>")
         self.add_command("clearaliases", self.cmd_clearaliases, 5)
+        self.add_command("tomtec_versions", self.cmd_showversion)
+
+        self.plugin_version = "1.5"
 
     def cmd_alias(self, player, msg, channel):
         if len(msg) < 2:
@@ -34,3 +38,6 @@ class aliases(minqlx.Plugin):
         for p in players:
             del self.db["minqlx:players:{}".format(p)]
         channel.reply("All aliases for all players ({} players in total) were cleared.".format(len(players)))
+
+    def cmd_showversion(self, player, msg, channel):
+        channel.reply("^4aliases.py^7 - version {}, created by Thomas Jones on 14/12/2015.".format(self.plugin_version))
