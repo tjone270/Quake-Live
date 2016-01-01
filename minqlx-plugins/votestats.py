@@ -29,9 +29,10 @@ class votestats(minqlx.Plugin):
         if passed:
             if vote.lower() == "map":
                 if len(args) > 1:
-                    theMsg = "The map is changing to ^4{}^7, with new game type ^4{}^7.".format(args[1].lower(), args[2].lower())
+                    changingToMapAndMode = list(args.lower())
+                    theMsg = "The map is changing to ^4{}^7, with new game type ^4{}^7.".format(changingToMapAndMode[0], changingToMapAndMode[1])
                 else:
-                    theMsg = "The map is changing to ^4{}^7, with same game type ({}).".format(args[1].lower(), self.game.factory)
+                    theMsg = "The map is changing to ^4{}^7, with same game type ({}).".format(args.lower(), self.game.factory)
 
                 self.msg(theMsg)
     
