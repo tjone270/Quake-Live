@@ -12,7 +12,7 @@ class votestats(minqlx.Plugin):
         
         self.add_command("tomtec_versions", self.cmd_showversion)
         
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.4"
 
 
     def process_vote(self, player, yes):
@@ -28,11 +28,11 @@ class votestats(minqlx.Plugin):
         
         if passed:
             if vote.lower() == "map":
-                if len(args) > 1:
-                    changingToMapAndMode = args.lower().split()
+                changingToMapAndMode = args.lower().split()
+                if len(changingToMapAndMode) > 1:
                     theMsg = "The map is changing to ^4{}^7, with new game type ^4{}^7.".format(changingToMapAndMode[0], changingToMapAndMode[1])
                 else:
-                    theMsg = "The map is changing to ^4{}^7, with same game type ({}).".format(args.lower(), self.game.factory)
+                    theMsg = "The map is changing to ^4{}^7, with same game type (^4{}^7).".format(changingToMapAndMode[0], self.game.factory)
 
                 self.msg(theMsg)
     
