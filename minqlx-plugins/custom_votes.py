@@ -8,6 +8,7 @@ import minqlx
 class custom_votes(minqlx.Plugin):
     def __init__(self):
         self.add_hook("vote_called", self.handle_vote_called)
+        self.add_hook("player_loaded", self.player_loaded)
 
         self.add_command("tomtec_versions", self.cmd_showversion)
         self.add_command("excessiveweaps", self.cmd_excessive_weaps, 5, usage="on/off")
@@ -15,12 +16,14 @@ class custom_votes(minqlx.Plugin):
 
         self.set_cvar_once("qlx_rulesetLocked", "0")
         self.set_cvar_once("qlx_serverExemptFromModeration", "0")
+        self.set_cvar_once("qlx_excessive", "0")
         
         self.plugin_version = "1.3"
 
-    def cmd_showversion(self, player, msg, channel):
-        channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
-
+    def player_loaded(self, player):
+        if (self.get_cvar("qlx_excessive", bool)):
+            player.tell("Excessive weapons are ^2enabled^7. To disable them, ^2/cv excessive off^7.")
+            
     def cmd_ruleset(self, player, msg, channel):
         if len(msg) < 2:
             return minqlx.RET_USAGE
