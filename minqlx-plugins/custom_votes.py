@@ -20,6 +20,7 @@ class custom_votes(minqlx.Plugin):
         
         self.plugin_version = "1.3"
 
+
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
             player.tell("Excessive weapons are ^2enabled^7. To disable them, ^2/cv excessive off^7.")
