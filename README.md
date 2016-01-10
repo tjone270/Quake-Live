@@ -1,3 +1,6 @@
 # Quake Live/Minqlx Extras
 
-This repo contains extra minqlx plugins created by myself. Please keep lines 1, 2, 3 and 4, and the showversion command lines.
+Please read the LICENCE.md file in the root of this repository now, before accessing other files in this repository further.
+
+This repo contains extra minqlx plugins created by tjone270.
+
