@@ -28,21 +28,21 @@ class pingspec(minqlx.Plugin):
 
     def process_frame(self):
         self.frame_counter += 1
-        if self.frame_counter == (self.get_cvar("qlx_pingSpecSecondsBetweenChecks") * int(minqlx.get_cvar("sv_fps"))):
+        if self.frame_counter == (int(self.get_cvar("qlx_pingSpecSecondsBetweenChecks")) * int(minqlx.get_cvar("sv_fps"))):
             self.frame_counter = 0
             self.check_ping()
 
     def check_ping(self):
         for player in self.players():
-            if player.ping > self.get_cvar("qlx_pingSpecMaxPing"):
+            if player.ping > int(self.get_cvar("qlx_pingSpecMaxPing")):
                 if self.game.state == "warmup":
-                    player.tell("^1Your ping is over the maximum ping tolerated here ({}).".format(self.max_ping))
+                    player.tell("^1Your ping is over the maximum ping tolerated here ({}).".format(self.get_cvar("qlx_pingSpecMaxPing")))
                     player.tell("You will be put to spec when the game starts if it remains above the threshold.")
                 else:
                     if player.team != "spectator":
                         player.put("spectator")
-                        self.msg("{} has been put in spec automatically for having a ping over {}.".format(player.clean_name, self.max_ping))
-                        player.tell("^1Your ping is over {}, the threshold.^7".format(self.max_ping))
+                        self.msg("{} has been put in spec automatically for having a ping over {}.".format(player.clean_name, self.get_cvar("qlx_pingSpecMaxPing")))
+                        player.tell("^1Your ping is over {}, the threshold.^7".format(self.get_cvar("qlx_pingSpecMaxPing")))
                         player.tell("You have been put in spec.")
 
     def cmd_showversion(self, player, msg, channel):
