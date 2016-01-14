@@ -24,7 +24,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_excessive", "0")
         self.set_cvar_once("qlx_disablePlayerRemoval", "0")
         
-        self.plugin_version = "1.4"
+        self.plugin_version = "1.6"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
@@ -232,6 +232,7 @@ class custom_votes(minqlx.Plugin):
         if vote.lower() == "tempban":
             # enables the '/cv tempban <id>' command
             if self.get_cvar("qlx_disablePlayerRemoval", bool):
+                # if player removal cvar is set, do not permit '/cv tempban'
                 if caller.privileges == None:
                     caller.tell("Voting to tempban is disabled in this server.")
                     caller.tell("^2/cv spec <id>^7 and ^2/cv silence <id>^7 exist as substitutes to kicking/tempbanning.")
@@ -283,10 +284,49 @@ class custom_votes(minqlx.Plugin):
                 return minqlx.RET_STOP_ALL
 
         if vote.lower() in ("kick", "clientkick"):
+            # if player removal cvar is set, do not permit '/cv kick' or '/cv clientkick'
             if self.get_cvar("qlx_disablePlayerRemoval", bool):
                 if caller.privileges == None:
                     caller.tell("Voting to kick/clientkick is disabled in this server.")
                     caller.tell("^2/cv spec <id>^7 and ^2/cv silence <id>^7 exist as substitutes to kicking.")
+                    return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "lock":
+            # enables the '/cv lock <team>' command
+            if len(args) <= 1:
+                self.callvote("lock", "lock all teams")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                if args.lower() == "blue":
+                    self.callvote("lock blue", "lock the ^4blue^3 team")
+                    self.msg("{}^7 called a vote.".format(caller.name))
+                    return minqlx.RET_STOP_ALL
+                elif args.lower() == "red":
+                    self.callvote("lock red", "lock the ^1red^3 team")
+                    self.msg("{}^7 called a vote.".format(caller.name))
+                    return minqlx.RET_STOP_ALL
+                else:
+                    caller.tell("^2/cv lock^7 or ^2/cv lock <blue/red>^7 is the usage for this callvote command.")
+                    return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "unlock":
+            # enables the '/cv unlock <team>' command
+            if len(args) <= 1:
+                self.callvote("unlock", "unlock all teams")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                if args.lower() == "blue":
+                    self.callvote("unlock blue", "unlock the ^4blue^3 team")
+                    self.msg("{}^7 called a vote.".format(caller.name))
+                    return minqlx.RET_STOP_ALL
+                elif args.lower() == "red":
+                    self.callvote("unlock red", "unlock the ^1red^3 team")
+                    self.msg("{}^7 called a vote.".format(caller.name))
+                    return minqlx.RET_STOP_ALL
+                else:
+                    caller.tell("^2/cv unlock^7 or ^2/cv unlock <blue/red>^7 is the usage for this callvote command.")
                     return minqlx.RET_STOP_ALL
                 
     def cmd_showversion(self, player, msg, channel):
