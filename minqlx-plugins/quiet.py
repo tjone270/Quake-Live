@@ -4,7 +4,7 @@
 # You can modify everything, except for lines 1-4 and the !tomtec_versions code. They're there to indicate I whacked this together originally. Please make it better :D
 
 """
-This plugin will prevent any QLDS/Minqlx Administrator/Mod/Permlevel 4 and above from using /tell, /say_team and /say during a match.
+This plugin will prevent anyone who is not QLDS Admin/Mod or at least minqlx Permlevel 4 from using /tell, /say_team and /say during a match.
 Talking is permitted during warmup by default, setting the following cvar to 0 will disable that functionality as well: qlx_permitChatDuringWarmup
 """
 
