@@ -24,7 +24,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_excessive", "0")
         self.set_cvar_once("qlx_disablePlayerRemoval", "0")
         
-        self.plugin_version = "1.6"
+        self.plugin_version = "1.7"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
@@ -328,6 +328,38 @@ class custom_votes(minqlx.Plugin):
                 else:
                     caller.tell("^2/cv unlock^7 or ^2/cv unlock <blue/red>^7 is the usage for this callvote command.")
                     return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "balancing":
+            # enables the '/cv balancing on/off' command
+            if args.lower() == "off":
+                self.callvote("qlx !unload balance", "glicko-based team balancing: off")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            elif args.lower() == "on":
+                self.callvote("qlx !load balance", "glicko-based team balancing: on")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv balancing [on/off]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "roundtimelimit":
+            # enables the '/cv roundtimelimit [90/120/180]' command
+            if args.lower() == "180":
+                self.callvote("set roundtimelimit 180", "round time limit: 180")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "120":
+                self.callvote("set roundtimelimit 120", "round time limit: 120")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "90":
+                self.callvote("set roundtimelimit 90", "round time limit: 90")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv roundtimelimit [90/120/180]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
                 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
