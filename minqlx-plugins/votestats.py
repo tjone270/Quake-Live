@@ -17,11 +17,15 @@ class votestats(minqlx.Plugin):
         self.add_command("tomtec_versions", self.cmd_showversion)
 
         self.set_cvar_once("qlx_privatiseVotes", "0")
-        self.plugin_version = "1.4"
+        self.plugin_version = "1.5"
 
+        self.has_voted = []
 
     def process_vote(self, player, yes):
         if (self.get_cvar("qlx_privatiseVotes", bool)):
+            return
+
+        if player in self.has_voted:
             return
         
         if yes:
@@ -30,8 +34,10 @@ class votestats(minqlx.Plugin):
             word = "^1no"
             
         self.msg("{}^7 voted {}^7.".format(player.name, word))
+        self.has_voted.append(player)
 
     def handle_vote_ended(self, votes, vote, args, passed):
+        self.has_voted = []
         self.msg("Vote results: ^2{}^7 - ^1{}^7.".format(*votes))
         
         if passed:
