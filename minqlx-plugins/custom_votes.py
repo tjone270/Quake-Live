@@ -360,6 +360,12 @@ class custom_votes(minqlx.Plugin):
             else:
                 caller.tell("^2/cv roundtimelimit [90/120/180]^7 is the usage for this callvote command.")
                 return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "balance":
+            # enables the '/cv balance' command
+            self.callvote("qlx !balance", "balance the teams")
+            self.msg("{}^7 called a vote.".format(caller.name))
+            return minqlx.RET_STOP_ALL
                 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
