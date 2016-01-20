@@ -1,4 +1,4 @@
-# Created by Thomas Jones on 09/01/2016 - thomas@tomtecsolutions.com
+# Created by Thomas Jones on 19/01/2016 - thomas@tomtecsolutions.com
 # votemanager.py - a minqlx plugin to permit privileged players to vote normally initially, then vote a second time to force the vote either way.
 # This plugin is released to everyone, for any purpose. It comes with no warranty, no guarantee it works, it's released AS IS.
 # You can modify everything, except for lines 1-4 and the !tomtec_versions code. They're there to indicate I whacked this together originally. Please make it better :D
