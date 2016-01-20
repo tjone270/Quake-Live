@@ -23,13 +23,20 @@ class branding(minqlx.Plugin):
         self.set_cvar_once("qlx_serverBrandName", "Branding isn't set up!")
         self.set_cvar_once("qlx_serverBrandTopField", "Set these cvars: 'qlx_serverBrandName', 'qlx_serverBrandTopField', 'qlx_serverBrandBottomField'.")
         self.set_cvar_once("qlx_serverBrandBottomField", "Tip: ^1C^2o^3l^4o^5u^6r ^1v^2a^3l^4u^5e^6s ^1a^2r^3e ^1s^2u^3p^4p^5o^6r^1t^2e^3d^4.")
-
-        self.plugin_version = "1.3"
+        self.set_cvar("qlx_minqlxSelfBrand", "0")
+        
+        self.plugin_version = "1.4"
         
     def brand_map(self):
-        minqlx.set_configstring(3, (self.get_cvar("qlx_serverBrandName")))
-        minqlx.set_configstring(678, (self.get_cvar("qlx_serverBrandTopField")))
-        minqlx.set_configstring(679, (self.get_cvar("qlx_serverBrandBottomField")))
+        cs678 = minqlx.get_configstring(678)
+        if cs678:
+            cs678 += " - "
+        cs679 = minqlx.get_configstring(679)
+        if cs679:
+            cs679 += " - "
+        minqlx.set_configstring(3, self.get_cvar("qlx_serverBrandName"))
+        minqlx.set_configstring(678, cs678 + self.get_cvar("qlx_serverBrandTopField"))
+        minqlx.set_configstring(679, cs679 + self.get_cvar("qlx_serverBrandBottomField"))
 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4branding.py^7 - version {}, created by Thomas Jones on 06/11/2015.".format(self.plugin_version))
