@@ -28,15 +28,9 @@ class branding(minqlx.Plugin):
         self.plugin_version = "1.4"
         
     def brand_map(self):
-        cs678 = minqlx.get_configstring(678)
-        if cs678:
-            cs678 += " - "
-        cs679 = minqlx.get_configstring(679)
-        if cs679:
-            cs679 += " - "
         minqlx.set_configstring(3, self.get_cvar("qlx_serverBrandName"))
-        minqlx.set_configstring(678, cs678 + self.get_cvar("qlx_serverBrandTopField"))
-        minqlx.set_configstring(679, cs679 + self.get_cvar("qlx_serverBrandBottomField"))
+        minqlx.set_configstring(678, self.get_cvar("qlx_serverBrandTopField"))
+        minqlx.set_configstring(679, self.get_cvar("qlx_serverBrandBottomField"))
 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4branding.py^7 - version {}, created by Thomas Jones on 06/11/2015.".format(self.plugin_version))
