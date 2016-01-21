@@ -10,10 +10,10 @@ class info(minqlx.Plugin):
     database = minqlx.database.Redis
 
     def __init__(self):
-    	self.add_command("info", self.cmd_info, usage="<id>")
+    	self.add_command("info", self.cmd_info, 3, usage="<id>")
     	self.add_command("tomtec_versions", self.cmd_showversion)
 
-    	self.plugin_version = "1.0"
+    	self.plugin_version = "1.1"
 
     def cmd_info(self, player, msg, channel):
         if len(msg) < 2:
@@ -28,7 +28,7 @@ class info(minqlx.Plugin):
 
         key = "minqlx:players:{}:ips".format(steam_id)
         out = list(self.db.smembers(key))
-        channel.reply("{}^7 has played on this server using the following IP addresses:".format(player_name))
+        channel.reply("{}^7 has played on this server from the following IP addresses:".format(player_name))
         channel.reply(" ^4*^7  {}".format("   \n ^4*^7  ".join(out)))
 
         key = "minqlx:players:{}".format(steam_id)
@@ -37,4 +37,4 @@ class info(minqlx.Plugin):
         channel.reply(" ^4*^7  {}".format("   \n ^4*^7  ".join(out)))
 
     def cmd_showversion(self, player, msg, channel):
-        channel.reply("^4ips.py^7 - version {}, created by Thomas Jones and vks (on QuakeNet IRC) on 21/01/2016.".format(self.plugin_version))
+        channel.reply("^4ips.py^7 - version {}, created by Thomas Jones on 21/01/2016.".format(self.plugin_version))
