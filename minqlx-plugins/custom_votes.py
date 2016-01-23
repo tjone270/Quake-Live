@@ -389,15 +389,47 @@ class custom_votes(minqlx.Plugin):
                 caller.tell("^2/cv lgdamage [6/7]^7 is the usage for this callvote command.")
                 return minqlx.RET_STOP_ALL
 
+        if vote.lower() == "lgdamage":
+            # enables the '/cv lgdamage [6/7]' command
+            if args.lower() == "6":
+                self.callvote("set g_damage_lg 6; set g_knockback_lg 1.75", "^7Lightning gun^3 damage: 6")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "7":
+                self.callvote("set g_damage_lg 7; set g_knockback_lg 1.50", "^7Lightning gun^3 damage: 7 (with appropriate knockback)")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv lgdamage [6/7]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "rgdamage":
+            # enables the '/cv rgdamage [80/100]' command
+            if args.lower() == "80":
+                self.callvote("set g_damage_rg 80", "^2Railgun^3 damage: 80")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "100":
+                self.callvote("set g_damage_rg 100", "^2Railgun^3 damage: 100")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv rgdamage [80/100]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
         if vote.lower() == "cvar":
             if not self.get_cvar("qlx_disableCvarVoting", bool):
-                # enables the '/cv cvar <variable> <value>' command
-                if self.db.has_permission(caller.steam_id, self.get_cvar("qlx_cvarVotePermissionRequired", int)):
-                    self.callvote("set {}".format(args), "Server CVAR change: {}^3".format(args))
-                    self.msg("{}^7 called a server vote.".format(caller.name))
-                    return minqlx.RET_STOP_ALL
+                if not len(args) <= 1:
+                    # enables the '/cv cvar <variable> <value>' command
+                    if self.db.has_permission(caller.steam_id, self.get_cvar("qlx_cvarVotePermissionRequired", int)):
+                        self.callvote("set {}".format(args), "Server CVAR change: {}^3".format(args))
+                        self.msg("{}^7 called a server vote.".format(caller.name))
+                        return minqlx.RET_STOP_ALL
+                    else:
+                        caller.tell("^1Insufficient privileges to change a server cvar.^7 Permission Level required: ^43^7.")
+                        return minqlx.RET_STOP_ALL
                 else:
-                    caller.tell("^1Insufficient privileges to change a server cvar.^7 Permission Level required: ^43^7.")
+                    caller.tell("^2/cv cvar <variable> <value>^7 is the usage for this callvote command.")
                     return minqlx.RET_STOP_ALL
             else:
                 caller.tell("Voting to change server CVARs is disabled on this server.")
