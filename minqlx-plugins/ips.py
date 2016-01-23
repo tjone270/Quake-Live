@@ -10,7 +10,7 @@ class ips(minqlx.Plugin):
     database = minqlx.database.Redis
     
     def __init__(self):
-        self.add_command("ip", self.cmd_ip, usage="<id>")
+        self.add_command("ip", self.cmd_ip, 2, usage="<id>")
         self.add_command("tomtec_versions", self.cmd_showversion)
 
         self.plugin_version = "1.0"
