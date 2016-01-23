@@ -7,6 +7,8 @@
 The following cvars are used on this plugin:
     qlx_rulesetLocked: Is used to prevent '/cv ruleset' votes. Default: 0
     qlx_disablePlayerRemoval: Prevents non-privileged players from using '/cv kick' or '/cv tempban'. Default: 0
+    qlx_disableCvarVoting: Prevents anyone from calling a CVAR vote. Default: 0
+    qlx_cvarVotePermissionRequired: Required permission level to call a CVAR vote. Default: 3
 """
 
 import minqlx
@@ -23,8 +25,10 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_rulesetLocked", "0")
         self.set_cvar_once("qlx_excessive", "0")
         self.set_cvar_once("qlx_disablePlayerRemoval", "0")
+        self.set_cvar_once("qlx_disableCvarVoting", "0")
+        self.set_cvar_once("qlx_cvarVotePermissionRequired", "3")
         
-        self.plugin_version = "1.7"
+        self.plugin_version = "1.8"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
@@ -224,6 +228,10 @@ class custom_votes(minqlx.Plugin):
             except:
                 caller.tell("^1Invalid ID.^7 Use a client ID from the ^2/players^7 command.")
                 return minqlx.RET_STOP_ALL
+
+            if self.get_cvar("qlx_serverExemptFromModeration") == "1":
+                caller.tell("This server has the serverExemptFromModeration flag set, and therefore, silencing is disabled.")
+                return minqlx.RET_STOP_ALL
             
             self.callvote("qlx !silence {} 10 minutes You were call-voted silent for 10 minutes.; mute {}".format(player_id, player_id), "silence {} for 10 minutes".format(player_name))
             self.msg("{}^7 called a vote.".format(caller.name))
@@ -366,6 +374,34 @@ class custom_votes(minqlx.Plugin):
             self.callvote("qlx !balance", "balance the teams")
             self.msg("{}^7 called a vote.".format(caller.name))
             return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "lgdamage":
+            # enables the '/cv lgdamage [6/7]' command
+            if args.lower() == "6":
+                self.callvote("set g_damage_lg 6; set g_knockback_lg 1.75", "^7Lightning gun^3 damage: 6")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "7":
+                self.callvote("set g_damage_lg 7; set g_knockback_lg 1.50", "^7Lightning gun^3 damage: 7 (with appropriate knockback)")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv lgdamage [6/7]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "cvar":
+            if not self.get_cvar("qlx_disableCvarVoting", bool):
+                # enables the '/cv cvar <variable> <value>' command
+                if self.db.has_permission(caller.steam_id, self.get_cvar("qlx_cvarVotePermissionRequired", int):
+                    self.callvote("set {}".format(args), "^6Server CVAR change: {}^3".format(args))
+                    self.msg("{}^7 called a server vote.".format(caller.name))
+                    return minqlx.RET_STOP_ALL
+                else:
+                    caller.tell("^1Insufficient privileges to change a server cvar.^7 Permission Level required: ^43^7.")
+                    return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("Voting to change server CVARs is disabled on this server.")
+                return minqlx.RET_STOP_ALL
                 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
