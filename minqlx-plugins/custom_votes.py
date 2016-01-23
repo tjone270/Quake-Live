@@ -392,7 +392,7 @@ class custom_votes(minqlx.Plugin):
         if vote.lower() == "cvar":
             if not self.get_cvar("qlx_disableCvarVoting", bool):
                 # enables the '/cv cvar <variable> <value>' command
-                if self.db.has_permission(caller.steam_id, self.get_cvar("qlx_cvarVotePermissionRequired", int):
+                if self.db.has_permission(caller.steam_id, self.get_cvar("qlx_cvarVotePermissionRequired", int)):
                     self.callvote("set {}".format(args), "^6Server CVAR change: {}^3".format(args))
                     self.msg("{}^7 called a server vote.".format(caller.name))
                     return minqlx.RET_STOP_ALL
