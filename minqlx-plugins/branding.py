@@ -11,6 +11,8 @@ Simply put the plugin in the 'minqlx-plugins' folder, !load the plugin, and set 
     qlx_serverBrandTopField
     qlx_serverBrandBottomField
 
+    qlx_brandingPrependMapName (this cvar will put the map name before your qlx_serverBrandName. Default: 0)
+
 Once set, change maps, and you'll see the map loading screen is changed.
 """
 
@@ -24,10 +26,16 @@ class branding(minqlx.Plugin):
         self.set_cvar_once("qlx_serverBrandTopField", "Set these cvars: 'qlx_serverBrandName', 'qlx_serverBrandTopField', 'qlx_serverBrandBottomField'.")
         self.set_cvar_once("qlx_serverBrandBottomField", "Tip: ^1C^2o^3l^4o^5u^6r ^1v^2a^3l^4u^5e^6s ^1a^2r^3e ^1s^2u^3p^4p^5o^6r^1t^2e^3d^4.")
 
-        self.plugin_version = "1.4"
+        self.set_cvar_once("qlx_brandingPrependMapName", "0")
+        
+        self.plugin_version = "1.5"
         
     def brand_map(self):
-        minqlx.set_configstring(3, (self.get_cvar("qlx_serverBrandName")))
+        if self.get_cvar("qlx_brandingPrependMapName", bool):
+            minqlx.set_configstring(3, self.game.map_title + " " + (self.get_cvar("qlx_serverBrandName")))
+        else:
+            minqlx.set_configstring(3, (self.get_cvar("qlx_serverBrandName")))
+            
         cs = self.game.map_subtitle1
         if cs:
             cs += " - "
