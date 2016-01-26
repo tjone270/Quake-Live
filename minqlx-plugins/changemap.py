@@ -4,7 +4,9 @@
 # You can modify everything, except for lines 1-4 and the !tomtec_versions code. They're there to indicate I whacked this together originally. Please make it better :D
 
 """
-    This plugin will change the map to the mapname set in qlx_defaultMapToChangeTo. Default: campgrounds
+    This plugin will change the map to the mapname set in the following cvars:
+        qlx_defaultMapToChangeTo              - Default: campgrounds
+        qlx_defaultMapFactoryToChangeTo       - Default: ffax
 """
 
 import minqlx
@@ -16,12 +18,13 @@ class changemap(minqlx.Plugin):
         self.add_command("tomtec_versions", self.cmd_showversion)
 
         self.set_cvar_once("qlx_defaultMapToChangeTo", "campgrounds")
+        self.set_cvar_once("qlx_defaultMapFactoryToChangeTo", "ffa")
         
         self.plugin_version = "1.0"
 
     def player_disconnect(self, player, reason):
         if len(teams["red"] + teams["blue"] + teams["spectator"]) == 0:
-            self.change_map(self.get_cvar("qlx_defaultMapToChangeTo"))
+            self.change_map(self.get_cvar("qlx_defaultMapToChangeTo"), self.get_cvar("qlx_defaultMapFactoryToChangeTo"))
         
         
     def cmd_showversion(self, player, msg, channel):
