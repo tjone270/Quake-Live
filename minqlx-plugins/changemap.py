@@ -6,7 +6,7 @@
 """
     This plugin will change the map to the mapname set in the following cvars:
         qlx_defaultMapToChangeTo              - Default: campgrounds
-        qlx_defaultMapFactoryToChangeTo       - Default: ffax
+        qlx_defaultMapFactoryToChangeTo       - Default: ffa
 """
 
 import minqlx
@@ -23,7 +23,7 @@ class changemap(minqlx.Plugin):
         self.plugin_version = "1.0"
 
     def player_disconnect(self, player, reason):
-        if len(teams["red"] + teams["blue"] + teams["spectator"]) == 0:
+        if len(self.players()) <= 1:
             self.change_map(self.get_cvar("qlx_defaultMapToChangeTo"), self.get_cvar("qlx_defaultMapFactoryToChangeTo"))
         
         
