@@ -41,7 +41,7 @@ class branding(minqlx.Plugin):
         self.set_cvar_once("qlx_brandingPrependMapName", "0")
         self.set_cvar_once("qlx_rainbowBrandName", "0")
         
-        self.plugin_version = "1.6"
+        self.plugin_version = "1.7"
 
         self.playerConnectedYetList = []
         
@@ -85,7 +85,7 @@ class branding(minqlx.Plugin):
         
     def player_loaded(self, player):
         if self.get_cvar("qlx_loadedMessage") != None:
-            self.center_print(self.get_cvar("qlx_loadedMessage"))
+            self.center_print(self.get_cvar("qlx_loadedMessage"), player.id)
 
         try:
             self.playerConnectedYetList.remove(player)
