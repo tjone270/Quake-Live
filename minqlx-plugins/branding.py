@@ -17,6 +17,7 @@ Simply put the plugin in the 'minqlx-plugins' folder, !load the plugin, and set 
     qlx_endOfGameMessage                 - When the game finishes, it'll put the text in this cvar in the text box on the left.
     
     qlx_brandingPrependMapName           - This cvar will put the map name before your qlx_serverBrandName.                     Default: 0
+    qlx_brandingAppendGameType           - Will add the game type after your qlx_serverBrandName.                               Default: 0
     qlx_rainbowBrandName                 - Make the entire map name (qlx_serverBrandName) appear in rainbow colouring.          Default: 0
     
 Once set, change maps, and you'll see the map loading screen is changed.
@@ -39,17 +40,23 @@ class branding(minqlx.Plugin):
         self.set_cvar_once("qlx_serverBrandBottomField", "Tip: ^1C^2o^3l^4o^5u^6r ^1v^2a^3l^4u^5e^6s ^1a^2r^3e ^1s^2u^3p^4p^5o^6r^1t^2e^3d^4.")
 
         self.set_cvar_once("qlx_brandingPrependMapName", "0")
+        self.set_cvar_once("qlx_brandingAppendGameType", "0")
         self.set_cvar_once("qlx_rainbowBrandName", "0")
         
-        self.plugin_version = "1.7"
+        self.plugin_version = "1.8"
 
         self.playerConnectedYetList = []
         
     def brand_map(self):
         if self.get_cvar("qlx_brandingPrependMapName", bool):
-            minqlx.set_configstring(3, self.game.map_title + " " + (self.get_cvar("qlx_serverBrandName")))
+            topBranding = self.game.map_title + " " + self.get_cvar("qlx_serverBrandName")
         else:
-            minqlx.set_configstring(3, (self.get_cvar("qlx_serverBrandName")))
+            topBranding = self.get_cvar("qlx_serverBrandName")
+
+        if self.get_cvar("qlx_brandingAppendGameType", bool):
+            minqlx.set_configstring(3, topBranding + " " + self.game.type)
+        else:
+            minqlx.set_configstring(3, topBranding)
             
         cs = self.game.map_subtitle1
         if cs:
