@@ -8,6 +8,7 @@ import minqlx
 class q3resolver(minqlx.Plugin):
     def __init__(self):
         self.add_hook("vote_called", self.handle_vote_called)
+        self.add_command("tomtec_versions", self.cmd_showversion)
         self.plugin_version = "1.1"
 
         self.q3mapTranslationMapNamesQ3 = ["q3dm0", "q3dm1", "q3dm2", "q3dm3", "q3dm4", "q3dm5", "q3dm6", "q3dm7", "q3dm8", "q3dm9", "q3dm10", "q3dm11", "q3dm12", "q3dm13", "q3dm14", "q3dm15", "q3dm16", "q3dm17", "q3dm18", "q3dm19", "q3tourney1", "q3tourney2", "q3tourney3", "q3tourney4", "q3tourney5", "q3tourney6", "q3ctf1", "q3ctf2", "q3ctf3", "q3ctf4"]
