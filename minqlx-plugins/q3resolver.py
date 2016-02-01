@@ -8,7 +8,7 @@ import minqlx
 class q3resolver(minqlx.Plugin):
     def __init__(self):
         self.add_hook("vote_called", self.handle_vote_called)
-        self.plugin_version = "1.0"
+        self.plugin_version = "1.1"
 
         self.q3mapTranslationMapNamesQ3 = ["q3dm0", "q3dm1", "q3dm2", "q3dm3", "q3dm4", "q3dm5", "q3dm6", "q3dm7", "q3dm8", "q3dm9", "q3dm10", "q3dm11", "q3dm12", "q3dm13", "q3dm14", "q3dm15", "q3dm16", "q3dm17", "q3dm18", "q3dm19", "q3tourney1", "q3tourney2", "q3tourney3", "q3tourney4", "q3tourney5", "q3tourney6", "q3ctf1", "q3ctf2", "q3ctf3", "q3ctf4"]
         self.q3mapTranslationMapNamesQL = ["introduction", "arenagate", "spillway", "hearth", "eviscerated", "forgotten", "campgrounds", "retribution", "brimstoneabbey", "heroskeep", "namelessplace", "chemicalreaction", "dredwerkz", "lostworld", "grimdungeons", "demonkeep", "cobaltstation", "longestyard", "spacechamber", "terminalheights", "powerstation", "provinggrounds", "hellsgate", "verticalvengeance", "fatalinstinct", "beyondreality", "duelingkeeps", "troubledwaters", None, "spacectf"]
@@ -18,13 +18,13 @@ class q3resolver(minqlx.Plugin):
     def handle_vote_called(self, caller, vote, args):
         if vote.lower() == "map":
             for index, item in enumerate(self.q3mapTranslationMapNamesQ3):
-                if args.lower() == item:
+                theArgs = args.lower().split()
+                if theArgs[0] == item:
                     q3mapName = str(self.q3mapTranslationMapNamesQ3[index])
                     q3longName = str(self.q3mapTranslationLongNamesQ3[index])
                     qLmapName = str(self.q3mapTranslationMapNamesQL[index])
                     qLlongName = str(self.q3mapTranslationLongNamesQL[index])
                     caller.tell("^1Q3A^7: Resolving Q3A map: ^1{}^7 (name: ^4{}^7) to QL map: ^4{}^7.".format(q3mapName, q3longName, qLlongName))
-                    theArgs = args.lower().split()
                     if len(theArgs) == 2:
                         # There's a factory appended to the map name, so re-call the vote with the specified factory.
                         minqlx.client_command(caller.id, "callvote map {} {}".format(qLmapName, theArgs[1]))
