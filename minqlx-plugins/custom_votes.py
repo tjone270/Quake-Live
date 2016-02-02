@@ -28,7 +28,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_disableCvarVoting", "0")
         self.set_cvar_once("qlx_cvarVotePermissionRequired", "3")
         
-        self.plugin_version = "1.8"
+        self.plugin_version = "1.9"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
@@ -415,6 +415,24 @@ class custom_votes(minqlx.Plugin):
                 return minqlx.RET_STOP_ALL
             else:
                 caller.tell("^2/cv rgdamage [80/100]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "runes":
+            # enables the '/cv runes on/off' command
+            if self.game.state != "warmup":
+                caller.tell("Voting to alter runes is only allowed during the warm-up period.")
+                return minqlx.RET_STOP_ALL
+            
+            if args.lower() == "off":
+                self.callvote("set g_runes 0; map_restart", "runes: off")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            elif args.lower() == "on":
+                self.callvote("set g_runes 1; map_restart", "runes: on")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv runes [on/off]^7 is the usage for this callvote command.")
                 return minqlx.RET_STOP_ALL
 
         if vote.lower() == "cvar":
