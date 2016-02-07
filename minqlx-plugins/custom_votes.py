@@ -11,6 +11,10 @@ The following cvars are used on this plugin:
     qlx_cvarVotePermissionRequired: Required permission level to call a CVAR vote. Default: 3
 """
 
+#
+#    List of custom votes this plugin provides: http://tomtecsolutions.com.au/thepurgery/index.php?title=Special_votes
+#
+
 import minqlx
 
 class custom_votes(minqlx.Plugin):
@@ -28,7 +32,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_disableCvarVoting", "0")
         self.set_cvar_once("qlx_cvarVotePermissionRequired", "3")
         
-        self.plugin_version = "2.0"
+        self.plugin_version = "2.1"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
