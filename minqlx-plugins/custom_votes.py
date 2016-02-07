@@ -28,7 +28,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_disableCvarVoting", "0")
         self.set_cvar_once("qlx_cvarVotePermissionRequired", "3")
         
-        self.plugin_version = "1.9"
+        self.plugin_version = "2.0"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
@@ -375,28 +375,28 @@ class custom_votes(minqlx.Plugin):
             self.msg("{}^7 called a vote.".format(caller.name))
             return minqlx.RET_STOP_ALL
 
-        if vote.lower() == "lgdamage":
-            # enables the '/cv lgdamage [6/7]' command
-            if args.lower() == "6":
-                self.callvote("set g_damage_lg 6; set g_knockback_lg 1.75", "^7Lightning gun^3 damage: 6")
+        if vote.lower() == "lgammo":
+            # enables the '/cv lgammo [150/200]' command
+            if args.lower() == "150":
+                self.callvote("set g_startingAmmo_lg 150", "Lightning gun ammo: 150")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
-            if args.lower() == "7":
-                self.callvote("set g_damage_lg 7; set g_knockback_lg 1.50", "^7Lightning gun^3 damage: 7 (with appropriate knockback)")
+            if args.lower() == "200":
+                self.callvote("set g_startingAmmo_lg 200", "Lightning gun ammo: 200")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             else:
-                caller.tell("^2/cv lgdamage [6/7]^7 is the usage for this callvote command.")
+                caller.tell("^2/cv lgammo [150/200]^7 is the usage for this callvote command.")
                 return minqlx.RET_STOP_ALL
 
         if vote.lower() == "lgdamage":
             # enables the '/cv lgdamage [6/7]' command
             if args.lower() == "6":
-                self.callvote("set g_damage_lg 6; set g_knockback_lg 1.75", "^7Lightning gun^3 damage: 6")
+                self.callvote("set g_damage_lg 6; set g_knockback_lg 1.75", "^7Lightning gun damage: 6")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             if args.lower() == "7":
-                self.callvote("set g_damage_lg 7; set g_knockback_lg 1.50", "^7Lightning gun^3 damage: 7 (with appropriate knockback)")
+                self.callvote("set g_damage_lg 7; set g_knockback_lg 1.50", "^7Lightning gun damage: 7 (with appropriate knockback)")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             else:
