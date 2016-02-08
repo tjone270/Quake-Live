@@ -25,7 +25,7 @@ class clanspinner(minqlx.Plugin):
         self.pauseAnimation = True
         self.initialise()
 
-        self.plugin_version = "0.8"
+        self.plugin_version = "0.9"
 
     def cmd_clanspinner(self, player, msg, channel):
         if len(msg) <= 1:
@@ -45,18 +45,21 @@ class clanspinner(minqlx.Plugin):
             self.initialise()
 
     def handle_console_print(self, text):
+        # Detect the map is changing and pause the for-loop, and clear the clanMembers list so handle_player_loaded can repopulate it.
         if "==== ShutdownGame ====" in text:
             self.pauseAnimation = True
             self.clanMembers = []
         
     def handle_plugin_unload(self, plugin):
+        # Stop the while true loop
         if plugin == "clanspinner":
             self.keep_going = False
 
+        # Restore original clan tags
         for p in self.clanMembers:
             p.clan = self.clanTag
             
-    @minqlx.next_frame
+    @minqlx.next_frame # Runs on the next frame so plugins like clan.py can attach the clan first.
     def handle_player_loaded(self, player):
         if player.clan == self.clanTag:
             self.clanMembers.append(player)
