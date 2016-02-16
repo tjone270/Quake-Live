@@ -19,7 +19,7 @@ class votestats(minqlx.Plugin):
 
         self.set_cvar_once("qlx_privatiseVotes", "0")
 
-        self.plugin_version = "1.6"
+        self.plugin_version = "1.7"
 
         self.has_voted = []
 
@@ -34,17 +34,21 @@ class votestats(minqlx.Plugin):
         return minqlx.RET_STOP_ALL
     
     def process_vote(self, player, yes):
-        if (self.get_cvar("qlx_privatiseVotes", bool)):
+        if self.get_cvar("qlx_privatiseVotes", bool):
             return
 
         if player in self.has_voted:
             return
+
+        if not self.get_cvar("g_allowSpecVote", bool):
+            if player.team == "spectator":
+                return
         
         if yes:
             word = "^2yes"
         else:
             word = "^1no"
-
+        
         for p in self.players():
             if self.db.get_flag(p, "votestats:votes_enabled", default=True):
                 p.tell("{}^7 voted {}^7.".format(player.name, word))
