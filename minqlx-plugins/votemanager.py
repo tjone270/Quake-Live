@@ -20,7 +20,7 @@ class votemanager(minqlx.Plugin):
         
         self.has_voted = []
 
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.3"
 
     def handle_vote_called(self, caller, vote, args):
         self.has_voted.append(caller)
@@ -39,6 +39,7 @@ class votemanager(minqlx.Plugin):
                     word = "vetoed"
                     
                 self.msg("{}^7 {} the vote.".format(player.name, word))
+                return minqlx.RET_STOP_ALL
 
         self.has_voted.append(player)
         
