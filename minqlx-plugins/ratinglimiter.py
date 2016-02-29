@@ -45,7 +45,7 @@ class ratinglimiter(minqlx.Plugin):
             js = res.json()
             gt = self.game.type_short
             if "players" not in js:
-                raise "Strange data was retrieved, idk what the fuck's going on, leave me alone."
+                raise "Strange data was recieved..."
             for p in js["players"]:
                 if int(p["steamid"]) == player.steam_id and gt in p:
                     self.process_player(player, p[gt]['elo'], p[gt]['games'])
