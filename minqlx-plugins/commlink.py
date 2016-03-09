@@ -53,7 +53,7 @@ class commlink(minqlx.Plugin):
         self.identity = ("#" + self.get_cvar("qlx_commlinkIdentity"))
         self.clientName = self.get_cvar("qlx_commlinkServerName")
 
-        self.add_command(("world", "say_world"), self.send_commlink_message, priority=minqlx.PRI_LOWEST, usage="message")
+        self.add_command(("world", "say_world"), self.send_commlink_message, priority=minqlx.PRI_LOWEST, usage="<message>")
         self.add_command("tomtec_versions", self.cmd_showversion)
         self.add_command("commlink", self.cmd_toggle_commlink)
         
