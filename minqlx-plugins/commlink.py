@@ -23,8 +23,14 @@
 """
 
     Set the following cvars:
-        qlx_commlinkIdentity            - Set this cvar in your server.cfg, it needs to be the same for all your servers. If someone's using the same identity, there'll be crosstalk across the servers.
-        qlx_commlinkServerName          - Make this a 12 character or less identifier that will appear when messages from the server appear on other servers in the same identity group.
+        qlx_commlinkIdentity                        - Set this cvar in your server.cfg, it needs to be the same for all your servers. If someone's using the same identity, there'll be crosstalk across the servers.
+            No Default. This cvar MUST be set.
+        qlx_commlinkServerName                      - Make this a 12 character or less identifier that will appear when messages from the server appear on other servers in the same identity group.
+            Default: Server-XXXX (where X = random number)
+        qlx_enableConnectDisconnectMessages         - Enables the 'Player connected.' and 'Player disconnected.' messages in CommLink.
+            Default: 1
+        qlx_enableCommlinkMessages                  - Enables CommLink message reception for all players. If this is set to 0, players have to manually enable CommLink with the !commlink command.
+            Default: 1
         
 """
 
@@ -48,6 +54,8 @@ class commlink(minqlx.Plugin):
         self.add_hook("game_countdown", self.game_countdown)
         
         self.set_cvar_once("qlx_commlinkServerName", "Server-{}".format(random.randint(1000, 9999)))
+        self.set_cvar_once("qlx_enableConnectDisconnectMessages", "1")
+        self.set_cvar_once("qlx_enableCommlinkMessages", "1")
 
         self.server = "irc.tomtecsolutions.com.au"
         self.identity = ("#" + self.get_cvar("qlx_commlinkIdentity"))
@@ -62,14 +70,14 @@ class commlink(minqlx.Plugin):
         self.logger.info("Connecting to {}...".format(self.server))
         self.msg("Connecting to ^3CommLink^7 server...")
 
-        self.plugin_version = "1.0"
+        self.plugin_version = "1.1"
         
     def game_countdown(self):
         if self.game.type_short == "duel":
             self.msg("^3CommLink^7 message reception has been disabled during your Duel.")
             
     def cmd_toggle_commlink(self, player, msg, channel):
-        flag = self.db.get_flag(player, "commlink:enabled", default=True)
+        flag = self.db.get_flag(player, "commlink:enabled", default=(self.get_cvar("qlx_enableCommlinkMessages", bool)))
         self.db.set_flag(player, "commlink:enabled", not flag)
         if flag:
             word = "disabled"
@@ -84,20 +92,20 @@ class commlink(minqlx.Plugin):
             self.irc.stop()
 
     def handle_player_connect(self, player):
-        if self.irc:
+        if self.irc and self.get_cvar("qlx_enableConnectDisconnectMessages", bool):
             self.irc.msg(self.identity, self.translate_colors("{} connected.".format(player.name)))
 
     def handle_player_disconnect(self, player, reason):
         if reason and reason[-1] not in ("?", "!", "."):
             reason = reason + "."
         
-        if self.irc:
+        if self.irc and self.get_cvar("qlx_enableConnectDisconnectMessages", bool):
             self.irc.msg(self.identity, self.translate_colors("{} {}".format(player.name, reason)))
         
     def handle_msg(self, irc, user, channel, msg):
         def broadcast_commlink(msg):
             for p in self.players():
-                if self.db.get_flag(p, "commlink:enabled", default=True):
+                if self.db.get_flag(p, "commlink:enabled", default=(self.get_cvar("qlx_enableCommlinkMessages", bool))):
                     p.tell("[CommLink] ^4{}^7:^3 {}".format(user[0], " ".join(msg)))
 
         if not msg:
