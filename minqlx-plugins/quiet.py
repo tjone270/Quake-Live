@@ -18,22 +18,23 @@ class quiet(minqlx.Plugin):
         self.add_command("tomtec_versions", self.cmd_showversion)
 
         self.set_cvar_once("qlx_permitChatDuringWarmup", "1")
+        self.set_cvar_once("qlx_permLevelRequiredToTalk", "4")
         
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.3"
 
 
     def handle_client_command(self, player, cmd):
         if self.game.state != "warmup":
             if (cmd.lower().startswith("say ") or cmd.lower().startswith("say_team ") or cmd.lower().startswith("tell ")):
                 ident = player.steam_id
-                if not (player.privileges in ["admin", "mod"] or self.db.has_permission(ident, 4)):
+                if not (player.privileges in ["admin", "mod"] or self.db.has_permission(ident, self.get_cvar("qlx_permLevelRequiredToTalk", int))):
                     player.tell("Chat is disabled during the match.")
                     return minqlx.RET_STOP_ALL
         else:
             if not (self.get_cvar("qlx_permitChatDuringWarmup", bool)):
                 if (cmd.lower().startswith("say ") or cmd.lower().startswith("say_team ") or cmd.lower().startswith("tell ")):
                     ident = player.steam_id
-                    if not (player.privileges in ["admin", "mod"] or self.db.has_permission(ident, 4)):
+                    if not (player.privileges in ["admin", "mod"] or self.db.has_permission(ident, self.get_cvar("qlx_permLevelRequiredToTalk", int))):
                         player.tell("Chat is disabled during the match.")
                         return minqlx.RET_STOP_ALL
 
