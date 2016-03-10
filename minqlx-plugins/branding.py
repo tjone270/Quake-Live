@@ -43,7 +43,7 @@ class branding(minqlx.Plugin):
         self.set_cvar_once("qlx_brandingAppendGameType", "0")
         self.set_cvar_once("qlx_rainbowBrandName", "0")
         
-        self.plugin_version = "1.8"
+        self.plugin_version = "1.9"
 
         self.playerConnectedYetList = []
         
@@ -81,8 +81,8 @@ class branding(minqlx.Plugin):
             res = ""
             for i in range(len(map_name)):
                 res += "^{}{}".format(next(r), map_name[i])
-
-            minqlx.set_configstring(3, res)
+            cs3 = self.clean_text(res)
+            minqlx.set_configstring(3, cs3)
 
     def player_connect(self, player):
         if self.get_cvar("qlx_connectMessage") != None:
