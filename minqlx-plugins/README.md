@@ -74,6 +74,14 @@ CVARs:
         Default: 3
 ```
 
+### `disabled_commands.py`
+Displays a message when a command listed in the disabled commands list is run, and stops the command from running in the first place.
+```
+Guide:
+    Open the plugin up in an editor and edit the DISABLED_COMMANDS array, adding commands to the list (omitting the !).
+    Save and load to a minqlx-enabled Quake server and you'll find the commands in the array no longer run.
+```
+
 ### `ips.py`
 Shows player IP address history from the Redis database. IPs are recorded on player connect. The plugin does not have to be loaded to record IPs.
 ```
