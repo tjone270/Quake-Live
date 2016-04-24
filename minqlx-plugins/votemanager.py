@@ -6,6 +6,9 @@
 """
 This plugin works best when the player isn't a QLDS mod/admin, otherwise it can only be
 used to give the impression that a QLDS mod/admin voted.
+
+You can also protect players with permission level >= LEVEL from getting kickvoted
+by setting: qlx_protectedPerm "LEVEL"
 """
 
 import minqlx
@@ -18,11 +21,23 @@ class votemanager(minqlx.Plugin):
 
         self.add_command("tomtec_versions", self.cmd_showversion)
         
+        self.set_cvar_once("qlx_protectedPerm", "1")
+        
         self.has_voted = []
 
         self.plugin_version = "1.3"
 
     def handle_vote_called(self, caller, vote, args):
+        if vote.lower() in ["kick", "clientkick"]:
+            try:
+                guy = self.player(int(args))
+                perm = self.db.get_permission(guy)
+                if perm >= self.get_cvar("qlx_protectedPerm", int):
+                    caller.tell("{}^7 has permission level ^1{}^7 and will not be kicked.".format(guy.name, perm))
+                    return minqlx.RET_STOP_ALL
+            except:
+                return
+            
         self.has_voted.append(caller)
                 
     def handle_vote(self, player, yes):
