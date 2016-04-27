@@ -24,7 +24,7 @@ class votemanager(minqlx.Plugin):
         
         self.has_voted = []
 
-        self.plugin_version = "1.4"
+        self.plugin_version = "1.3"
 
     def handle_vote_called(self, caller, vote, args):
         if vote.lower() in ["clientkick", "kick"]:
@@ -35,7 +35,7 @@ class votemanager(minqlx.Plugin):
                 
             perm = self.db.get_permission(guy)
             if perm >= self.get_cvar("qlx_protectedPerm", int):
-                caller.tell("{}^7 has permission level ^4{}^7 and will not be kicked.".format(guy.name, perm))
+                caller.tell("{}^7 has permission level ^1{}^7 and will not be kicked.".format(guy.name, perm))
                 return minqlx.RET_STOP_ALL
             
         self.has_voted.append(caller)
