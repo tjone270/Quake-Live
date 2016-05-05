@@ -35,15 +35,11 @@ class branding(minqlx.Plugin):
         
         self.add_command("tomtec_versions", self.cmd_showversion)
 
-        self.set_cvar_once("qlx_serverBrandName", "Branding isn't set up!")
-        self.set_cvar_once("qlx_serverBrandTopField", "Set these cvars: 'qlx_serverBrandName', 'qlx_serverBrandTopField', 'qlx_serverBrandBottomField'.")
-        self.set_cvar_once("qlx_serverBrandBottomField", "Tip: ^1C^2o^3l^4o^5u^6r ^1v^2a^3l^4u^5e^6s ^1a^2r^3e ^1s^2u^3p^4p^5o^6r^1t^2e^3d^4.")
-
         self.set_cvar_once("qlx_brandingPrependMapName", "0")
         self.set_cvar_once("qlx_brandingAppendGameType", "0")
         self.set_cvar_once("qlx_rainbowBrandName", "0")
         
-        self.plugin_version = "2.0"
+        self.plugin_version = "2.1"
 
         self.playerConnectedYetList = []
         
@@ -57,15 +53,18 @@ class branding(minqlx.Plugin):
             minqlx.set_configstring(3, topBranding + " " + self.game.type)
         else:
             minqlx.set_configstring(3, topBranding)
-            
-        cs = self.game.map_subtitle1
-        if cs:
-            cs += " - "
-        minqlx.set_configstring(678, cs + (self.get_cvar("qlx_serverBrandTopField")))
-        cs = self.game.map_subtitle2
-        if cs:
-            cs += " - "
-        minqlx.set_configstring(679, cs + (self.get_cvar("qlx_serverBrandBottomField")))
+
+        if self.get_cvar("qlx_serverBrandTopField") != None:
+            cs = self.game.map_subtitle1
+            if cs:
+                cs += " - "
+            minqlx.set_configstring(678, cs + (self.get_cvar("qlx_serverBrandTopField")))
+
+        if self.get_cvar("qlx_serverBrandBottomField") != None:
+            cs = self.game.map_subtitle2
+            if cs:
+                cs += " - "
+            minqlx.set_configstring(679, cs + (self.get_cvar("qlx_serverBrandBottomField")))
 
         if self.get_cvar("qlx_rainbowBrandName", bool):
             # Thanks Mino for this bit!
@@ -81,6 +80,7 @@ class branding(minqlx.Plugin):
             res = ""
             for i in range(len(map_name)):
                 res += "^{}{}".format(next(r), map_name[i])
+
             minqlx.set_configstring(3, res)
 
     def player_connect(self, player):
