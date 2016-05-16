@@ -16,7 +16,7 @@ class onjoin(minqlx.Plugin):
         self.add_command(("onjoin", "oj"), self.cmd_onjoin, usage="<message>", client_cmd_perm=0)
         
         self.add_command("tomtec_versions", self.cmd_showversion)
-        self.plugin_version = "1.0"
+        self.plugin_version = "1.1"
 
 
     def cmd_onjoin(self, player, msg, channel):
@@ -29,14 +29,14 @@ class onjoin(minqlx.Plugin):
                 player.tell("Your onjoin message has been removed.")
                 return minqlx.RET_STOP_ALL
 
-        if len(name.encode()) > 150:
+        if len(msg[1:].encode()) > 150:
             player.tell("That message is too long. Character Limit: 150.")
             return minqlx.RET_STOP_ALL
-                   
-        self.db[onjoin_key] = str(msg[1:])
 
+        self.db[onjoin_key] = str(msg[1:])
         player.tell("That message has been saved. To make me forget about it, a simple ^4{}onjoin^7 will do it.".format(self.get_cvar("qlx_commandPrefix")))
-        
+        return minqlx.RET_STOP_ALL
+    
     def handle_player_connect(self, player):
         onjoin_key = _onjoin_key.format(player.steam_id)
         if onjoin_key in self.db:
