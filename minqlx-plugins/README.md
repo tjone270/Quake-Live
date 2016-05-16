@@ -102,15 +102,11 @@ Commands:
     !ip <id>           - List IP addresses used by the player.
 ```
 
-### `locations.py`
-Provides an approximate geo-location of the specified player based off of IP address.
+### `onjoin.py`
+Displays a saved message from a player when they connect to a server.
 ```
 Commands:
-    !loc <id>                                        - Display the approximate location of the player.
-
-CVARs:
-    qlx_locationCommandPermissionRequired            - Required permission level to run the !loc command.
-        Default: 1
+    !onjoin <message>           - Set an onjoin message (run without arguments to clear message).
 ```
 
 ### `q3resolver.py`
