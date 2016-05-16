@@ -10,6 +10,19 @@ Commands:
     !clearaliases         - Clear all player aliases from the database.
 ```
 
+### `autorestart.py`
+Automatically runs the `quit` command on a server at XX:XX time, if no-one's connected to the server.
+If you use Supervisor (process manager) with the `autorestart` parameter, the server will automatically relaunch after the `quit` command runs.
+```
+CVARs:
+    qlx_autoRestartTime         - The time for the server to quit automatically in 24-hour time syntax.
+        Default: 00:00
+
+Guide:
+    autorestart.py requires the 'schedule' python library to be installed. You can install it with the following command:
+        sudo python3.5 -m pip install schedule
+```
+
 ### `branding.py`
 Replaces in-game messages/text with custom text set in special CVARs.
 ```
