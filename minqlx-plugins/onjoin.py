@@ -11,7 +11,7 @@ _onjoin_key = "minqlx:players:{}:onjoin_message"
 
 class onjoin(minqlx.Plugin):
     def __init__(self):
-        self.add_hook("player_connect", self.handle_player_connect, priority=minqlx.PRI_LOWEST)
+        self.add_hook("player_loaded", self.handle_player_loaded, priority=minqlx.PRI_LOWEST)
 
         self.add_command(("onjoin", "oj"), self.cmd_onjoin, usage="<message>", client_cmd_perm=0)
         
@@ -28,19 +28,20 @@ class onjoin(minqlx.Plugin):
                 del self.db[onjoin_key]
                 player.tell("Your onjoin message has been removed.")
                 return minqlx.RET_STOP_ALL
-
-        if len(msg[1:].encode()) > 150:
+        message = str(" ".join(msg[1:]))
+        
+        if len(message.encode()) > 150:
             player.tell("That message is too long. Character Limit: 150.")
             return minqlx.RET_STOP_ALL
 
-        self.db[onjoin_key] = str(msg[1:])
+        self.db[onjoin_key] = message
         player.tell("That message has been saved. To make me forget about it, a simple ^4{}onjoin^7 will do it.".format(self.get_cvar("qlx_commandPrefix")))
         return minqlx.RET_STOP_ALL
     
-    def handle_player_connect(self, player):
+    def handle_player_loaded(self, player):
         onjoin_key = _onjoin_key.format(player.steam_id)
         if onjoin_key in self.db:
-            onjoin_message = self.db[name_key]
+            onjoin_message = self.db[onjoin_key]
             self.msg("{}^7: ^2{}^7".format(player.name, onjoin_message))
             self.talk_beep()
 
