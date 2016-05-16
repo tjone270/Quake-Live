@@ -44,6 +44,9 @@ class branding(minqlx.Plugin):
         self.playerConnectedYetList = []
         
     def brand_map(self):
+        if self.get_cvar("qlx_serverBrandName") == None:
+            self.set_cvar("qlx_serverBrandName", self.game.map_title)
+            
         if self.get_cvar("qlx_brandingPrependMapName", bool):
             topBranding = self.game.map_title + " " + self.get_cvar("qlx_serverBrandName")
         else:
