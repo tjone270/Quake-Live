@@ -45,7 +45,7 @@ clear
 echo "Installing Supervisor..."
 easy_install supervisor
 clear
-# this is now done in the quakeconfig.sh script, no need to create a config we won't be using.
+# this is now done in the deploy.sh script, no need to create a config we won't be using.
 #echo "Configuring Supervisor..."
 #echo_supervisord_conf > /etc/supervisord.conf
 #echo -e "\n[program:quakelive]\ncommand=/home/qlserver/quakestart.sh %(process_num)s\nuser=qlserver\nprocess_name=qzeroded_%(process_num)s\nnumprocs=10\nautorestart=true" >> /etc/supervisord.conf
