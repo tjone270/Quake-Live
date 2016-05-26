@@ -102,7 +102,7 @@
 |serverinfo|Displays all CVARs with flag 64 set. These CVARs can be queried via the Valve source protocol from the server's `net_port`.|`serverinfo`|:white_check_mark:|:white_check_mark:|
 |set|Sets a CVAR with no special flags set.|`set <cvar> <value>`|:white_check_mark:|:white_check_mark:|
 |seta|Sets a CVAR with the archive flag set.|`seta <cvar> <value>`|:white_check_mark:|:white_check_mark:|
-|setenv
+|setenv|Mostly used for setting/controlling Voodoo environment variables. Very likely unused and won't do anything now.|`setenv`|:white_check_mark:|:x:
 |shaderlist
 |showip|Display current IP address(es).|`showip`|:white_check_mark:|:x:
 |s_info|Display sound/audio system information.|`s_info`|:white_check_mark:|:x:
