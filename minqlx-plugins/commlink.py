@@ -70,7 +70,7 @@ class commlink(minqlx.Plugin):
         self.logger.info("Connecting to {}...".format(self.server))
         self.msg("Connecting to ^3CommLink^7 server...")
 
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.3"
         
     def game_countdown(self):
         if self.game.type_short == "duel":
@@ -93,6 +93,7 @@ class commlink(minqlx.Plugin):
 
     def handle_player_connect(self, player):
         if self.irc and self.get_cvar("qlx_enableConnectDisconnectMessages", bool):
+            if str(player.steam_id)[0] == "9": return
             self.irc.msg(self.identity, self.translate_colors("{} connected.".format(player.name)))
 
     def handle_player_disconnect(self, player, reason):
@@ -100,6 +101,7 @@ class commlink(minqlx.Plugin):
             reason = reason + "."
         
         if self.irc and self.get_cvar("qlx_enableConnectDisconnectMessages", bool):
+            if str(player.steam_id)[0] == "9": return
             self.irc.msg(self.identity, self.translate_colors("{} {}".format(player.name, reason)))
         
     def handle_msg(self, irc, user, channel, msg):
