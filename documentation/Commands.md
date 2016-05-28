@@ -7,16 +7,8 @@
 |alias
 |arena
 |astatus
-|-attack
-|+attack
-|-back
-|+back
 |bind
 |bindlist
-|-button2
-|+button2
-|-button3
-|+button3
 |centerview|Centers the vertical view pitch of the player.|`centerview`|:white_check_mark:|:x:|
 |changeVectors
 |clear|Clear the console scrollback.|`clear`|:white_check_mark:|:x:|
@@ -27,25 +19,23 @@
 |clientviewprofile
 |cmd
 |cmdlist|Alias of `listcmds`|
-|condump
-|configstrings
-|connect
+|condump|Dump all buffered text in the console to a file (with LF line endings).|`condump <file>`|:white_check_mark:|:x:
+|configstrings|Lists current config-strings from the server in index order.|`configstrings`|:white_check_mark:|:x:
+|connect|Connect to a server. Accepts domains and IP addresses (requires port).|`connect <ip/domain>:<port>`|:white_check_mark:|:x:
 |connect_lobby
 |cvarAdd|Adds/subtracts an int/float stored in a CVAR.|Add:`cvaradd s_volume +0.05`  Subtract:`cvaradd s_volume -0.05`|:white_check_mark:|:white_check_mark:
 |cvarlist|Alias of `listcvars`|
 |cvarMult|Multiplies an int/float stored in a CVAR.|`cvarmult s_volume 5`|:white_check_mark:|:white_check_mark:
 |cvar_restart|Restarts the CVAR subsystem. Note that this clears most changes to CVARs.|`cvar_restart`|:white_check_mark:|:white_check_mark:|
-|demo
+|demo|Play a demo file.|`demo <file>`|:white_check_mark:|:x:
 |devmap|Loads a map in development/cheats mode. Will append a `cheats` tag to your server while in devmap mode.|`devmap <map> [factory]`|:white_check_mark:|:white_check_mark:|
-|dir
+|dir|List the contents of a directory.|`dir <directory> [extension]`|:white_check_mark:|:white_check_mark:|
 |disconnect|Disconnect from the current server.|`disconnect`|:white_check_mark:|:x:|
-|dumpuser|Prints the player's `userinfo` to the console.|`dumpuser <player name>`
-|echo
+|dumpuser|Prints the player's `userinfo` to the console.|`dumpuser <player name>`|:white_check_mark:|:white_check_mark:|
+|echo|Prints text to console.|`echo <text>`|:white_check_mark:|:white_check_mark:
 |exec|Executes a configuration file.|`exec <config file>`|:white_check_mark:|:white_check_mark:|
 |fdir
 |find
-|-forward
-|+forward
 |fs_openedList
 |fs_referencedList
 |gfxinfo
@@ -53,34 +43,18 @@
 |in_restart|Restarts the game input subsystem.|`in_restart`|:white_check_mark:|:x:
 |kick|Kick a player by name.|`kick <player name>`|:white_check_mark:|:white_check_mark:|
 |killserver|Unload the currently loaded map and put the server in a 'map-less' state (does not exit the process but shuts down the game, further `map` commands can be run to recover the server)|`killserver`|:white_check_mark:|:white_check_mark:
-|-left
-|+left
 |listcmds|Lists all commands with optional filtering.|`listcmds [filter]`|:white_check_mark:|:white_check_mark:
 |listcvars|Lists all CVARs with optional filtering.|`listcvars [filter]`|:white_check_mark:|:white_check_mark:
 |ListInputDevices|Lists all input devices.|`listinputdevices`|:white_check_mark:|:x:
-|-lookdown
-|+lookdown
-|-lookup
-|+lookup
 |map|Loads a map normally.|`map <map name> [factory]`|:white_check_mark:|:white_check_mark:|
 |map_restart|Reloads the map, it's entities and respawns all players.|`map_restart`|
 |meminfo|Shows memory allocation information.|`meminfo`|:white_check_mark:|:white_check_mark:|
 |messagemode|Calls the `say` chat dialog.|`messagemode`|:white_check_mark:|:x:
 |messagemode2|Calls the `say_team` chat dialog.|`messagemode`|:white_check_mark:|:x:
 |midiinfo|Display MIDI device information.|`midiinfo`|:white_check_mark:|:x:
-|-mlook
-|+mlook
 |model|Get/set the current player model/skin.|`model [model/skin]`|:white_check_mark:|:x:
 |modelist|Display a list of monitor configurations that `r_mode` will accept.|`modelist`|:white_check_mark:|:x:
 |modellist|A list of all model files currently loaded/in use.|`modellist`|:white_check_mark:|:x:
-|-movedown
-|+movedown
-|-moveleft
-|+moveleft
-|-moveright
-|+moveright
-|-moveup
-|+moveup
 |music|Plays a looping music track in-game.|`music <path to music file> [loop file]`|:white_check_mark:|:x:
 |net_restart|Restarts the networking subsystem.|`net_restart`|:white_check_mark:|:x:
 |path|Show the current paths in the search path and whether or not those files are pure. Also show currently opened files (handles).|`path`|:white_check_mark:|:white_check_mark:
@@ -93,8 +67,6 @@
 |reload_factories|Reloads all the factories (will read in new factories) from pak00.pk3/scripts/factories.txt and scripts/*.factories|`reload_factories`|:white_check_mark:|:white_check_mark:|
 |reload_mappool|Reloads the map-pool file specified in the `sv_mappoolFile` CVAR.|`reload_mappool`|:white_check_mark:|:white_check_mark:|
 |reset|Resets a CVAR to it's initial value.|`reset <cvar>`|:white_check_mark:|:white_check_mark:|
-|-right
-|+right
 |say|Send a message from the client/server. Server messages are prefixed with `Server: `, client messages are prefixed with `PlayerName: ^2 `|`say <message>`|:white_check_mark:|:white_check_mark:
 |screenshot|Write a screenshot in TGA format.|`screenshot [file name]`|:white_check_mark:|:x:
 |screenshotJPEG|Write a screenshot in JPEG format.|`screenshotjpeg [file name]`|:white_check_mark:|:x:
@@ -109,8 +81,6 @@
 |skinlist|List loaded 'skins' for the currently selected player model.|`skinlist`|:white_check_mark:|:x:
 |s_list|List all currently loaded/buffered sound files.|`s_list`|:white_check_mark:|:x:
 |snd_restart|Restarts the audio subsystem.|`snd_restart`|:white_check_mark:|:x:
-|-speed
-|+speed
 |s_stop|Stop playing the looping music track.|`s_stop`|:white_check_mark:|:x:
 |startRandomMap|Runs a random map listed in the map-pool file (with the factory also specified). By default this runs on server startup unless specified otherwise.|`startRandomMap`|:white_check_mark:|:white_check_mark:|
 |status|List all clients, and their Client IDs, scores, latency in milliseconds (ping), in-game name, lastmsg, IP address, QPort, player rate and Steam64 ID.|`status`|:white_check_mark:|:white_check_mark:|
@@ -118,27 +88,23 @@
 |steam_subscribeugc
 |steam_unsubscribeugc
 |stoprecord|Stops recording a demo.|`stoprecord`|:white_check_mark:|:x:
-|-strafe
-|+strafe
-|toggle
-|toggleconsole
+|toggle|Inverts a CVAR's boolean value.|`toggle <cvar>`|:white_check_mark:|:white_check_mark:
+|toggleconsole|Toggles the console into/out of view. Designed for binding.|`toggleconsole`|:white_check_mark:|:x:
 |touchFile
 |unalias
 |unaliasall
-|unbind
-|unbindall
+|unbind|Removes a single bind on a key.|`unbind <key>`|:white_check_mark:|:x:
+|unbindall|Removes all set binds. Usually used within `repconfig.cfg`/`qzconfig.cfg`.|`unbindall`|:white_check_mark:|:x:
 |userinfo
 |vid_restart|Restarts the graphics subsystem.|`vid_restart`|:white_check_mark:|:x:
-|-voice
-|+voice
-|vstr
-|wait
-|web_changeHash
-|web_clearCache
-|web_hideBrowser
+|vstr|Executes commands within a CVAR.|`vstr <cvar>`|:white_check_mark:|:white_check_mark:
+|wait|Waits for one frame (or specified frames) before continuing.|`wait [frames]`|:white_check_mark:|:x:
+|web_changeHash|?|`web_changeHash <hash>`|:white_check_mark:|:x:
+|web_clearCache|Clears the Awesomium browser web-cache.|`web_clearcache`|:white_check_mark:|:x:
+|web_hideBrowser|Hides the web-based UI.|`web_hidebrowser`|:white_check_mark:|:x:
 |web_reload|For development use only. Will trap your client in the old Quake 3 Arena menu system, requires a relaunch to get back to normal functionality|`web_reload`|:white_check_mark:|:x:
-|web_showBrowser
-|web_showError
+|web_showBrowser|Shows the web-based UI (even when in a match).|`web_showbrowser`|:white_check_mark:|:x:
+|web_showError|Displays a error message in the web-based UI.|`web_showerror <error message>`|:white_check_mark:|:x:|
 |writeClientConfig
 |writeconfig
 
