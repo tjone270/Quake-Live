@@ -3,28 +3,28 @@
 ## Commands (regular)
 | Command | Description | Syntax | Client | Server |
 | :------ | :---------: | ------ | :----: | :----: |
-|aclear
-|alias
-|arena
-|astatus
-|bind
-|bindlist
+|aclear|?
+|alias|Create a command alias.|`alias <alias name> <command to alias>`|:white_check_mark:|:x:
+|arena|Load a sp_arena file.|`arena <arena file>`|:white_check_mark:|:white_check_mark:
+|astatus|?
+|bind|Bind a key to a command/alias.|`bind <key> <command/alias>`|:white_check_mark:|:x:
+|bindlist|List all key binds currently set/assigned.|`bindlist`|:white_check_mark:|:x:
 |centerview|Centers the vertical view pitch of the player.|`centerview`|:white_check_mark:|:x:|
-|changeVectors
+|changeVectors|Prints out a table from the current statistics for development usage.|`changevectors`|:white_check_mark:|:x:
 |clear|Clear the console scrollback.|`clear`|:white_check_mark:|:x:|
 |clearcvar|Clears the specified CVAR's value, setting it to Null ("")|`clearcvar <cvar>`|:white_check_mark:|:white_check_mark:|
-|clientfriendinvite
-|clientinfo
+|clientfriendinvite|Send a Steam friend invite to the specified player.|`clientfriendinvite <client id>`|:white_check_mark:|:x:
+|clientinfo|Prints your state, current server if any and userinfo strings.|`clientinfo`|:white_check_mark:|:x:
 |clientkick|Kicks a player/bot by client ID|`clientkick <client id>`|:white_check_mark:|:white_check_mark:
-|clientviewprofile
-|cmd
-|cmdlist|Alias of `listcmds`|
+|clientviewprofile|Opens the Steam overlay with the Steam profile of the player specified in a browser window.|`clientviewprofile <client id>`|:white_check_mark:|:x:
+|cmd|Executes a command.|`cmd <command>`|:white_check_mark:|:x:
+|cmdlist|Alias of `listcmds`.|
 |condump|Dump all buffered text in the console to a file (with LF line endings).|`condump <file>`|:white_check_mark:|:x:
 |configstrings|Lists current config-strings from the server in index order.|`configstrings`|:white_check_mark:|:x:
 |connect|Connect to a server. Accepts domains and IP addresses (requires port).|`connect <ip/domain>:<port>`|:white_check_mark:|:x:
-|connect_lobby
+|connect_lobby|?|`connect_lobby`|:white_check_mark:|:x:
 |cvarAdd|Adds/subtracts an int/float stored in a CVAR.|Add:`cvaradd s_volume +0.05`  Subtract:`cvaradd s_volume -0.05`|:white_check_mark:|:white_check_mark:
-|cvarlist|Alias of `listcvars`|
+|cvarlist|Alias of `listcvars`.|
 |cvarMult|Multiplies an int/float stored in a CVAR.|`cvarmult s_volume 5`|:white_check_mark:|:white_check_mark:
 |cvar_restart|Restarts the CVAR subsystem. Note that this clears most changes to CVARs.|`cvar_restart`|:white_check_mark:|:white_check_mark:|
 |demo|Play a demo file.|`demo <file>`|:white_check_mark:|:x:
@@ -34,12 +34,12 @@
 |dumpuser|Prints the player's `userinfo` to the console.|`dumpuser <player name>`|:white_check_mark:|:white_check_mark:|
 |echo|Prints text to console.|`echo <text>`|:white_check_mark:|:white_check_mark:
 |exec|Executes a configuration file.|`exec <config file>`|:white_check_mark:|:white_check_mark:|
-|fdir
-|find
-|fs_openedList
-|fs_referencedList
-|gfxinfo
-|imagelist
+|fdir|List files that match a specified filter in the search path.|`fdir <filter>`|:white_check_mark:|:white_check_mark:
+|find|Searches the console history for text (case-sensitive).|`find <string>`|:white_check_mark:|:x:
+|fs_openedList|Lists currently opened PK3 archives.|`fs_openedlist`|:white_check_mark:|:x:
+|fs_referencedList|Lists currently referenced PK3 archive names.|`fs_referencedlist`|:white_check_mark:|:x:
+|gfxinfo|Displays graphics subsystem information, including card vendor, renderer etc.|`gfxinfo`|:white_check_mark:|:x:
+|imagelist|Lists currently loaded images.|`imagelist`|:white_check_mark:|:x:
 |in_restart|Restarts the game input subsystem.|`in_restart`|:white_check_mark:|:x:
 |kick|Kick a player by name.|`kick <player name>`|:white_check_mark:|:white_check_mark:|
 |killserver|Unload the currently loaded map and put the server in a 'map-less' state (does not exit the process but shuts down the game, further `map` commands can be run to recover the server)|`killserver`|:white_check_mark:|:white_check_mark:
@@ -47,7 +47,7 @@
 |listcvars|Lists all CVARs with optional filtering.|`listcvars [filter]`|:white_check_mark:|:white_check_mark:
 |ListInputDevices|Lists all input devices.|`listinputdevices`|:white_check_mark:|:x:
 |map|Loads a map normally.|`map <map name> [factory]`|:white_check_mark:|:white_check_mark:|
-|map_restart|Reloads the map, it's entities and respawns all players.|`map_restart`|
+|map_restart|Reloads the map, it's entities and respawns all players.|`map_restart`|:white_check_mark:|:white_check_mark:
 |meminfo|Shows memory allocation information.|`meminfo`|:white_check_mark:|:white_check_mark:|
 |messagemode|Calls the `say` chat dialog.|`messagemode`|:white_check_mark:|:x:
 |messagemode2|Calls the `say_team` chat dialog.|`messagemode`|:white_check_mark:|:x:
@@ -70,12 +70,12 @@
 |say|Send a message from the client/server. Server messages are prefixed with `Server: `, client messages are prefixed with `PlayerName: ^2 `|`say <message>`|:white_check_mark:|:white_check_mark:
 |screenshot|Write a screenshot in TGA format.|`screenshot [file name]`|:white_check_mark:|:x:
 |screenshotJPEG|Write a screenshot in JPEG format.|`screenshotjpeg [file name]`|:white_check_mark:|:x:
-|sectorlist|List the map's sectors and the number of entities within the sectors.|`sectorlist`|:white_check_mark:|:x:
+|sectorlist|List the map's sectors and the number of entities within the sectors.|`sectorlist`|:white_check_mark:|:white_check_mark:
 |serverinfo|Displays all CVARs with flag 64 set. These CVARs can be queried via the Valve source protocol from the server's `net_port`.|`serverinfo`|:white_check_mark:|:white_check_mark:|
 |set|Sets a CVAR with no special flags set.|`set <cvar> <value>`|:white_check_mark:|:white_check_mark:|
 |seta|Sets a CVAR with the archive flag set.|`seta <cvar> <value>`|:white_check_mark:|:white_check_mark:|
 |setenv|Mostly used for setting/controlling Voodoo environment variables. Very likely unused and won't do anything now.|`setenv`|:white_check_mark:|:x:
-|shaderlist
+|shaderlist|List all shaders currently loaded.|`shaderlist`|:white_check_mark:|:x:
 |showip|Display current IP address(es).|`showip`|:white_check_mark:|:x:
 |s_info|Display sound/audio system information.|`s_info`|:white_check_mark:|:x:
 |skinlist|List loaded 'skins' for the currently selected player model.|`skinlist`|:white_check_mark:|:x:
@@ -84,18 +84,18 @@
 |s_stop|Stop playing the looping music track.|`s_stop`|:white_check_mark:|:x:
 |startRandomMap|Runs a random map listed in the map-pool file (with the factory also specified). By default this runs on server startup unless specified otherwise.|`startRandomMap`|:white_check_mark:|:white_check_mark:|
 |status|List all clients, and their Client IDs, scores, latency in milliseconds (ping), in-game name, lastmsg, IP address, QPort, player rate and Steam64 ID.|`status`|:white_check_mark:|:white_check_mark:|
-|steam_downloadugc
-|steam_subscribeugc
-|steam_unsubscribeugc
+|steam_downloadugc|Download a Steam workshop item.|`steam_downloadugc <workshop id>`|:white_check_mark:|:x:
+|steam_subscribeugc|Subscribe to a Steam workshop item.|`steam_subscribeugc <workshop id>`|:white_check_mark:|:x:
+|steam_unsubscribeugc|Unsubscribe from a Steam workshop item.|`steam_unsubscribeugc <workshop id>`|:white_check_mark:|:x:
 |stoprecord|Stops recording a demo.|`stoprecord`|:white_check_mark:|:x:
 |toggle|Inverts a CVAR's boolean value.|`toggle <cvar>`|:white_check_mark:|:white_check_mark:
 |toggleconsole|Toggles the console into/out of view. Designed for binding.|`toggleconsole`|:white_check_mark:|:x:
-|touchFile
-|unalias
-|unaliasall
+|touchFile|Opens the specified file for reading and then immediately closes the file again.|`touchfile <file>`|:white_check_mark:|:white_check_mark:
+|unalias|Remove a single alias.|`unalias <alias>`|:white_check_mark:|:x:
+|unaliasall|Removes all set aliases.|`unaliasall`|:white_check_mark:|:x:
 |unbind|Removes a single bind on a key.|`unbind <key>`|:white_check_mark:|:x:
 |unbindall|Removes all set binds. Usually used within `repconfig.cfg`/`qzconfig.cfg`.|`unbindall`|:white_check_mark:|:x:
-|userinfo
+|userinfo|?|`userinfo`|:white_check_mark:|:x:
 |vid_restart|Restarts the graphics subsystem.|`vid_restart`|:white_check_mark:|:x:
 |vstr|Executes commands within a CVAR.|`vstr <cvar>`|:white_check_mark:|:white_check_mark:
 |wait|Waits for one frame (or specified frames) before continuing.|`wait [frames]`|:white_check_mark:|:x:
@@ -105,8 +105,8 @@
 |web_reload|For development use only. Will trap your client in the old Quake 3 Arena menu system, requires a relaunch to get back to normal functionality|`web_reload`|:white_check_mark:|:x:
 |web_showBrowser|Shows the web-based UI (even when in a match).|`web_showbrowser`|:white_check_mark:|:x:
 |web_showError|Displays a error message in the web-based UI.|`web_showerror <error message>`|:white_check_mark:|:x:|
-|writeClientConfig
-|writeconfig
+|writeClientConfig|Writes a new configuration file that doesn't include game or server CVARs or any default settings.|`writeclientconfig <file>`|:white_check_mark:|:white_check_mark:
+|writeconfig|Writes a new configuration file with all currently set CVARs and binds.|`writeconfig <file>`|:white_check_mark:|:white_check_mark:
 
 
 ------------------------
