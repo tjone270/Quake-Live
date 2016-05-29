@@ -1,4 +1,4 @@
-# Quake Live Documentation
+# Quake Live Technical Documentation
 
 ## Local/Builtin
 | Command | Description | Syntax | Client | Server |
