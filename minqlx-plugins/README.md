@@ -23,6 +23,23 @@ Guide:
         sudo python3.5 -m pip install schedule
 ```
 
+### `botmanager.py`
+Adds a `/cv addbot | !addbot` and `/cv rembot | !rembot` command system. Has functionality to automatically adds/removes bots to even teams. Also displays a warning on maps that don't support bots.  
+It's a good idea to set `bot_enable` to `1` by default, otherwise the plugin's useless.
+```
+CVARs:
+    bot_autoManage        - Automatically add/remove bot to even up the teams. Will disable all other commands during automatic management.
+        Default: 0
+
+Commands:
+    !addbot               - Adds a bot.
+    !rembot               - Removes a bot.
+
+Client Commands:
+    /cv addbot            - Vote to add a bot.
+    /cv rembot            - Vote to remove a bot.
+```
+
 ### `branding.py`
 Replaces in-game messages/text with custom text set in special CVARs.
 ```
