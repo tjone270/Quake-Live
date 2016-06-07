@@ -3,7 +3,7 @@
 # This plugin is released to everyone, for any purpose. It comes with no warranty, no guarantee it works, it's released AS IS.
 # You can modify everything, except for lines 1-4 and the !tomtec_versions code. They're there to indicate I whacked this together originally. Please make it better :D
 
-BOT_NAME="StandardBot" # name of bot in-game
+BOT_NAME="^3Bot" # name of bot in-game
 BOT_TYPE=("Anarki", "5") # bot, skill level
 
 """
