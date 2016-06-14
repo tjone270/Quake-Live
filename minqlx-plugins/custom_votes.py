@@ -116,7 +116,7 @@ class custom_votes(minqlx.Plugin):
                 caller.tell("You are not allowed to call a vote as spectator.")
                 return minqlx.RET_STOP_ALL
 
-        vote = vote.stip()
+        vote = vote.lower().strip()
         if vote == "infiniteammo":
             # enables the '/cv infiniteammo [on/off]' command
             if args.lower() == "off":
