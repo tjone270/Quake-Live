@@ -230,7 +230,7 @@ class custom_votes(minqlx.Plugin):
             try:
                 player_name = self.player(int(args)).clean_name
                 player_id = self.player(int(args)).id
-            except AttributeError:
+            except Exception:
                 caller.tell("^1Invalid ID.^7 Use a client ID from the ^2/players^7 command.")
                 return minqlx.RET_STOP_ALL
 
@@ -240,8 +240,7 @@ class custom_votes(minqlx.Plugin):
                 return minqlx.RET_STOP_ALL
 
             self.callvote(
-                "qlx !silence {} 10 minutes You were call-voted silent for 10 minutes.; mute {}".format(player_id,
-                                                                                                        player_id),
+                "qlx !silence {} 10 minutes You were call-voted silent for 10 minutes.; mute {}".format(player_id, player_id),
                 "silence {} for 10 minutes".format(player_name))
             self.msg("{}^7 called a vote.".format(caller.name))
             return minqlx.RET_STOP_ALL
@@ -258,7 +257,7 @@ class custom_votes(minqlx.Plugin):
             try:
                 player_name = self.player(int(args)).clean_name
                 player_id = self.player(int(args)).id
-            except AttributeError:
+            except Exception:
                 caller.tell("^1Invalid ID.^7 Use a client ID from the ^2/players^7 command.")
                 return minqlx.RET_STOP_ALL
 
@@ -275,7 +274,7 @@ class custom_votes(minqlx.Plugin):
             try:
                 player_name = self.player(int(args)).clean_name
                 player_id = self.player(int(args)).id
-            except AttributeError:
+            except Exception:
                 caller.tell("^1Invalid ID.^7 Use a client ID from the ^2/players^7 command.")
                 return minqlx.RET_STOP_ALL
 
@@ -465,5 +464,5 @@ class custom_votes(minqlx.Plugin):
                 return minqlx.RET_STOP_ALL
 
     def cmd_showversion(self, player, msg, channel):
-        channel.reply(
-            "^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
+        channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016."
+                      .format(self.plugin_version))
