@@ -20,10 +20,19 @@ class ips(minqlx.Plugin):
             return minqlx.RET_USAGE
         
         try:
-            steam_id = self.player(int(msg[1])).steam_id
-            player_name = self.player(int(msg[1])).name
-        except:
-            channel.reply("^1Invalid Client ID.^7 Enter a valid client ID to see a list of IP addresses they've used on this server.")
+            ident = int(msg[1])
+            target_player = None
+            if 0 <= ident < 64:
+                steam_id = self.player(int(msg[1])).steam_id
+                player_name = self.player(int(msg[1])).name
+            else:
+                player_name = ident
+                steam_id = ident
+        except ValueError:
+            channel.reply("Invalid ID. Use either a client ID or a SteamID64.")
+            return
+        except minqlx.NonexistentPlayerError:
+            channel.reply("Invalid client ID. Use either a client ID or a SteamID64.")
             return
         
         key = "minqlx:players:{}:ips".format(steam_id)
