@@ -57,7 +57,7 @@ class commlink(minqlx.Plugin):
         self.set_cvar_once("qlx_enableConnectDisconnectMessages", "1")
         self.set_cvar_once("qlx_enableCommlinkMessages", "1")
 
-        self.server = "irc.tomtecsolutions.com.au"
+        self.server = "irc.quakelive.tomtecsolutions.com.au"
         self.identity = ("#" + self.get_cvar("qlx_commlinkIdentity"))
         self.clientName = self.get_cvar("qlx_commlinkServerName")
 
@@ -70,7 +70,7 @@ class commlink(minqlx.Plugin):
         self.logger.info("Connecting to {}...".format(self.server))
         self.msg("Connecting to ^3CommLink^7 server...")
 
-        self.plugin_version = "1.3"
+        self.plugin_version = "1.5"
         
     def game_countdown(self):
         if self.game.type_short == "duel":
