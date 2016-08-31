@@ -104,6 +104,14 @@ CVARs:
         Default: 3
 ```
 
+### `dictionary.py`
+Defines english words, and produces random english words upon command.
+```
+Commands:
+    !define <word>           - Define an english word(s).
+    !randomword              - Produce a random english word.
+```
+
 ### `disabled_commands.py`
 Displays a message when a command listed in the disabled commands list is run, and stops the command from running in the first place.
 ```
@@ -158,6 +166,9 @@ CVARs:
     qlx_kickPlayersOutOfRatingBounds        - Kick players that don't conform to the rating limits.
         Default: 1
 ```
+
+### `thirtysecwarn.py`
+Plays unused VO when a game is nearing the round time limit.
 
 ### `votemanager.py`
 Permits players with Minqlx Permission level 3 to vote and force-vote.
