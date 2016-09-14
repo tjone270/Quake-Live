@@ -32,7 +32,7 @@ class custom_votes(minqlx.Plugin):
         self.set_cvar_once("qlx_disableCvarVoting", "0")
         self.set_cvar_once("qlx_cvarVotePermissionRequired", "3")
         
-        self.plugin_version = "2.1"
+        self.plugin_version = "2.2"
 
     def player_loaded(self, player):
         if (self.get_cvar("qlx_excessive", bool)):
