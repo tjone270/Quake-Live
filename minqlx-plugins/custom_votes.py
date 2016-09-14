@@ -393,6 +393,24 @@ class custom_votes(minqlx.Plugin):
                 caller.tell("^2/cv lgammo [150/200]^7 is the usage for this callvote command.")
                 return minqlx.RET_STOP_ALL
 
+        if vote.lower() == "glammo":
+            # enables the '/cv glammo [25/10/6]' command
+            if args.lower() == "25":
+                self.callvote("set g_startingAmmo_gl 25", "Grenade launcher ammo: 150")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "10":
+                self.callvote("set g_startingAmmo_gl 10", "Grenade launcher ammo: 200")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            if args.lower() == "6":
+                self.callvote("set g_startingAmmo_gl 6", "Grenade launcher ammo: 200")
+                self.msg("{}^7 called a vote.".format(caller.name))
+                return minqlx.RET_STOP_ALL
+            else:
+                caller.tell("^2/cv glammo [25/10/6]^7 is the usage for this callvote command.")
+                return minqlx.RET_STOP_ALL
+
         if vote.lower() == "lgdamage":
             # enables the '/cv lgdamage [6/7]' command
             if args.lower() == "6":
