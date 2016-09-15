@@ -396,15 +396,15 @@ class custom_votes(minqlx.Plugin):
         if vote.lower() == "glammo":
             # enables the '/cv glammo [25/10/6]' command
             if args.lower() == "25":
-                self.callvote("set g_startingAmmo_gl 25", "Grenade launcher ammo: 150")
+                self.callvote("set g_startingAmmo_gl 25", "Grenade launcher ammo: 25")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             if args.lower() == "10":
-                self.callvote("set g_startingAmmo_gl 10", "Grenade launcher ammo: 200")
+                self.callvote("set g_startingAmmo_gl 10", "Grenade launcher ammo: 10")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             if args.lower() == "6":
-                self.callvote("set g_startingAmmo_gl 6", "Grenade launcher ammo: 200")
+                self.callvote("set g_startingAmmo_gl 6", "Grenade launcher ammo: 6")
                 self.msg("{}^7 called a vote.".format(caller.name))
                 return minqlx.RET_STOP_ALL
             else:
