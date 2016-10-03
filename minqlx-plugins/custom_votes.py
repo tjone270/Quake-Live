@@ -474,6 +474,18 @@ class custom_votes(minqlx.Plugin):
             else:
                 caller.tell("Voting to change server CVARs is disabled on this server.")
                 return minqlx.RET_STOP_ALL
+
+        if vote.lower() == "do":
+            if "balance" in self.plugins:
+                if self.plugins["balance"].suggested_pair:
+                    self.callvote("qlx !do", "force the suggested switch")
+                    self.msg("{}^7 called a vote.".format(caller.name))
+                else:
+                    caller.tell("A switch hasn't been suggested yet by ^4!teams^7, you cannot vote to apply a suggestion that doesn't exist.")
+            else:
+                caller.tell("The ^4balance^7 system isn't currently loaded. This vote cannot function.")
+                
+            return minqlx.RET_STOP_ALL
                 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4custom_votes.py^7 - version {}, created by Thomas Jones on 01/01/2016.".format(self.plugin_version))
