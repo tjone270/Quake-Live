@@ -3,9 +3,7 @@
 # This plugin is released to everyone, for any purpose. It comes with no warranty, no guarantee it works, it's released AS IS.
 # You can modify everything, except for lines 1-4 and the !tomtec_versions code. They're there to indicate I whacked this together originally. Please make it better :D
 
-import minqlx
-import requests
-import time
+import minqlx, requests
 
 class ratinglimiter(minqlx.Plugin):
     def __init__(self):
@@ -19,13 +17,14 @@ class ratinglimiter(minqlx.Plugin):
         self.set_cvar_once("qlx_minRating", "0")
         self.set_cvar_once("qlx_maxRating", "1600")
         self.set_cvar_once("qlx_kickPlayersOutOfRatingBounds", "1")
+        self.set_cvar_once("qlx_ratingOverridePermission", "4")
 
         self.set_cvar_once("qlx_balanceUrl", "qlstats.net:8080")
         self.set_cvar_once("qlx_balanceApi", "elo")
 
         self.prohibitedPlayers = []
         
-        self.plugin_version = "1.1"
+        self.plugin_version = "1.2"
 
 
     def handle_new_game(self):
@@ -35,8 +34,11 @@ class ratinglimiter(minqlx.Plugin):
         if player in self.prohibitedPlayers:
             return "^1You are not permitted to join this server."
         
-    @minqlx.thread
     def handle_player_loaded(self, player):
+        if not self.db.has_permission(player, self.get_cvar("qlx_ratingOverridePermission", int)):
+            self.send_request(player)
+
+    def send_request(self, player):
         try:
             url = "http://{}/{}/{}".format(self.get_cvar("qlx_balanceUrl"), self.get_cvar("qlx_balanceApi"), player.steam_id)
             res = requests.get(url)
@@ -58,11 +60,9 @@ class ratinglimiter(minqlx.Plugin):
         if player in self.prohibitedPlayers:
             player.center_print("^1You are not permitted to join the game.")
             return minqlx.RET_STOP_ALL
-        
+
+    @minqlx.next_frame
     def process_player(self, player, glicko, games_played):
-        if not self.get_cvar("qlx_kickPlayersOutOfRatingBounds", bool):
-            return
-        
         if glicko > self.get_cvar("qlx_maxRating", int): # player's glicko is higher than the server allows
             self.prohibitedPlayers.append(player)
             playerIs = "over"
@@ -70,17 +70,23 @@ class ratinglimiter(minqlx.Plugin):
             self.prohibitedPlayers.append(player)
             playerIs = "under"
         elif (glicko == self.get_cvar("qlx_minRating", int)) or (glicko == self.get_cvar("qlx_maxRating", int)): # player's glicko is the same as either of the limits
-            player.tell("Your glicko ({}) is on the borderline of the server's glicko limits. Don't be surprised if you're kicked after some games.".format(glicko))
+            if self.get_cvar("qlx_kickPlayersOutOfRatingBounds", bool):
+                suffix = "Don't be surprised if you're kicked after some games."
+            else:
+                suffix = ""
+            player.tell("Your glicko ({}) is on the borderline of the server's glicko limits. {}".format(glicko, suffix))
             return
-        
-        if player in self.prohibitedPlayers:
-            if playerIs == "over": limit = self.get_cvar("qlx_maxRating", int)
-            else: limit = self.get_cvar("qlx_minRating", int)
-            player.mute()
-            player.put("spectator")
-            player.tell("Sorry, your glicko rating ({}) is {} the glicko limitation on this server ({}). ^1You will be kicked shortly.".format(glicko, playerIs, limit))
-            time.sleep(8)
-            player.kick("Your glicko rating was {} the server limitation ({}).".format(playerIs, limit))
+
+        if playerIs == "over":
+            limit = self.get_cvar("qlx_maxRating", int)
+        else:
+            limit = self.get_cvar("qlx_minRating", int)
+
+        if not self.get_cvar("qlx_kickPlayersOutOfRatingBounds", bool):
+            player.tell("Sorry, your glicko rating ({}) is {} the glicko limitation on this server ({}).".format(glicko, playerIs, limit))
+            player.tell("You can spectate, but you cannot join this game until you meet the glicko requirements.")
+        elif player in self.prohibitedPlayers:
+            player.kick("Sorry, your glicko rating ({}) is {} the glicko limitation on this server ({}).".format(glicko, playerIs, limit))
             
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4ratinglimiter.py^7 - version {}, created by Thomas Jones on 27/02/2016.".format(self.plugin_version))
