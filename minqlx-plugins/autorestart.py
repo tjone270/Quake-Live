@@ -24,7 +24,11 @@ class autorestart(minqlx.Plugin):
         self.set_cvar_once("qlx_autoRestartTime", "00:00") # 12:00am
 
         self.add_command("tomtec_versions", self.cmd_showversion)
-        self.plugin_version = "1.0"
+
+        self.add_hook("player_disconnect", self.handle_player_disconnect)
+
+        self.plugin_version = "1.1"
+        self.restart = False
         
         self.initialise()
         
@@ -39,7 +43,12 @@ class autorestart(minqlx.Plugin):
                 time.sleep(1)
         loop()
 
+    def handle_player_disconnect(self, *args, **kwargs):
+        if len(self.players()) <= 1 and self.restart:
+            minqlx.console_command("quit")
+            
     def server_shutdown(self):
+        self.restart = True
         if len(self.players()) < 1:
             minqlx.console_command("quit")
 
