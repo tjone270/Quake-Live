@@ -15,7 +15,6 @@ import minqlx
 class votemanager(minqlx.Plugin):
     def __init__(self):
         self.add_hook("vote_called", self.handle_vote_called)
-        self.add_hook("vote_started", self.handle_vote_started)
         self.add_hook("vote", self.handle_vote)
         self.add_hook("vote_ended", self.handle_vote_ended)
 
@@ -25,12 +24,10 @@ class votemanager(minqlx.Plugin):
         
         self.has_voted = []
 
-        self.plugin_version = "1.4"
-
-    def handle_vote_started(self, player, vote, args):
-        self.has_voted = []
+        self.plugin_version = "1.5"
         
     def handle_vote_called(self, caller, vote, args):
+        self.has_voted = []
         if vote.lower() in ["clientkick", "kick"]:
             try:
                 guy = self.player(int(args)) if vote.lower() == "clientkick" else self.find_player(args.lower())[0]
