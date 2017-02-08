@@ -11,6 +11,7 @@ import minqlx
 
 class votestats(minqlx.Plugin):
     def __init__(self):
+        self.add_hook("vote_started", self.process_vote, priority=minqlx.PRI_LOWEST)
         self.add_hook("vote", self.process_vote, priority=minqlx.PRI_LOWEST)
         self.add_hook("vote_ended", self.handle_vote_ended, priority=minqlx.PRI_LOWEST)
 
@@ -19,10 +20,14 @@ class votestats(minqlx.Plugin):
 
         self.set_cvar_once("qlx_privatiseVotes", "0")
 
-        self.plugin_version = "1.7"
+        self.plugin_version = "1.8"
 
         self.has_voted = []
-
+    
+    def vote_started(self, player, vote, args):
+        self.has_voted = []
+        self.has_voted.append(player)
+        
     def cmd_votes(self, player, msg, channel):
         flag = self.db.get_flag(player, "votestats:votes_enabled", default=True)
         self.db.set_flag(player, "votestats:votes_enabled", not flag)
