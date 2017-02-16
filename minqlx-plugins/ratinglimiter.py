@@ -24,14 +24,14 @@ class ratinglimiter(minqlx.Plugin):
 
         self.prohibitedPlayers = []
         
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.3"
 
 
     def handle_new_game(self):
         self.prohibitedPlayers = [] # clear all banned players so their glickos can be recalculated.
         
     def handle_player_connected(self, player):
-        if player in self.prohibitedPlayers:
+        if (player in self.prohibitedPlayers) and (self.get_cvar("qlx_kickPlayersOutOfRatingBounds", bool)):
             return "^1You are not permitted to join this server."
         
     def handle_player_loaded(self, player):
