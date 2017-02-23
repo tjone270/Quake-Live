@@ -1,4 +1,6 @@
-# Quake Live/Minqlx Extras
+# NO LONGER UPDATED - tjone270 is leaving the QL community.
+
+## Quake Live/Minqlx Extras
 
 Please read the LICENCE.md file in the root of this repository now, before accessing other files in this repository further.
 
