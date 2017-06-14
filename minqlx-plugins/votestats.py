@@ -11,7 +11,7 @@ import minqlx
 
 class votestats(minqlx.Plugin):
     def __init__(self):
-        self.add_hook("vote_started", self.process_vote, priority=minqlx.PRI_LOWEST)
+        self.add_hook("vote_started", self.vote_started, priority=minqlx.PRI_LOWEST)
         self.add_hook("vote", self.process_vote, priority=minqlx.PRI_LOWEST)
         self.add_hook("vote_ended", self.handle_vote_ended, priority=minqlx.PRI_LOWEST)
 
@@ -20,7 +20,7 @@ class votestats(minqlx.Plugin):
 
         self.set_cvar_once("qlx_privatiseVotes", "0")
 
-        self.plugin_version = "1.8"
+        self.plugin_version = "1.9"
 
         self.has_voted = []
     
