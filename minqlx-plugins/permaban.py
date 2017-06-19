@@ -7,11 +7,14 @@ import minqlx
 
 class permaban(minqlx.Plugin):
     def __init__(self):
-        self.add_command("permaban", self.cmd_permaban, 5, usage="<id>/<steam_id>")
         self.add_hook("player_connect", self.handle_player_connect, priority=minqlx.PRI_HIGH)
+
+        self.add_command("permaban", self.cmd_permaban, 5, usage="<id>/<steam_id>")
         self.add_command("tomtec_versions", self.cmd_showversion)
 
-        self.plugin_version = "1.4"
+        self.plugin_version = "1.5"
+
+
 
     def cmd_permaban(self, player, msg, channel):
         if len(msg) < 2:
@@ -42,19 +45,31 @@ class permaban(minqlx.Plugin):
         
         
     def handle_player_connect(self, player):
+        is_banned_id = self.is_banned(player)
+
+        if is_banned_id:
+            if (is_banned_id == player.steam_id):
+                return "Your account is permabanned.\n"
+            else:
+                self.db.set("minqlx:players:{}:permabanned".format(is_banned_id), "1")    # make sure every single associated account is banned
+                self.db.set("minqlx:players:{}:permabanned".format(player.steam_id), "1") # make sure the new account is banned
+                return "Your associated accounts are permabanned.\n"
+
+
+    def is_banned(self, player):
         ip_list = list(self.db.smembers("minqlx:players:{}:ips".format(player.steam_id)))
         ip_list.append(player.ip)
 
-        banned_id = False
+        if self.db.get("minqlx:players:{}:permabanned".format(player.steam_id)) == "1":
+            return player.steam_id
+        
         for ip in ip_list:
             for steam_id in list(self.db.smembers("minqlx:ips:{}".format(ip))):
                 if self.db.get("minqlx:players:{}:permabanned".format(steam_id)) == "1":
-                    banned_id = steam_id
+                    return steam_id
+                
+        return False
 
-        if banned_id:
-            self.db.set("minqlx:players:{}:permabanned".format(banned_id), "1")
-            return "You are permanently banned from ^4The Purgery^7.\n"
-
+        
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4permaban.py^7 - version {}, created by Thomas Jones on 19/06/2017.".format(self.plugin_version))
-
