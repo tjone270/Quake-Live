@@ -11,10 +11,10 @@ class permaban(minqlx.Plugin):
         self.add_hook("player_connect", self.handle_player_connect, priority=minqlx.PRI_HIGH)
         self.add_command("tomtec_versions", self.cmd_showversion)
 
-        self.plugin_version = "1.2"
+        self.plugin_version = "1.3"
 
     def cmd_permaban(self, player, msg, channel):
-        if len(msg) < 1:
+        if len(msg) < 2:
             return minqlx.RET_USAGE
         
         try:
