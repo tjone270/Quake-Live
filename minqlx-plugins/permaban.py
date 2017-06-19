@@ -11,7 +11,7 @@ class permaban(minqlx.Plugin):
         self.add_hook("player_connect", self.handle_player_connect, priority=minqlx.PRI_HIGH)
         self.add_command("tomtec_versions", self.cmd_showversion)
 
-        self.plugin_version = "1.1"
+        self.plugin_version = "1.2"
 
     def cmd_permaban(self, player, msg, channel):
         if len(msg) < 1:
@@ -23,13 +23,9 @@ class permaban(minqlx.Plugin):
             if 0 <= ident < 64:
                 steam_id = self.player(int(msg[1])).steam_id
                 player_name = self.player(int(msg[1])).name
-                ip_address = self.player(int(msg[1])).ip
             else:
                 player_name = ident
                 steam_id = ident
-                key = "minqlx:players:{}:ips".format(steam_id)
-                ip_list = list(self.db.smembers(key))
-                ip_address = ip_list[-1]
         except ValueError:
             channel.reply("Invalid ID. Use either a client ID or a SteamID64.")
             return
