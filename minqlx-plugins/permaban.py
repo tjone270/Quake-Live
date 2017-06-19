@@ -11,7 +11,7 @@ class permaban(minqlx.Plugin):
         self.add_hook("player_connect", self.handle_player_connect, priority=minqlx.PRI_HIGH)
         self.add_command("tomtec_versions", self.cmd_showversion)
 
-        self.plugin_version = "1.3"
+        self.plugin_version = "1.4"
 
     def cmd_permaban(self, player, msg, channel):
         if len(msg) < 2:
@@ -45,16 +45,16 @@ class permaban(minqlx.Plugin):
         ip_list = list(self.db.smembers("minqlx:players:{}:ips".format(player.steam_id)))
         ip_list.append(player.ip)
 
-        banned = False
+        banned_id = False
         for ip in ip_list:
             for steam_id in list(self.db.smembers("minqlx:ips:{}".format(ip))):
                 if self.db.get("minqlx:players:{}:permabanned".format(steam_id)) == "1":
-                    banned = True
+                    banned_id = steam_id
 
-        if banned:
+        if banned_id:
+            self.db.set("minqlx:players:{}:permabanned".format(banned_id), "1")
             return "You are permanently banned from ^4The Purgery^7.\n"
 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4permaban.py^7 - version {}, created by Thomas Jones on 19/06/2017.".format(self.plugin_version))
-
 
