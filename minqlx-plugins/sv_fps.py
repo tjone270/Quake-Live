@@ -9,8 +9,8 @@ class sv_fps(minqlx.Plugin):
     def __init__(self):
         self.add_command(("sv_fps", "svfps"), self.cmd_svfps, 5, usage="<integer>")
         self.add_command("tomtec_versions", self.cmd_showversion)
-        self.set_cvar_once("qlx_svfps", STD_SVFPS)
-        self.plugin_version = "1.0"
+        self.set_cvar_once("qlx_svfps", str(STD_SVFPS))
+        self.plugin_version = "1.1"
         self.set_initial_fps(self.get_cvar("qlx_svfps", int))
 
         
@@ -25,14 +25,14 @@ class sv_fps(minqlx.Plugin):
             return minqlx.RET_STOP
 
         if (self.check_value(sv_fps)):
-            minqlx.set_cvar("sv_fps", sv_fps, -1)
+            minqlx.set_cvar("sv_fps", str(sv_fps), -1)
             channel.reply("sv_fps is now set to {}.".format(sv_fps))
 
     @minqlx.delay(5)
     def set_initial_fps(self, cvarval):
         if (cvarval != STD_SVFPS):
             if (self.check_value(cvarval)):
-                minqlx.set_cvar("sv_fps", cvarval, -1)
+                minqlx.set_cvar("sv_fps", str(cvarval), -1)
             else:
                 self.msg("Will not set sv_fps to value of qlx_svfps as the latter contains an incompatible value.")
         else:
