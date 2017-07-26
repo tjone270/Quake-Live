@@ -119,6 +119,14 @@ Guide:
     Open the plugin up in an editor and edit the DISABLED_COMMANDS array, adding commands to the list (omitting the !).
     Save and load to a minqlx-enabled Quake server and you'll find the commands in the array no longer run.
 ```
+   
+### `permaban.py`
+Permanently bans players from the server. Cross-references SteamIDs with IP addresses for a more through ban.  
+Permabans can't be undone without a lot of DB modification.
+```
+Commands:
+    !permaban <id>           - Permanently bans <id> from the server.
+```
 
 ### `ips.py`
 Shows player IP address history from the Redis database. IPs are recorded on player connect. The plugin does not have to be loaded to record IPs.
@@ -165,6 +173,21 @@ CVARs:
         Default: 1600
     qlx_kickPlayersOutOfRatingBounds        - Kick players that don't conform to the rating limits.
         Default: 1
+```
+
+### `sv_fps.py`
+Provides a safe way to modify the server frame-rate variable.  
+Rules:
+1. sv_fps must be greater than or equal to 40.
+2. sv_fps can't be a negative number.
+3. sv_fps must be divisable by 40.
+```
+Commands:
+    !sv_fps/!svfps <int>   - Sets the sv_fps cvar live in the server.
+
+CVARs:
+    qlx_svfps              - Set this cvar to your desired sv_fps value, and the server will set it upon loading the plugin.
+        Default: 40
 ```
 
 ### `thirtysecwarn.py`
