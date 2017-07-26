@@ -10,7 +10,7 @@ class sv_fps(minqlx.Plugin):
         self.add_command(("sv_fps", "svfps"), self.cmd_svfps, 5, usage="<integer>")
         self.add_command("tomtec_versions", self.cmd_showversion)
         self.set_cvar_once("qlx_svfps", str(STD_SVFPS))
-        self.plugin_version = "1.1"
+        self.plugin_version = "1.2"
         self.set_initial_fps(self.get_cvar("qlx_svfps", int))
 
         
@@ -24,21 +24,21 @@ class sv_fps(minqlx.Plugin):
             channel.reply("You must specify a positive integer greater than or equal to {}.".format(STD_SVFPS))
             return minqlx.RET_STOP
 
-        if (self.check_value(sv_fps)):
+        if (self.check_value(sv_fps, channel)):
             minqlx.set_cvar("sv_fps", str(sv_fps), -1)
             channel.reply("sv_fps is now set to {}.".format(sv_fps))
 
     @minqlx.delay(5)
     def set_initial_fps(self, cvarval):
         if (cvarval != STD_SVFPS):
-            if (self.check_value(cvarval)):
+            if (self.check_value(cvarval, minqlx.CHAT_CHANNEL)):
                 minqlx.set_cvar("sv_fps", str(cvarval), -1)
             else:
                 self.msg("Will not set sv_fps to value of qlx_svfps as the latter contains an incompatible value.")
         else:
             pass 
         
-    def check_value(self, sv_fps):
+    def check_value(self, sv_fps, channel):
         ret = True
         if (sv_fps < 0):
             channel.reply("The integer specified must be positive.")
