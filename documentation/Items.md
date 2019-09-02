@@ -50,8 +50,8 @@
 |45|Damage|
 |46|Armor Regen|
 |47|Domination Capture Point|
-|48|Red Cube|
-|49|Blue Cube|
+|48|Red Skull|
+|49|Blue Skull|
 |50|Nailgun|
 |51|Prox Launcher|
 |52|Chaingun|
