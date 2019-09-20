@@ -2,7 +2,6 @@
 
 | ID | Item |
 | :- | :--: |
-|0|Game Crashes|
 |1|Armor Shard|
 |2|Yellow Armor|
 |3|Red Armor|
