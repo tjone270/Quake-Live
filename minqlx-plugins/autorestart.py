@@ -29,10 +29,10 @@ class autorestart(minqlx.Plugin):
 
         self.plugin_version = "1.1"
         self.restart = False
-        
+
         self.initialise()
-        
-        
+
+
     def initialise(self):
         schedule.every().day.at(self.get_cvar("qlx_autoRestartTime")).do(self.server_shutdown)
 
@@ -44,13 +44,23 @@ class autorestart(minqlx.Plugin):
         loop()
 
     def handle_player_disconnect(self, *args, **kwargs):
-        if len(self.players()) <= 1 and self.restart:
+        if self.human_count_in_game() <= 1 and self.restart:
             minqlx.console_command("quit")
-            
+
     def server_shutdown(self):
         self.restart = True
-        if len(self.players()) < 1:
+        if self.human_count_in_game() == 0:
             minqlx.console_command("quit")
 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4autorestart.py^7 - version {}, created by Thomas Jones on 16/05/2016.".format(self.plugin_version))
+
+        #needs delay or else gets count before team/spec change
+    def human_count_in_game(self, *args, **kwargs):
+        human_count_in_game = 0
+
+        for p in self.teams()['free'] + self.teams()['red'] + self.teams()['blue']:
+            if(str(p.steam_id)[0] != "9"): #not a bot
+                human_count_in_game += 1
+
+        return human_count_in_game
