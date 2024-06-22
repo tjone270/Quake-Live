@@ -45,12 +45,12 @@ class autorestart(minqlx.Plugin):
 
     def handle_player_disconnect(self, *args, **kwargs):
         if len(self.players()) <= 1 and self.restart:
-            minqlx.console_command("quit")
+            minqlx.console_command("killserver")
             
     def server_shutdown(self):
         self.restart = True
         if len(self.players()) < 1:
-            minqlx.console_command("quit")
+            minqlx.console_command("killserver")
 
     def cmd_showversion(self, player, msg, channel):
         channel.reply("^4autorestart.py^7 - version {}, created by Thomas Jones on 16/05/2016.".format(self.plugin_version))
