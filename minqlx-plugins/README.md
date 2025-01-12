@@ -128,6 +128,14 @@ Commands:
     !permaban <id>           - Permanently bans <id> from the server.
 ```
 
+### `permissionlist.py`
+Lists all players in the minqlx database with a permission level greater than 0. Command functions for permission level 5 players only.
+
+```
+Commands:
+    !permissionlist          - Get the list.
+```
+
 ### `ips.py`
 Shows player IP address history from the Redis database. IPs are recorded on player connect. The plugin does not have to be loaded to record IPs.
 ```
