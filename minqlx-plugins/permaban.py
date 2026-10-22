@@ -57,17 +57,22 @@ class permaban(minqlx.Plugin):
 
 
     def is_banned(self, player):
-        ip_list = list(self.db.smembers("minqlx:players:{}:ips".format(player.steam_id)))
-        ip_list.append(player.ip)
-
         if self.db.get("minqlx:players:{}:permabanned".format(player.steam_id)) == "1":
             return player.steam_id
-        
-        for ip in ip_list:
-            for steam_id in list(self.db.smembers("minqlx:ips:{}".format(ip))):
-                if self.db.get("minqlx:players:{}:permabanned".format(steam_id)) == "1":
-                    return steam_id
-                
+
+        ip_addresses = self.db.smembers("minqlx:players:{}:ips".format(player.steam_id))
+        ip_addresses.add(player.ip)
+
+        # Merge associations in Redis so repeated accounts are checked only once.
+        steam_ids = list(self.db.sunion(["minqlx:ips:{}".format(ip) for ip in ip_addresses]))
+        if not steam_ids:
+            return False
+
+        ban_statuses = self.db.mget(["minqlx:players:{}:permabanned".format(steam_id) for steam_id in steam_ids])
+        for steam_id, ban_status in zip(steam_ids, ban_statuses):
+            if ban_status == "1":
+                return steam_id
+
         return False
 
         
